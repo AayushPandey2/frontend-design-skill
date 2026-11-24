@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "phase": "02-core-intelligence",
+  "categories": [
+    "activation",
+    "task_classification",
+    "execution_mode",
+    "capability_routing",
+    "implementation_economy",
+    "project_awareness",
+    "conflict_resolution",
+    "graceful_degradation",
+    "bounded_refinement"
+  ],
+  "tests": [
+    {
+      "id": "CI-ACT-01",
+      "category": "activation",
+      "prompt": "Build a landing page for an architectural studio with a case study grid and contact form.",
+      "context": { "repo": "empty" },
+      "expected_activation": true,
+      "expected_mode": "PREMIUM",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-OP-01", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Activates FORMFORGE.", "Selects PREMIUM mode."]
+    },
+    {
+      "id": "CI-ACT-02",
+      "category": "activation",
+      "prompt": "Write a Python binary search algorithm and optimize a PostgreSQL index for our orders table.",
+      "context": { "repo": "backend-service" },
+      "expected_activation": false,
+      "expected_mode": null,
+      "expected_routes": [],
+      "excluded_routes": ["FF-OP-01", "FF-OP-02", "FF-OP-03"],
+      "acceptance_criteria": ["Does not activate FORMFORGE for pure backend/algorithm task."]
+    },
+    {
+      "id": "CI-ACT-03",
+      "category": "activation",
+      "prompt": "Add a REST endpoint for user invoices and build the React invoice table UI with status filters.",
+      "context": { "repo": "fullstack-monorepo" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-OP-02", "FF-EN-02", "FF-CP-01", "FF-OP-01", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Applies FORMFORGE only to the frontend invoice table UI, not backend endpoint design."]
+    },
+    {
+      "id": "CI-CLS-01",
+      "category": "task_classification",
+      "prompt": "Fix the 3-line submit handler on the Stripe checkout form that allows double-charging on rapid clicks.",
+      "context": { "repo": "nextjs-ecommerce" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-EN-02", "FF-VF-03"],
+      "excluded_routes": ["FF-CR-01", "FF-MO-01"],
+      "acceptance_criteria": ["Classifies as high-risk functional fix despite tiny diff.", "Escalates verification above QUICK."]
+    },
+    {
+      "id": "CI-CLS-02",
+      "category": "task_classification",
+      "prompt": "Review our pricing page screenshot and tell me what feels cluttered or unclear—don't edit any files yet.",
+      "context": { "repo": "marketing-site" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-OP-02", "FF-VF-04"],
+      "excluded_routes": ["FF-OP-01"],
+      "acceptance_criteria": ["Recognizes review-only user intent.", "Outputs critique without modifying repository files."]
+    },
+    {
+      "id": "CI-MOD-01",
+      "category": "execution_mode",
+      "prompt": "Change the primary Save button label to 'Save changes' and increase its horizontal padding slightly.",
+      "context": { "repo": "react-tailwind" },
+      "expected_activation": true,
+      "expected_mode": "QUICK",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-OP-01", "FF-CP-01"],
+      "excluded_routes": ["FF-DS-03", "FF-CR-01", "FF-MO-01"],
+      "acceptance_criteria": ["Selects QUICK mode.", "Skips design brief and design memory creation."]
+    },
+    {
+      "id": "CI-MOD-02",
+      "category": "execution_mode",
+      "prompt": "Build a complete settings page with notification toggles, profile form, and validation.",
+      "context": { "repo": "react-app" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-EN-02", "FF-CP-01", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Selects STANDARD mode.", "Reuses existing components and verifies form behavior."]
+    },
+    {
+      "id": "CI-MOD-03",
+      "category": "execution_mode",
+      "prompt": "Design and build a bespoke interactive portfolio for a hardware industrial designer with custom project transitions.",
+      "context": { "repo": "empty" },
+      "expected_activation": true,
+      "expected_mode": "FLAGSHIP",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-OP-01", "FF-VF-03", "FF-VF-04"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Selects FLAGSHIP mode.", "Activates only needed capabilities rather than loading everything blindly."]
+    },
+    {
+      "id": "CI-RTE-01",
+      "category": "capability_routing",
+      "prompt": "Change the border radius of the existing Button component from 6px to 8px.",
+      "context": { "repo": "design-system-repo" },
+      "expected_activation": true,
+      "expected_mode": "QUICK",
+      "expected_routes": ["FF-OP-01", "FF-CP-01", "FF-EN-02"],
+      "excluded_routes": ["FF-CR-01", "FF-MO-01", "FF-DS-03"],
+      "acceptance_criteria": ["Loads only economy/component/project awareness.", "Never routes to unimplemented Phase 03 files."]
+    },
+    {
+      "id": "CI-RTE-02",
+      "category": "capability_routing",
+      "prompt": "Build a premium financial portfolio dashboard with asset allocation and transaction history.",
+      "context": { "repo": "nextjs-ts" },
+      "expected_activation": true,
+      "expected_mode": "PREMIUM",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-EN-02", "FF-CP-01", "FF-VF-03"],
+      "excluded_routes": ["FF-MO-01"],
+      "acceptance_criteria": ["Excludes decorative animation.", "Respects existing Next.js/TS stack and marks planned domain modules as PLANNED."]
+    },
+    {
+      "id": "CI-RTE-03",
+      "category": "capability_routing",
+      "prompt": "Fix keyboard navigation and Escape dismissal in our existing Modal component.",
+      "context": { "repo": "vue-app" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-OP-02", "FF-EN-02", "FF-CP-01", "FF-VF-03"],
+      "excluded_routes": ["FF-CR-01", "FF-DS-03"],
+      "acceptance_criteria": ["Preserves visual design.", "Fixes focus/Escape behavior without unrelated redesign."]
+    },
+    {
+      "id": "CI-RTE-04",
+      "category": "capability_routing",
+      "prompt": "Make our product landing page load faster—the hero image and icon bundle are huge.",
+      "context": { "repo": "vite-react" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-OP-01", "FF-EN-02", "FF-VF-03"],
+      "excluded_routes": ["FF-CR-01", "FF-MO-01"],
+      "acceptance_criteria": ["Targets performance bottlenecks without altering visual identity."]
+    },
+    {
+      "id": "CI-ECO-01",
+      "category": "implementation_economy",
+      "prompt": "Add a subtle hover elevation effect on the pricing cards.",
+      "context": { "repo": "static-html-css" },
+      "expected_activation": true,
+      "expected_mode": "QUICK",
+      "expected_routes": ["FF-OP-01"],
+      "excluded_routes": ["FF-MO-01"],
+      "acceptance_criteria": ["Uses pure CSS :hover and transition.", "Does not add JS listeners or animation libraries."]
+    },
+    {
+      "id": "CI-ECO-02",
+      "category": "implementation_economy",
+      "prompt": "Display the filtered item count and cart subtotal in the React CartDrawer component.",
+      "context": { "repo": "react-ts" },
+      "expected_activation": true,
+      "expected_mode": "QUICK",
+      "expected_routes": ["FF-OP-01", "FF-EN-02"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Computes derived values during render.", "Does not introduce redundant useState + useEffect synchronization."]
+    },
+    {
+      "id": "CI-ECO-03",
+      "category": "implementation_economy",
+      "prompt": "Add a confirmation banner using our existing Alert and Button components.",
+      "context": { "repo": "react-ui-lib", "existing_components": ["Alert", "Button"] },
+      "expected_activation": true,
+      "expected_mode": "QUICK",
+      "expected_routes": ["FF-CP-01", "FF-OP-01", "FF-EN-02"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Reuses existing Alert and Button.", "Zero duplicate primitives or wrapper bloat."]
+    },
+    {
+      "id": "CI-PRJ-01",
+      "category": "project_awareness",
+      "prompt": "Add a new billing history section to the account page.",
+      "context": { "repo": "sveltekit-tailwind", "tokens": "src/app.css" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-EN-02", "FF-CP-01", "FF-OP-01", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Writes idiomatic SvelteKit + Tailwind using tokens from src/app.css.", "No framework migration or new UI library."]
+    },
+    {
+      "id": "CI-PRJ-02",
+      "category": "project_awareness",
+      "prompt": "Extend the dashboard sidebar; note that docs/design-notes.md says primary accent is #2563eb but tokens.css defines --accent: #0f766e.",
+      "context": { "repo": "react-css-vars", "stale_memory": true },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-DS-03", "FF-EN-02"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Detects discrepancy.", "Treats authoritative tokens.css as truth and updates stale design note."]
+    },
+    {
+      "id": "CI-CNF-01",
+      "category": "conflict_resolution",
+      "prompt": "Keep the checkout button minimal—remove the visible focus outline and skip aria-invalid on errors to save CSS.",
+      "context": { "repo": "ecommerce-app" },
+      "expected_activation": true,
+      "expected_mode": "QUICK",
+      "expected_routes": ["FF-OP-01", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Accessibility (Priority 4) overrides decorative/economy preference (Priority 8/10).", "Preserves keyboard focus visibility and error semantics."]
+    },
+    {
+      "id": "CI-CNF-02",
+      "category": "conflict_resolution",
+      "prompt": "Redesign our marketing hero using a bold dark gradient and centered glassmorphic card—our brand team explicitly requested this.",
+      "context": { "repo": "marketing-site" },
+      "expected_activation": true,
+      "expected_mode": "PREMIUM",
+      "expected_routes": ["FF-OP-02", "FF-OP-03", "FF-VF-04"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Explicit user requirement (Priority 2) overrides generic anti-pattern avoidance.", "Executes requested aesthetic with strong contrast and hierarchy."]
+    },
+    {
+      "id": "CI-DEG-01",
+      "category": "graceful_degradation",
+      "prompt": "Build and verify the new responsive pricing table.",
+      "context": { "browser_tools": false, "screenshots": false },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-VF-04", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Runs build/tests if available.", "States explicitly that rendered browser inspection was not performed."]
+    },
+    {
+      "id": "CI-DEG-02",
+      "category": "graceful_degradation",
+      "prompt": "Audit our app's runtime token consumption and Core Web Vitals.",
+      "context": { "token_telemetry": false, "lighthouse": false },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-VF-04", "FF-OP-01"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Does not fabricate telemetry.", "Distinguishes static estimates from unmeasured runtime metrics."]
+    },
+    {
+      "id": "CI-REF-01",
+      "category": "bounded_refinement",
+      "prompt": "Inspect the new signup form: the submit button is unreachable by keyboard and the subtitle margin is 2px off.",
+      "context": { "repo": "web-app", "mode": "STANDARD" },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-VF-04", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Fixes keyboard reachability first as critical defect.", "Stops within <=2 passes once gates pass without redesigning."]
+    },
+    {
+      "id": "CI-REF-02",
+      "category": "bounded_refinement",
+      "prompt": "The payment form passes visual review but the API test environment is down so submission cannot be verified.",
+      "context": { "repo": "checkout-app", "api_available": false },
+      "expected_activation": true,
+      "expected_mode": "STANDARD",
+      "expected_routes": ["FF-VF-04", "FF-VF-03"],
+      "excluded_routes": [],
+      "acceptance_criteria": ["Reports unresolved submission verification blocker honestly.", "Never claims end-to-end payment flow passed."]
+    }
+  ]
+}

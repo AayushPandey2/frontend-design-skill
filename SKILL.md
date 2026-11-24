@@ -1,100 +1,80 @@
 ---
 name: formforge
-description: Unified frontend design and engineering intelligence for building, redesigning, auditing, and optimizing web and mobile interfaces. Combines creative direction, visual design, UX, design systems, components, purposeful motion, frontend engineering, verification, and strict code/context economy. Use whenever creating, modifying, reviewing, or debugging UI, pages, components, layouts, styles, animations, accessibility, or design systems.
+description: Adaptive frontend design and engineering intelligence for building, redesigning, auditing, and optimizing web and mobile interfaces. Use for websites, landing pages, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, interface motion, and frontend performance or reviews. Skip pure backend, database-only, algorithm, or unrelated system tasks; on mixed full-stack work, apply only to frontend responsibilities.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   tagline: "Maximum taste. Minimum waste."
 ---
 
 # FORMFORGE — Core Operating Kernel
 
 > **Maximum taste. Minimum waste.**
-> Maximize visual craft, usability, functional correctness, and design consistency while minimizing unnecessary code, tokens, dependencies, tool calls, and abstractions. Optimize waste, never value.
+> Deliver the highest achievable frontend quality with minimum necessary code, context, dependencies, and tool calls. Optimize waste, never value.
 
-## 1. Instruction Priority Ladder
+## 1. Operating Contract
 
-Resolve any conflict using this strict order (contextual exceptions beat rigid universal bans):
+- **Standard contract**: `Understand -> Inspect -> Classify -> Route -> Implement -> Verify -> Deliver`
+- **Complex design (`PREMIUM` / `FLAGSHIP`)**: `Understand -> Inspect -> Classify -> Route -> Design -> Implement -> Render -> Critique -> Refine -> Verify -> Deliver`
+- Compress stages for small edits; skip steps that add no value.
 
+## 2. Task Classification (5 Dimensions)
+
+Before loading references or writing code, classify:
+1. **Task type**: creation, redesign, component mod, layout/responsive fix, design system, motion, a11y, perf, debugging, or review.
+2. **Scope**: property, element, component, section, page, multi-page, design system, or full app.
+3. **Complexity**: affected components, journeys, interactions, state/data, and uncertainty—never line count alone (a 5-line auth/payment change can be high-risk).
+4. **Risk**: interaction breakage, a11y/responsive regression, security, data loss, auth/payment flows, or design system drift.
+5. **User intent**: implement code vs. advice/critique vs. debug vs. reproduce. Never edit code when only review/advice is asked; never redesign when a targeted fix is asked.
+
+## 3. Adaptive Execution Modes
+
+Auto-select the lightest sufficient mode. Honor explicit user overrides. Escalate if risk/complexity grows; de-escalate if simpler than expected.
+
+| Mode | Scope & Risk | Experimental Context Target* | Refinement Bound |
+| :--- | :--- | :--- | :--- |
+| **QUICK** | Localized, low-risk edit (label, spacing, CSS fix, single prop) | ~1.5k–3k tokens | Targeted fix + verify only |
+| **STANDARD** | Ordinary component, page, form, a11y, or perf task | ~3k–6k tokens | Up to 2 passes |
+| **PREMIUM** | High-craft landing page, dashboard, e-commerce, or design system | ~6k–10k tokens | Up to 3 passes |
+| **FLAGSHIP** | Complex multi-view app, bespoke portfolio, or motion-rich flagship | ~10k–15k tokens | Up to 5 passes |
+
+*\*Experimental targets cover loaded FORMFORGE kernel + selected references, not conversation history or project source.*
+
+## 4. Instruction Priority Ladder
+
+Resolve conflicts in strict order (contextual judgment beats rigid universal bans):
 1. Safety, security, and mandatory platform constraints.
 2. Explicit user requirements and brief constraints.
 3. Functional correctness and data integrity.
-4. Accessibility (keyboard, contrast, semantics, reduced motion) and usability.
-5. Existing project architecture, tech stack, and design system.
+4. Accessibility (keyboard, focus, contrast, semantics, reduced motion) and usability.
+5. Existing project architecture, tech stack, and established design system.
 6. Product-specific creative direction and visual identity.
-7. Runtime performance and long-term maintainability.
+7. Runtime performance and maintainability.
 8. Code, context, and tool-call economy.
 9. Creative experimentation.
 10. Decorative preferences.
 
-## 2. Adaptive Execution Modes
+## 5. Global Implementation & Tool Economy
 
-Select the lightest mode that satisfies task scope, risk, and quality bar. Honor explicit user overrides.
+- **Decision ladder** (stop at first viable option): 1. Existing project code -> 2. Native HTML/CSS -> 3. Browser APIs -> 4. Installed dependency -> 5. Small custom code -> 6. Justified complexity.
+- **Anti-bloat defaults**: No unrequested features, speculative abstractions, redundant state, derived-value effects, unused code, or wholesale rewrites for localized edits.
+- **Tool & context economy**: Search symbols/paths before reading; read targeted line ranges; never reload unchanged files; batch independent calls; keep reports concise.
+- **Quality floor**: Economy never overrides correctness, accessibility, security, responsiveness, or essential error handling.
 
-| Mode | Trigger Scope | Workflow Depth | Verification |
-| :--- | :--- | :--- | :--- |
-| **QUICK** | Single-component tweak, CSS/layout fix, copy update, low-risk edit | Inspect affected files -> minimal edit -> targeted check | Targeted build/lint/render check |
-| **STANDARD** | Ordinary page, new component, feature UI, a11y/perf remediation | Inspect project -> establish/preserve direction -> implement -> verify | Render + responsive + a11y + functional check |
-| **PREMIUM** | Landing page, product interface, multi-view flow, design system setup | Product brief -> creative direction -> token system -> build -> render & critique -> refine | Full rubric check + rendered visual critique |
-| **FLAGSHIP** | High-craft portfolio, flagship brand experience, complex interactive UI | Deep direction exploration -> bespoke typography/motion -> build -> independent critique -> refine | Comprehensive visual, motion, a11y & perf audit |
+## 6. Progressive Context Routing (Level 2 Core Modules)
 
-## 3. Execution Loop
+Load only the Level 2 modules needed for the classified task. Never load all modules by default; never route to unimplemented files.
 
-Scale each stage to the active mode:
+| Module | Load When |
+| :--- | :--- |
+| [references/routing-and-modes.md](references/routing-and-modes.md) | Multi-category classification, mode escalation, or routing ambiguity |
+| [references/implementation-economy.md](references/implementation-economy.md) | Writing/editing UI code, choosing CSS vs. JS, or trimming complexity |
+| [references/project-and-memory.md](references/project-and-memory.md) | Inspecting an existing repo, checking deps, or reading/updating design memory |
+| [references/verification-and-refinement.md](references/verification-and-refinement.md) | Verifying rendered/a11y/functional gates, running refinement loops, or handling missing tools |
 
-`Understand -> Route -> Design -> Implement -> Render -> Critique -> Refine -> Verify -> Deliver`
+Full capability statuses (`IMPLEMENTED`, `PLANNED`, `DEFERRED`, `REJECTED`) live in [docs/capability-registry.json](docs/capability-registry.json).
 
-- **Bounded refinement**: Every refinement pass must target an identified weakness. Stop once acceptance criteria are met and additional passes yield no meaningful improvement.
-- **No gratuitous redesigns**: Never alter working visual direction or architecture without a concrete requirement or defect.
+## 7. Graceful Degradation & Honesty Gates
 
-## 4. Global Economy Protocol
-
-### Code Economy Decision Ladder
-Before writing new code, evaluate in order and stop at the first viable option:
-1. **Existing project code**: Reuse existing components, tokens, helpers, and patterns.
-2. **Native HTML & CSS**: Prefer semantic elements, CSS Grid/Flexbox, `:has()`, `clamp()`, and CSS transitions over JS.
-3. **Browser APIs**: Use native platform capabilities before reaching for libraries.
-4. **Existing dependencies**: Use what is already installed; never add a package for trivial logic.
-5. **Small custom implementation**: Write clear, minimal, readable code with shallow nesting.
-6. **Justified complexity**: Add abstractions or dependencies only when concrete benefits outweigh maintenance cost.
-
-**Enforce strictly**: No speculative features, premature abstractions, unnecessary component wrappers, redundant state, effects for derived values, file rewrites for minor edits, or dead code. Never sacrifice readability for line-count golfing.
-
-### Context & Tool Economy
-- Inspect directory structure and search symbols before reading files; read only necessary line ranges.
-- Never reload unchanged files or unrelated reference modules.
-- Batch independent tool calls; keep reasoning and final reports concise and actionable.
-
-### Quality Protection Floor
-Economy rules never override functional correctness, accessibility, security, responsiveness, essential error handling, readability, or visual quality.
-
-## 5. Contextual Anti-Generic Design Check
-
-Before writing UI code in `STANDARD`, `PREMIUM`, or `FLAGSHIP` mode, verify that visual choices are earned by the product rather than pulled from generic defaults:
-- **Earned structure**: Use cards, borders, badges, numbered markers, gradients, or glass effects only when they clarify hierarchy or serve the brand—never as filler.
-- **Typography & copy**: Pick intentional typefaces, clear scale, readable line lengths, and active, user-centric copy. Avoid filler labels, fake metrics, and decorative micro-badges.
-- **Purposeful motion**: Animate to communicate state change, spatial continuity, or focal hierarchy. Respect `prefers-reduced-motion`; skip unmotivated entrance choreography.
-- **User authority**: When a brief explicitly requests a specific aesthetic, honor it cleanly.
-
-## 6. Capability Routing (Progressive Context)
-
-Load only the capability domains needed for the current task. Full capability contracts live in [docs/capability-registry.json](docs/capability-registry.json), and system rules live in [docs/architecture.md](docs/architecture.md).
-
-| Domain ID | Domain | Activate When |
-| :--- | :--- | :--- |
-| `FF-CR` | Creative Intelligence | Defining visual direction, brand adaptation, hero concepts, or originality |
-| `FF-VD` | Visual Design | Choosing typography, color systems, layout grids, spacing, contrast, or density |
-| `FF-UX` | UX Intelligence | Structuring navigation, forms, states (loading/empty/error/success), or mobile flows |
-| `FF-DS` | Design Systems | Creating or maintaining tokens, themes, light/dark modes, or design memory |
-| `FF-CP` | Component Intelligence | Discovering, reusing, composing, or architecting accessible UI components |
-| `FF-MO` | Motion Intelligence | Designing transitions, micro-interactions, choreography, or reduced-motion rules |
-| `FF-EN` | Frontend Engineering | Implementing semantic HTML/CSS/TS/framework code, state, perf, or security |
-| `FF-SP` | Specialized Product | Adapting density and patterns for SaaS, fintech, e-commerce, AI, or mobile |
-| `FF-VF` | Verification Intelligence | Inspecting rendered UI, responsive breakpoints, a11y, perf, and regressions |
-| `FF-OP` | Optimization Intelligence | Enforcing token budgets, minimal diffs, dependency hygiene, and bounded loops |
-
-## 7. Verification & Honesty Gates
-
-- **Mandatory gates**: Functional correctness, accessibility, and security must pass before delivery.
-- **Evidence rule**: Never claim an interface is visually verified unless the actual rendered output has been inspected.
-- **Honest reporting**: Report only observed tool outputs, executed checks, and real unresolved issues.
+- **Mandatory gates**: Functional correctness, accessibility, and security must pass regardless of mode.
+- **Missing tools**: If browser automation, screenshots, tests, or token telemetry are unavailable, use the best available alternative, state unverified dimensions explicitly, and never fabricate visual or test evidence.

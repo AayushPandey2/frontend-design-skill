@@ -1,53 +1,36 @@
 # FORMFORGE Implementation Roadmap
 
-## Phase 01 — Foundation, Research & Architecture (Current)
+## Phase 01 — Foundation, Research & Architecture (Complete)
 
-- [x] Initialize `formforge/phase-01-foundation` branch and repository hygiene (`.gitignore`, `LICENSE`).
-- [x] Author portable Level 0/1 operating kernel in [SKILL.md](../SKILL.md).
-- [x] Define progressive context, adaptive modes, conflict resolution, and economy rules in [architecture.md](architecture.md).
-- [x] Establish the 10-domain unified capability registry in [capability-registry.json](capability-registry.json).
-- [x] Define 12 benchmark tasks and the 100-point quality + 12-metric efficiency rubric in [tasks.json](../evals/tasks.json) and [rubric.json](../evals/rubric.json).
-- [x] Add zero-dependency structural validator in [validate_foundation.py](../scripts/validate_foundation.py).
+- [x] Established portable `agentskills.io` structure, `.gitignore`, `LICENSE`, and `README.md`.
+- [x] Defined 10-domain capability model, 100-point quality rubric, and 12-category frontend eval suite.
 
----
+## Phase 02 — Core Intelligence, Adaptive Routing & Engineering Economy (Complete)
 
-## Phase 02 — Core Level 2 Capability Modules
+- [x] Refined Level 0/1 operating kernel in [SKILL.md](../SKILL.md) with positive/negative activation boundaries and 5-dimension task classification.
+- [x] Authored 4 focused Level 2 core modules: [routing-and-modes.md](../references/routing-and-modes.md), [implementation-economy.md](../references/implementation-economy.md), [project-and-memory.md](../references/project-and-memory.md), and [verification-and-refinement.md](../references/verification-and-refinement.md).
+- [x] Consolidated [capability-registry.json](capability-registry.json) to 30 entries with explicit `IMPLEMENTED` / `PLANNED` / `DEFERRED` / `REJECTED` statuses and valid `reference_paths`.
+- [x] Added 23-case core intelligence evaluation suite in [core-intelligence.json](../evals/core-intelligence.json) and removed the Phase 01 Python script to keep the skill dependency-free.
 
-Build focused, non-overlapping `references/*.md` modules loaded selectively by task route, ordered by impact:
+## Phase 03 — Specialized Design & Engineering Modules
 
-1. **Creative Direction & Visual Design (`references/creative-direction.md`, `references/visual-design.md`)**
-   - Product-grounded brief template, contextual anti-generic review, unified typography engine, semantic color contrast rules, grid/density guidance.
-2. **UX Intelligence (`references/ux-intelligence.md`)**
-   - Task-based navigation, active microcopy rules, resilient async states (loading/empty/error/success), form ergonomics, mobile-first touch standards.
-3. **Frontend Engineering & Components (`references/engineering.md`, `references/components.md`)**
-   - Stack detection, reuse-first component discovery, accessible interactive primitives, state derivation, bundle/Core Web Vitals discipline, client security.
-4. **Design Systems (`references/design-systems.md`)**
-   - Semantic token architecture, light/dark parity, minimal token budgets.
-5. **Motion Intelligence (`references/motion.md`)**
-   - Purposeful motion hierarchy, timing/easing curves, GPU-composited transitions, interruptibility, `prefers-reduced-motion` compliance.
-6. **Verification Intelligence (`references/verification.md`)**
-   - Rendered visual critique checklist, keyboard/a11y gate protocol, bounded refinement stopping rules.
+Author Level 2/3 domain modules in `references/` in priority order:
+1. Creative direction & visual design (product-grounded briefs, typography, color contrast, grids, anti-generic judgment).
+2. UX intelligence (information architecture, active microcopy, resilient async states, forms, mobile ergonomics).
+3. Frontend engineering & accessible components (semantic HTML, modern CSS, keyboard/ARIA primitives, bundle/CWV hygiene).
+4. Design systems (semantic tokens, light/dark parity).
+5. Motion intelligence (purposeful curves, GPU-composited transitions, reduced-motion compliance).
+6. Product-domain profiles & initial live-agent baseline evaluations across [core-intelligence.json](../evals/core-intelligence.json) and [tasks.json](../evals/tasks.json).
 
----
+## Phase 04 — Automated Verification & Evidence-Driven Pruning
 
-## Phase 03 — Specialized Intelligence, Design Memory & Baseline Evals
-
-- Author compact Level 3 product-domain profiles (SaaS, fintech, e-commerce, AI-native apps, portfolios, mobile-first).
-- Define a lightweight persistent project design memory convention for multi-session continuity.
-- Execute initial baseline runs across `evals/tasks.json` against real rendered outputs to establish empirical quality and token baselines.
-
----
-
-## Phase 04 — Automated Verification & Evidence-Driven Optimization
-
-- Add Level 4 executable browser/a11y/layout verification scripts (`scripts/`) that run out-of-context.
-- Compare FORMFORGE against unassisted and baseline runs using blind rendered scoring and efficiency metrics.
-- Prune or compress any instruction modules that do not measurably improve quality per unit of context.
+- Integrate browser/accessibility/performance verification probes (Level 4) where supported.
+- Run blind rendered comparisons and prune any instructions that do not measurably improve quality per unit of context.
 
 ---
 
 ## Open Uncertainties & Assumptions
 
-- **Triggering recall across agents**: `SKILL.md` frontmatter description has not yet been tested across multiple agent runtimes for under-triggering or false-positive triggering.
-- **Optimal Level 2 module size**: Target budgets (~1.5–3KB per reference file) are architectural hypotheses pending Phase 03 token-efficiency measurements.
-- **Empirical quality/token lift**: No benchmark runs have been executed yet in Phase 01; all capability effectiveness claims remain hypotheses until Phase 03/04 rendered evaluations complete.
+- **Live-agent execution**: Neither [core-intelligence.json](../evals/core-intelligence.json) nor [tasks.json](../evals/tasks.json) has been executed against live agent runs yet; Phase 02 verification covers structural/referential integrity only.
+- **Token counts**: Reported token counts are word-based estimates (`words * 1.33`), not tokenizer-exact measurements.
+- **Experimental context budgets**: Mode token targets (`1.5k–3k` through `10k–15k`) remain hypotheses until Phase 03 empirical runs.

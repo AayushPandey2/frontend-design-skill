@@ -2,47 +2,36 @@
 
 **Maximum taste. Minimum waste.**
 
-FORMFORGE is a portable, modular AI agent skill for frontend design and engineering. It pairs product-grounded creative direction, visual craft, UX rigor, and purposeful motion with strict code, context, and verification economy.
+FORMFORGE is a portable, zero-dependency AI agent skill for frontend design and engineering. It combines adaptive task classification, progressive context loading, strict implementation economy, project/design-memory awareness, and bounded evidence-driven verification.
 
-## Core Principles
+## Core Capabilities (Phase 02)
 
-- **Taste over templates**: Visual and structural choices derive from the product's actual domain, audience, and job—never generic card-kit defaults or rigid aesthetic bans.
-- **Economy without compromise**: Follow a strict code decision ladder (existing project code -> native HTML/CSS -> browser APIs -> installed packages -> minimal custom code) while protecting correctness, accessibility, and security as non-negotiable gates.
-- **Progressive context loading**: Keep the core kernel (`SKILL.md`) concise and load domain guidance only when a task route requires it.
-- **Adaptive execution modes**: Scale ceremony to risk (`QUICK`, `STANDARD`, `PREMIUM`, `FLAGSHIP`).
-- **Evidence-driven verification**: Never claim visual or functional quality without inspecting actual rendered output and running targeted checks.
+- **Lightweight Operating Kernel** ([SKILL.md](SKILL.md)): Clear activation boundaries, 5-dimension task classification, 10-level conflict priority ladder, and 6-step code economy ladder.
+- **Adaptive Modes & Routing** ([references/routing-and-modes.md](references/routing-and-modes.md)): Auto-selects `QUICK`, `STANDARD`, `PREMIUM`, or `FLAGSHIP` based on scope and risk, loading only task-relevant guidance.
+- **Implementation & Tool Economy** ([references/implementation-economy.md](references/implementation-economy.md)): Prefers existing project code and native HTML/CSS/Browser APIs over unnecessary JS, wrappers, or dependencies.
+- **Project Awareness & Design Memory** ([references/project-and-memory.md](references/project-and-memory.md)): Preserves existing frameworks and tokens while maintaining concise, non-duplicative cross-session design decisions.
+- **Verification & Graceful Degradation** ([references/verification-and-refinement.md](references/verification-and-refinement.md)): Risk-scaled checks, bounded refinement loops, and honest fallback reporting when browser or test tools are unavailable.
 
 ## Repository Layout
 
 ```text
 FORMFORGE/
-├── SKILL.md                      # Level 0 discovery + Level 1 core operating kernel
-├── README.md                     # Project overview
-├── LICENSE                       # MIT License
+├── SKILL.md                           # Level 0 discovery + Level 1 core operating kernel
+├── README.md                          # Project overview
+├── LICENSE                            # MIT License
+├── references/
+│   ├── routing-and-modes.md           # 5-dimension classification, modes, routing examples
+│   ├── implementation-economy.md      # Code/CSS/editing/tool economy rules
+│   ├── project-and-memory.md          # Stack detection, dependency checks, design memory
+│   └── verification-and-refinement.md # Risk-based checks, bounded loops, degradation
 ├── docs/
-│   ├── architecture.md           # Progressive context, modes, routing, conflict & economy policies
-│   ├── capability-registry.json  # Unified 10-domain capability registry (40 evaluated entries)
-│   └── roadmap.md                # Phased implementation plan & open assumptions
-├── evals/
-│   ├── tasks.json                # 12 benchmark tasks across core frontend categories
-│   └── rubric.json               # 100-point quality rubric, 3 mandatory gates, 12 efficiency metrics
-└── scripts/
-    └── validate_foundation.py    # Zero-dependency Phase 01 structural & consistency validator
+│   ├── architecture.md                # Progressive context, budgets, conflict & degradation model
+│   ├── capability-registry.json       # Unified 10-domain registry (30 entries)
+│   └── roadmap.md                     # Phased plan & open uncertainties
+└── evals/
+    ├── core-intelligence.json         # 23 core intelligence test cases (9 categories)
+    ├── tasks.json                     # 12 frontend benchmark tasks
+    └── rubric.json                    # 100-point rubric, 3 mandatory gates, 12 efficiency metrics
 ```
 
-## Validation
-
-Run the Phase 01 foundation validator with Python 3.10+:
-
-```bash
-python scripts/validate_foundation.py
-```
-
-## Roadmap
-
-- **Phase 01 (Current)**: Core kernel, architecture, capability registry, evaluation suite, and structural validator.
-- **Phase 02**: Focused Level 2 `references/` modules for creative direction, visual design, UX, components, engineering, design systems, motion, and verification.
-- **Phase 03**: Product-domain profiles, persistent project design memory, and initial rendered baseline evaluations.
-- **Phase 04**: Automated Level 4 browser/accessibility verification scripts and evidence-driven instruction pruning.
-
-See [docs/roadmap.md](docs/roadmap.md) for details.
+See [docs/roadmap.md](docs/roadmap.md) for Phase 03–04 plans and open uncertainties.
