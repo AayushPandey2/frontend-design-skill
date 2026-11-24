@@ -1,6 +1,6 @@
 ---
 name: formforge
-description: Frontend design, planning, engineering, and QA skill for websites, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, motion, and performance. Includes interactive read-only design consultation (/formforge-plan) and standalone mode commands (/formforge-quick, -standard, -premium, -flagship, -audit, -polish, -optimize). Skip pure backend, database-only, or algorithm tasks.
+description: Frontend design, planning, engineering, motion, accessibility, Design DNA, replication, and QA skill ecosystem (25 /formforge* commands) for websites, apps, dashboards, UI components, and design systems. Skip pure backend, database-only, or algorithm tasks.
 license: MIT
 metadata:
   version: "0.6.0"
@@ -37,7 +37,7 @@ Auto-select the lightest sufficient mode (honor user overrides; escalate on disc
 
 ## 3. Standalone Commands & Fallbacks
 
-Invoke via native slash commands (where supported by host) or natural language (e.g., *"FORMFORGE, plan my website"*):
+Invoke via native slash commands (where supported by host), `skills/<command>/SKILL.md`, or natural language (e.g., *"FORMFORGE, plan my website"*):
 
 | Command | Behavior |
 | :--- | :--- |
@@ -46,10 +46,26 @@ Invoke via native slash commands (where supported by host) or natural language (
 | `/formforge-standard` | Ordinary frontend feature/component work (`STANDARD`) |
 | `/formforge-premium` | High-craft UI/UX & landing/product interfaces (`PREMIUM`) |
 | `/formforge-flagship` | Ambitious interactive/motion-rich experiences (`FLAGSHIP`) |
+| `/formforge-plan` | Read-only interactive design consultation -> standalone master prompt |
 | `/formforge-audit` | Read-only comprehensive visual, functional, a11y & waste audit |
 | `/formforge-polish` | Visual hierarchy, typography, spacing & surface refinement |
 | `/formforge-optimize` | Code, bundle, rendering & Core Web Vitals optimization |
-| `/formforge-plan` | Read-only interactive design consultation -> standalone master prompt (never edits code) |
+| `/formforge-replicate` | Recreate screenshot or authorized site in code, render & compare |
+| `/formforge-inspire` | Read-only web visual inspiration discovery & technique breakdown |
+| `/formforge-explore` | Read-only 2–4 distinct creative directions & moodboards |
+| `/formforge-redesign` | Holistic UI creative/UX rethink preserving core functionality |
+| `/formforge-motion` | Native-first animations, transitions, gestures & 12-point specs |
+| `/formforge-system` | Create, extract, or improve reusable design tokens & components |
+| `/formforge-responsive` | Design and repair responsive layouts across viewports |
+| `/formforge-accessibility` | Identify and fix semantic, keyboard, focus, contrast & a11y issues |
+| `/formforge-deslop` | Detect and remove generic AI-generated patterns & visual clutter |
+| `/formforge-compare` | Read-only evidence-based comparison of concepts or before/after UI |
+| `/formforge-assets` | Plan photography, illustrations, icons, licensing, cropping & perf |
+| `/formforge-verify` | Verify functional journeys, responsiveness, a11y & build health |
+| `/formforge-reference` | Read-only 14-point design specification extraction (no code) |
+| `/formforge-dna` | Extract, maintain (`DESIGN.md`) & apply persistent project Design DNA |
+| `/formforge-fidelity` | Verify implementation agreement against approved design contract |
+| `/formforge-help` | Read-only command directory, workflows & usage examples |
 
 ## 4. Priority Ladder & Economy
 
@@ -84,6 +100,10 @@ Route by **user intent**, not keywords alone (e.g., "remove animation" does not 
 | [performance-and-reliability.md](references/performance-and-reliability.md) | Core Web Vitals, bundles, images/fonts, data viz, or XSS/security |
 | [planning-mode.md](references/planning-mode.md) | Interactive read-only design consultation (`/formforge-plan`) |
 | [master-prompt-spec.md](references/master-prompt-spec.md) | Generating the standalone copyable master implementation prompt |
+| [reference-and-replication.md](references/reference-and-replication.md) | 14-point reference extraction, screenshot replication, or comparison |
+| [inspiration-and-exploration.md](references/inspiration-and-exploration.md) | Web visual inspiration, creative moodboards, or asset direction |
+| [design-dna.md](references/design-dna.md) | Project Design DNA extraction, `DESIGN.md`, and drift detection |
+| [design-fidelity.md](references/design-fidelity.md) | Verifying implementation agreement against approved design contracts |
 
 ## 6. Quality, Security & Honesty Gates
 

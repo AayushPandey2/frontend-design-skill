@@ -2,45 +2,65 @@
 
 **Maximum taste. Minimum waste.**
 
-FORMFORGE is a portable, zero-dependency AI agent skill for frontend design, interactive consultation, engineering, and quality assurance. It pairs product-grounded design judgment, modern frontend engineering, purposeful motion, and evidence-gated verification with strict code, context, and tool-call economy.
+FORMFORGE is a portable, zero-dependency AI agent skill ecosystem (25 individually discoverable `/formforge*` skills) for frontend design, interactive consultation, visual replication, Design DNA, motion, accessibility, engineering, and quality assurance.
 
 ## Why FORMFORGE
 
 AI-generated frontends frequently suffer from generic card-kit layouts, weak typographic hierarchy, redundant state/effects, unnecessary dependencies, incomplete interaction states, and unverified visual or accessibility claims. FORMFORGE addresses these through:
-- **Intentional design judgment** grounded in product subject, audience, and density—without rigid aesthetic blacklists.
-- **Interactive pre-code consultation** (`/formforge-plan`) that turns vague ideas and visual references into a standalone, copyable master implementation prompt.
-- **Native-first implementation economy** that reuses existing project code, HTML/CSS, and browser APIs before introducing abstractions or packages.
-- **Selective context loading** so trivial fixes load minimal guidance while complex builds retrieve specialized modules on demand.
-- **Evidence-gated verification** that separates static inspection from rendered/behavioral proof and stops once quality gates pass.
+- **25 focused skills over one monolith**: Invoke `/formforge` for auto-selected execution or target a specialized skill (`/formforge-plan`, `/formforge-reference`, `/formforge-replicate`, `/formforge-dna`, `/formforge-motion`, `/formforge-fidelity`, etc.).
+- **Single authoritative intelligence**: All 25 skills route into one shared core kernel ([SKILL.md](SKILL.md)) and 23 modular `references/*.md` files—zero duplicated instructions.
+- **Native-first implementation economy**: Reuses existing project code, HTML/CSS, and browser APIs before introducing abstractions or packages.
+- **Evidence-gated verification**: Separates static inspection from rendered/behavioral proof and design-contract fidelity (`/formforge-verify` vs. `/formforge-fidelity`).
 
-## Standalone Slash Commands
+## Command Directory (25 Skills)
 
 Type `/` in supported editors or use natural-language equivalents where native slash commands are unsupported:
 
-| Command | Mode / Role | Edits Code? | Natural-Language Fallback |
-| :--- | :--- | :---: | :--- |
-| `/formforge` | Auto-select mode (`QUICK`–`FLAGSHIP`) | Yes | *"Use FORMFORGE to build..."* |
-| `/formforge-quick` | Targeted, low-risk edits (`QUICK`) | Yes | *"FORMFORGE quick fix..."* |
-| `/formforge-standard` | Ordinary frontend development (`STANDARD`) | Yes | *"FORMFORGE standard build..."* |
-| `/formforge-premium` | High-craft UI/UX development (`PREMIUM`) | Yes | *"FORMFORGE premium design..."* |
-| `/formforge-flagship` | Ambitious interactive experiences (`FLAGSHIP`) | Yes | *"FORMFORGE flagship experience..."* |
-| `/formforge-audit` | Comprehensive visual, functional, a11y & waste audit | **No (Read-only)** | *"FORMFORGE, audit this frontend"* |
-| `/formforge-polish` | Visual hierarchy, typography, spacing & surface refinement | Yes | *"FORMFORGE, polish this UI"* |
-| `/formforge-optimize` | Code, bundle, rendering & CWV optimization | Yes | *"FORMFORGE, optimize this frontend"* |
-| `/formforge-plan` | Interactive design consultation -> master prompt | **No (Read-only)** | *"FORMFORGE, plan my website"* |
+| Command | Responsibility | Edits Code? |
+| :--- | :--- | :---: |
+| `/formforge` | Automatic capability and execution mode selection (`QUICK`–`FLAGSHIP`) | Yes |
+| `/formforge-quick` | Small, targeted, low-risk frontend modifications | Yes |
+| `/formforge-standard` | Ordinary frontend feature and component development | Yes |
+| `/formforge-premium` | High-end professional UI/UX development | Yes |
+| `/formforge-flagship` | Ambitious, sophisticated interactive experiences | Yes |
+| `/formforge-plan` | Interactive design consultation and standalone master prompt generation | **No (Read-only)** |
+| `/formforge-audit` | Comprehensive visual, functional, a11y, and waste inspection | **No (Read-only)** |
+| `/formforge-polish` | Visual hierarchy, typography, spacing, and surface refinement | Yes |
+| `/formforge-optimize` | Code, bundle, token, rendering, and Core Web Vitals optimization | Yes |
+| `/formforge-replicate` | Recreate an interface from a screenshot or authorized reference | Yes |
+| `/formforge-inspire` | Discover relevant real-world visual inspiration from the web | **No (Read-only)** |
+| `/formforge-explore` | Explore 2–4 genuinely distinct creative directions and moodboards | **No (Read-only)** |
+| `/formforge-redesign` | Completely rethink an existing interface while preserving core flows | Yes |
+| `/formforge-motion` | Advanced native-first animations, transitions, gestures & micro-interactions | Yes |
+| `/formforge-system` | Create, extract, or improve reusable design systems and tokens | Yes |
+| `/formforge-responsive` | Design and repair responsive layouts across viewports | Yes |
+| `/formforge-accessibility` | Identify and resolve semantic, keyboard, focus, contrast & a11y issues | Yes |
+| `/formforge-deslop` | Detect and eliminate generic AI-generated design patterns and clutter | Yes |
+| `/formforge-compare` | Compare design alternatives and before-and-after implementations | **No (Default)** |
+| `/formforge-assets` | Discover and plan images, icons, illustrations, licensing & media perf | Plan / Config |
+| `/formforge-verify` | Verify functional, responsive, a11y, and technical build requirements | Verify-first |
+| `/formforge-reference` | Extract a 14-point design specification from screenshots/sites | **No (Read-only)** |
+| `/formforge-dna` | Extract, maintain (`DESIGN.md`), and apply persistent project Design DNA | `DESIGN.md` |
+| `/formforge-fidelity` | Verify implementation against approved design specs/contracts | Verify-first |
+| `/formforge-help` | Display all 25 commands, workflows, and usage examples | **No (Read-only)** |
 
-## Interactive Design Planning Mode (`/formforge-plan`)
+## Skill Collaboration Workflows
 
-`/formforge-plan` enters a strict **read-only design consultation studio** (`Discover -> Explore -> Compare -> Select -> Specify -> Confirm -> Consolidate -> Generate`). It adapts across `Express`, `Guided`, and `Exhaustive` depths, retrieves real web visual references when browsing is available, records `LOCKED`/`PREFERRED`/`FLEXIBLE`/`REJECTED`/`UNRESOLVED` decisions, defines measurable Motion Specification Contracts, and outputs:
-1. A compact **Final Design Summary**
-2. A **Standalone Copyable Master Implementation Prompt** (usable in a fresh agent session with or without FORMFORGE)
-3. An optional **Reference & Asset Index**
+Skills cooperate cleanly without auto-chaining or circular invocation:
+- **Concept to Contract to Build**: `/formforge-inspire` -> `/formforge-explore` -> `/formforge-plan` -> `/formforge-premium` -> `/formforge-fidelity`
+- **Reference to Replication**: `/formforge-reference` -> `/formforge-replicate` -> `/formforge-compare` -> `/formforge-fidelity`
+- **System Consistency**: `/formforge-dna` -> `/formforge-system` -> `/formforge-standard` -> `/formforge-verify`
+- **Quality Recovery**: `/formforge-audit` -> `/formforge-deslop` -> `/formforge-polish` -> `/formforge-verify`
+- **Interaction & Perf**: `/formforge-motion` -> `/formforge-accessibility` -> `/formforge-optimize`
+- **Flagship Launch**: `/formforge-plan` -> `/formforge-flagship` -> `/formforge-fidelity`
 
-## Package Boundaries
+## Shared Intelligence Architecture
 
-- **Production Skill (Installable)**: [SKILL.md](SKILL.md), `references/` (19 modules), and [LICENSE](LICENSE).
-- **Native Slash Command Dispatchers**: `.agents/skills/` (`SKILL.md` for Antigravity & Codex), `.codex/prompts/` (`.md` for Codex), `.claude/commands/` (`.md`), `.cursor/commands/` (`.md`), `.gemini/commands/` (`.toml`), and `.windsurf/workflows/` (`.md`) — 9 thin dispatchers per platform.
-- **Project Documentation & Evals**: `docs/` ([architecture.md](docs/architecture.md), [capability-registry.json](docs/capability-registry.json)) and `evals/` (including [planning-mode.json](evals/planning-mode.json)).
+- **Core Kernel**: [SKILL.md](SKILL.md) (5-dimension classification, mode bounds, priority ladder, quality/honesty gates).
+- **Shared Domain Modules**: `references/` (23 focused Markdown modules, including `reference-and-replication.md`, `inspiration-and-exploration.md`, `design-dna.md`, and `design-fidelity.md`).
+- **25 Specialized Skill Entry Points**: `skills/<command>/SKILL.md` (each with distinct purpose, boundaries, workflow, reference routing, and verification requirements).
+- **8 Platform Command Directories**: `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/`, `.github/prompts/`, and `.opencode/commands/` — 25 thin dispatchers per platform.
+- **Docs & Evals**: `docs/` ([architecture.md](docs/architecture.md), [capability-registry.json](docs/capability-registry.json)) and `evals/` (including [planning-mode.json](evals/planning-mode.json) and [ecosystem-skills.json](evals/ecosystem-skills.json)).
 
 ## Installation
 
@@ -48,35 +68,39 @@ Type `/` in supported editors or use natural-language equivalents where native s
 git clone https://github.com/AayushPandey2/frontend-design-skill.git
 ```
 
-- **Skill installation**: Copy `SKILL.md`, `references/`, and `LICENSE` into `<your-agent-skills-dir>/formforge/` (e.g., `.agents/skills/formforge/` or `~/.gemini/config/skills/formforge/`).
-- **Native slash commands**: Copy the matching command directory into your project or user config (`.agents/skills/` for Antigravity & Codex, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, or `.windsurf/workflows/`). Where native slash commands are unsupported, invoke FORMFORGE via natural language.
-- **Remove**: Delete the `formforge/` skill folder and the `formforge*` command files.
-
-*Note: Clean-directory skill packaging, TOML/YAML command syntax, and internal links are structurally verified; third-party host CLI auto-discovery has not been live-tested.*
+- **Complete ecosystem installation (Recommended)**: Copy `SKILL.md`, `references/`, `LICENSE`, and `skills/` into your workspace or global skills directory (or copy the platform-specific command directory: `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/`, `.github/prompts/`, or `.opencode/commands/`).
+- **Individual skill installation**: Install `SKILL.md` + `references/` + `LICENSE` into `<skills-dir>/formforge/`, and install any individual `skills/<command>/SKILL.md` alongside it (updating relative links to `../formforge/SKILL.md` and `../formforge/references/*.md` if moved out of `skills/`).
+- **Remove**: Delete the installed `formforge*` skill folders and command files.
 
 ## Usage Examples
 
-- *"/formforge-plan Create a premium website for a luxury watch brand."* (`PLAN`, read-only)
-- *"/formforge-premium Build an editorial landing page for an architectural lighting studio."* (`PREMIUM`)
-- *"/formforge-standard Add a filterable billing table reusing our existing Table and Button."* (`STANDARD`)
-- *"/formforge-flagship Build an interactive portfolio with purposeful, reduced-motion-safe transitions."* (`FLAGSHIP`)
-- *"/formforge-audit Review our checkout flow for accessibility, responsive overflow, and dead controls."* (`AUDIT`, read-only)
-- *"/formforge-polish Fix the competing nav hierarchy and inconsistent card spacing."* (`POLISH`)
-- *"/formforge-optimize Remove redundant React state/effects and oversized icon imports."* (`OPTIMIZE`)
-- *"/formforge-quick Update the Save button label without modifying unrelated files."* (`QUICK`)
+- *"/formforge-inspire Minimalist architectural studio portfolio with strong editorial typography."*
+- *"/formforge-explore B2B climate analytics dashboard — show 3 distinct creative directions."*
+- *"/formforge-plan Create a premium website for a luxury watch brand."*
+- *"/formforge-reference Extract the typography, spacing, and surface system from this screenshot."*
+- *"/formforge-replicate Recreate this pricing section cleanly in React + Tailwind."*
+- *"/formforge-dna Extract our project Design DNA into DESIGN.md without duplicating CSS tokens."*
+- *"/formforge-motion Add interruptible, reduced-motion-safe drawer and tab transitions."*
+- *"/formforge-fidelity Verify our landing page against the locked master prompt."*
+- *"/formforge-help"*
 
 ## Evaluation & Limitations
 
-- **Current Readiness**: **`EXPERIMENTAL`**. Deterministic structural, metadata, link, JSON schema, and clean-install checks pass (`0` Python files, `0` runtime dependencies). Corpus and simulated context comparisons are recorded in [evals/results.json](evals/results.json).
-- **Limitations**: Live-agent execution, rendered browser scoring, fresh-session prompt reconstruction tests, and third-party host slash-command auto-discovery remain **unexecuted**.
+- **Current Readiness**: **`EXPERIMENTAL`**. Deterministic structural, metadata, link, JSON schema, and read-only guard checks pass (`0` Python files, `0` runtime dependencies). Corpus and simulated context comparisons are recorded in [evals/results.json](evals/results.json).
+- **Limitations**: Live-agent execution, rendered browser scoring, and third-party host slash-command auto-discovery remain **host-untested** outside structural file verification.
 
 ## Compatibility
 
-| Target | Status | Basis |
+| Target | Status | Integration Mechanism & Fallback |
 | :--- | :--- | :--- |
-| **`agentskills.io` Specification** | Structurally Verified | Valid `SKILL.md` frontmatter + progressive `references/` layout |
-| **Antigravity, OpenAI Codex, Claude Code, Cursor, Gemini CLI, Windsurf** | Structurally Verified / Host Untested | Native `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/` files provided; host discovery untested |
-| **GitHub Copilot, OpenCode** | Documented / Untested | Portable `SKILL.md` + natural-language command fallbacks |
+| **`agentskills.io` Specification** | Structurally Verified | Valid `SKILL.md` frontmatter + progressive `references/` + 25 `skills/*/SKILL.md` |
+| **Antigravity & OpenAI Codex** | Structurally Verified / Host Untested | `.agents/skills/<cmd>/SKILL.md` & `.codex/prompts/<cmd>.md` + natural-language fallback |
+| **Claude Code** | Structurally Verified / Host Untested | `.claude/commands/<cmd>.md` + natural-language fallback |
+| **Cursor** | Structurally Verified / Host Untested | `.cursor/commands/<cmd>.md` + natural-language fallback |
+| **Gemini CLI** | Structurally Verified / Host Untested | `.gemini/commands/<cmd>.toml` + natural-language fallback |
+| **Windsurf** | Structurally Verified / Host Untested | `.windsurf/workflows/<cmd>.md` + natural-language fallback |
+| **GitHub Copilot** | Structurally Verified / Host Untested | `.github/prompts/<cmd>.prompt.md` + natural-language fallback |
+| **OpenCode** | Structurally Verified / Host Untested | `.opencode/commands/<cmd>.md` + natural-language fallback |
 
 ## License
 

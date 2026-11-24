@@ -1,5 +1,7 @@
-# /formforge-quick
+---
+description: FORMFORGE QUICK mode for targeted, low-risk frontend edits
+---
 
-FORMFORGE QUICK mode for targeted, low-risk frontend edits.
+Load `skills/formforge-quick/SKILL.md` and follow its workflow and shared reference routing.
 
-Load `SKILL.md` and `references/implementation-economy.md`. Execute in `QUICK` mode: minimal inspection, targeted edit, targeted verification, no unrelated redesign.
+Request: $ARGUMENTS

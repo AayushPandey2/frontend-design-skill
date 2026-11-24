@@ -1,0 +1,2 @@
+description = "FORMFORGE AI-slop detection and visual clutter cleanup"
+prompt = "Load `skills/formforge-deslop/SKILL.md` and follow its workflow and shared reference routing.\n\nRequest: {{args}}"

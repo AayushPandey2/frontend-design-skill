@@ -1,0 +1,2 @@
+description = "FORMFORGE design-contract fidelity verification against approved specs"
+prompt = "Load `skills/formforge-fidelity/SKILL.md` and follow its workflow and shared reference routing.\n\nRequest: {{args}}"

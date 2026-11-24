@@ -63,13 +63,13 @@
       "domain": "FF-OP",
       "decision": "ADOPT",
       "status": "STRUCTURALLY VERIFIED",
-      "purpose": "Expose 9 standalone slash commands (/formforge, -quick, -standard, -premium, -flagship, -audit, -polish, -optimize, -plan) with natural-language fallbacks.",
-      "activation_conditions": ["slash command invocation or natural-language command equivalent"],
+      "purpose": "Expose 25 standalone /formforge* skills and slash commands across 8 agent platforms with natural-language fallbacks.",
+      "activation_conditions": ["slash command invocation, skills/*/SKILL.md activation, or natural-language equivalent"],
       "applicable_task_types": ["all"],
-      "reference_paths": ["SKILL.md"],
+      "reference_paths": ["SKILL.md", "skills/*/SKILL.md"],
       "dependencies": ["FF-OP-02", "FF-OP-03"],
-      "conflicts": ["Command files remain thin dispatchers without duplicating SKILL.md rules."],
-      "verification_requirements": ["All 9 commands registered cleanly with read-only boundaries enforced on audit/plan."]
+      "conflicts": ["Command files remain thin dispatchers without duplicating SKILL.md or references/ rules."],
+      "verification_requirements": ["All 25 skills and 8 platform dispatchers registered cleanly with read-only boundaries enforced."]
     },
     {
       "id": "FF-EN-02",
@@ -462,6 +462,62 @@
       "dependencies": ["FF-VF-01", "FF-MO-01"],
       "conflicts": ["Premature before Phase 04 engineering and baseline runs."],
       "verification_requirements": ["Deferred to Phase 05."]
+    },
+    {
+      "id": "FF-CD-03",
+      "name": "Visual Inspiration, Creative Exploration & Asset Direction",
+      "domain": "FF-CD",
+      "decision": "ADOPT",
+      "status": "STRUCTURALLY VERIFIED",
+      "purpose": "Real-world web inspiration (/formforge-inspire), 2-4 distinct creative moodboards (/formforge-explore), and asset/licensing/perf planning (/formforge-assets).",
+      "activation_conditions": ["inspiration discovery, creative direction exploration, or asset planning"],
+      "applicable_task_types": ["planning", "creative-direction", "assets"],
+      "reference_paths": ["references/inspiration-and-exploration.md"],
+      "dependencies": ["FF-CD-01"],
+      "conflicts": ["Inspire and Explore remain strict read-only; never fabricate URLs or asset availability."],
+      "verification_requirements": ["Verified links/fallback disclosures and distinct non-color-only directions."]
+    },
+    {
+      "id": "FF-VD-04",
+      "name": "Reference Extraction, Replication & Comparison",
+      "domain": "FF-VD",
+      "decision": "ADOPT",
+      "status": "STRUCTURALLY VERIFIED",
+      "purpose": "14-point read-only visual specification (/formforge-reference), faithful code replication (/formforge-replicate), and structured comparison (/formforge-compare).",
+      "activation_conditions": ["screenshot or authorized website analysis, replication, or before/after comparison"],
+      "applicable_task_types": ["reference", "replicate", "compare"],
+      "reference_paths": ["references/reference-and-replication.md"],
+      "dependencies": ["FF-VD-01", "FF-VF-01"],
+      "conflicts": ["Reference never generates code; Replicate never claims pixel-perfection without evidence."],
+      "verification_requirements": ["Clear Reference vs. Replicate separation and honest difference reporting."]
+    },
+    {
+      "id": "FF-EN-05",
+      "name": "Persistent Project Design DNA",
+      "domain": "FF-EN",
+      "decision": "ADOPT",
+      "status": "STRUCTURALLY VERIFIED",
+      "purpose": "Extract, maintain (DESIGN.md), apply, and detect drift in project design identity while keeping code tokens authoritative (/formforge-dna).",
+      "activation_conditions": ["multi-session project identity extraction, application, or drift checking"],
+      "applicable_task_types": ["design-system", "multi-page", "drift-check"],
+      "reference_paths": ["references/design-dna.md"],
+      "dependencies": ["FF-EN-02"],
+      "conflicts": ["Never duplicate exact code token tables or persist secrets/PII."],
+      "verification_requirements": ["Code remains authoritative and DESIGN.md contains zero sensitive data."]
+    },
+    {
+      "id": "FF-VF-04",
+      "name": "Design-Contract Fidelity Verification",
+      "domain": "FF-VF",
+      "decision": "ADOPT",
+      "status": "STRUCTURALLY VERIFIED",
+      "purpose": "Verify implementation agreement against approved specs, locked decisions, DESIGN.md, and visual references (/formforge-fidelity).",
+      "activation_conditions": ["post-build contract fidelity check against approved specs"],
+      "applicable_task_types": ["verification", "fidelity"],
+      "reference_paths": ["references/design-fidelity.md"],
+      "dependencies": ["FF-VF-01"],
+      "conflicts": ["Distinct from /formforge-verify; never introduces subjective redesigns."],
+      "verification_requirements": ["Severity-ranked deviations and authorized-only targeted fixes."]
     }
   ]
 }

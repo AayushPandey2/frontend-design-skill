@@ -14,8 +14,9 @@ FORMFORGE is a portable, zero-dependency, Markdown-first Agent Skill (`agentskil
 | :--- | :--- | :--- |
 | **Level 0 — Discovery** | `SKILL.md` YAML frontmatter | Always in agent index |
 | **Level 1 — Kernel** | `SKILL.md` Markdown body | Loaded on skill activation |
-| **Level 2 — Domain Modules** | 19 focused `references/*.md` files (including `planning-mode.md` & `master-prompt-spec.md`) | Loaded selectively by user intent, never by keyword alone |
-| **Native Command Dispatchers** | `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/` | Thin 9-command dispatchers pointing to `SKILL.md` + `references/` |
+| **Level 2 — Domain Modules** | 23 focused `references/*.md` files (including `planning-mode.md`, `master-prompt-spec.md`, `reference-and-replication.md`, `inspiration-and-exploration.md`, `design-dna.md`, `design-fidelity.md`) | Loaded selectively by user intent, never by keyword alone |
+| **Specialized Skill Entry Points** | 25 `skills/<command>/SKILL.md` folders | Individual skill discovery with distinct workflows and shared reference routing |
+| **Native Command Dispatchers** | `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/`, `.github/prompts/`, `.opencode/commands/` | Thin 25-command dispatchers pointing to `skills/<command>/SKILL.md` |
 | **Level 4 — Verification Tools** | Host browser/test/lint/a11y tools | Invoked when task risk justifies them |
 
 ### Experimental Context Targets (Kernel + Loaded References)

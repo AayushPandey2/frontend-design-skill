@@ -1,8 +1,8 @@
 ---
 name: formforge-audit
-description: FORMFORGE read-only comprehensive frontend inspection and critique. Use when invoked via /formforge-audit to review UI, accessibility, responsiveness, or functional bugs without editing files.
+description: FORMFORGE read-only comprehensive frontend inspection and critique. Use when invoked via /formforge-audit.
 ---
 
 # /formforge-audit
 
-STRICT READ-ONLY MODE: Do not modify repository files. Load [SKILL.md](../../../SKILL.md), [references/visual-critique.md](../../../references/visual-critique.md), [references/functional-and-technical-audits.md](../../../references/functional-and-technical-audits.md), and [references/verification-and-refinement.md](../../../references/verification-and-refinement.md). Report prioritized findings honestly.
+STRICT READ-ONLY MODE: Do not modify repository files. Load [formforge-audit](../../../skills/formforge-audit/SKILL.md) and follow its workflow and shared reference routing.

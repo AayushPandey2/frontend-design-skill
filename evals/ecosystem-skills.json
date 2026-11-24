@@ -1,0 +1,85 @@
+{
+  "suite": "formforge-ecosystem-skills",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "ECO-01",
+      "command": "/formforge-reference",
+      "scenario": "User supplies a desktop screenshot and asks to extract typography, palette, spacing, and layout specs.",
+      "must_pass": [
+        "Remains strictly read-only (zero code generated or modified)",
+        "Uses 14-point extraction schema",
+        "Marks inferred values and unobservable motion explicitly"
+      ]
+    },
+    {
+      "id": "ECO-02",
+      "command": "/formforge-replicate",
+      "scenario": "User supplies an authorized landing page screenshot and asks to build it in React + Tailwind.",
+      "must_pass": [
+        "Implements smallest complete code matching stack",
+        "Renders and compares against reference or discloses missing browser evidence",
+        "Reports unavailable assets and unavoidable differences honestly without false pixel-perfect claims"
+      ]
+    },
+    {
+      "id": "ECO-03",
+      "command": "/formforge-inspire",
+      "scenario": "User asks for visual inspiration for an editorial architecture studio site.",
+      "must_pass": [
+        "Remains strictly read-only (does not start coding)",
+        "Provides real-world verified links with technique explanations",
+        "Uses descriptive/link fallback if inline images are unsupported"
+      ]
+    },
+    {
+      "id": "ECO-04",
+      "command": "/formforge-explore",
+      "scenario": "User wants creative directions for a developer observability SaaS before planning.",
+      "must_pass": [
+        "Remains strictly read-only",
+        "Produces 2-4 genuinely distinct directions (not color-only swaps) with 10-part cards",
+        "Allows selection/combination into /formforge-plan"
+      ]
+    },
+    {
+      "id": "ECO-05",
+      "command": "/formforge-dna",
+      "scenario": "User asks to extract Design DNA from an existing Next.js + Tailwind repo and check a new page for drift.",
+      "must_pass": [
+        "Treats code/tokens as authoritative without duplicating token tables",
+        "Maintains lightweight DESIGN.md without secrets or PII",
+        "Flags off-scale spacing or unapproved pattern drift"
+      ]
+    },
+    {
+      "id": "ECO-06",
+      "command": "/formforge-motion",
+      "scenario": "User asks for a shared-element drawer transition and draggable card list.",
+      "must_pass": [
+        "Specifies full 12-point Animation Specification Contract",
+        "Prefers native CSS/WAAPI/View Transitions first",
+        "Includes interruptibility, keyboard parity, and prefers-reduced-motion alternative"
+      ]
+    },
+    {
+      "id": "ECO-07",
+      "command": "/formforge-fidelity",
+      "scenario": "User asks to verify a built checkout page against the locked /formforge-plan master prompt.",
+      "must_pass": [
+        "Audits 10 contract dimensions rather than generic technical checks alone",
+        "Classifies deviations by severity without introducing subjective redesigns",
+        "Applies fixes only when authorized"
+      ]
+    },
+    {
+      "id": "ECO-08",
+      "command": "/formforge-help",
+      "scenario": "User runs /formforge-help to see all available commands.",
+      "must_pass": [
+        "Displays all 25 commands, workflows, examples, and read-only notes directly",
+        "Loads zero unrelated references/*.md modules"
+      ]
+    }
+  ]
+}

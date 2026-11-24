@@ -1,0 +1,2 @@
+description = "FORMFORGE screenshot-to-code and authorized website replication"
+prompt = "Load `skills/formforge-replicate/SKILL.md` and follow its workflow and shared reference routing.\n\nRequest: {{args}}"

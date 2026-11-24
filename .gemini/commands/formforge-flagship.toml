@@ -1,6 +1,2 @@
 description = "FORMFORGE FLAGSHIP mode for ambitious interactive frontend experiences"
-prompt = """
-Load `SKILL.md` and only the specialized design, motion, engineering, and audit modules the experience requires. Execute in `FLAGSHIP` mode (<=5 passes).
-
-Request: {{args}}
-"""
+prompt = "Load `skills/formforge-flagship/SKILL.md` and follow its workflow and shared reference routing.\n\nRequest: {{args}}"

@@ -1,0 +1,2 @@
+description = "FORMFORGE responsive layout design and viewport repair"
+prompt = "Load `skills/formforge-responsive/SKILL.md` and follow its workflow and shared reference routing.\n\nRequest: {{args}}"

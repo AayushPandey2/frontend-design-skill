@@ -1,6 +1,2 @@
 description = "FORMFORGE auto-mode frontend design, engineering, and QA"
-prompt = """
-Load `SKILL.md` and auto-select the lightest sufficient execution mode (`QUICK`–`FLAGSHIP`). Load only intent-matched `references/*.md` modules.
-
-Request: {{args}}
-"""
+prompt = "Load `skills/formforge/SKILL.md` and follow its workflow and shared reference routing.\n\nRequest: {{args}}"

@@ -1,5 +1,7 @@
-# /formforge-standard
+---
+description: FORMFORGE STANDARD mode for ordinary frontend components and pages
+---
 
-FORMFORGE STANDARD mode for ordinary frontend components and pages.
+Load `skills/formforge-standard/SKILL.md` and follow its workflow and shared reference routing.
 
-Load `SKILL.md` and `references/routing-and-modes.md`. Execute in `STANDARD` mode, loading only task-relevant design, engineering, and verification references.
+Request: $ARGUMENTS

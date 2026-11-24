@@ -1,8 +1,8 @@
 ---
-description: FORMFORGE auto-mode frontend design, engineering, and QA. Use when invoked via /formforge or for general frontend tasks needing auto-selected QUICK-FLAGSHIP rigor.
+description: FORMFORGE auto-mode frontend design, engineering, and QA
 argument-hint: "[frontend request]"
 ---
 
-Load `SKILL.md` and auto-select the lightest sufficient execution mode (`QUICK`–`FLAGSHIP`). Load only intent-matched `references/*.md` modules.
+Load `skills/formforge/SKILL.md` and follow its workflow and shared reference routing.
 
 Request: $ARGUMENTS

@@ -1,5 +1,7 @@
-# /formforge-flagship
+---
+description: FORMFORGE FLAGSHIP mode for ambitious interactive frontend experiences
+---
 
-FORMFORGE FLAGSHIP mode for ambitious interactive frontend experiences.
+Load `skills/formforge-flagship/SKILL.md` and follow its workflow and shared reference routing.
 
-Load `SKILL.md` and only the specialized design, motion, engineering, and audit modules the experience requires. Execute in `FLAGSHIP` mode (<=5 passes).
+Request: $ARGUMENTS

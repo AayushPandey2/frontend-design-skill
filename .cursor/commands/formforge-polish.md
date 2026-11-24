@@ -1,5 +1,7 @@
-# /formforge-polish
+---
+description: FORMFORGE visual hierarchy, typography, spacing, and surface refinement
+---
 
-FORMFORGE visual hierarchy, typography, spacing, and surface refinement.
+Load `skills/formforge-polish/SKILL.md` and follow its workflow and shared reference routing.
 
-Load `SKILL.md`, `references/visual-critique.md`, `references/typography-and-content.md`, `references/color-and-surfaces.md`, and `references/layout-and-responsive.md`. Refine concrete visual defects without breaking working functionality.
+Request: $ARGUMENTS

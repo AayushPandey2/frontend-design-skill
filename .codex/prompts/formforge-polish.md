@@ -1,8 +1,8 @@
 ---
-description: FORMFORGE visual hierarchy, typography, spacing, and surface refinement. Use when invoked via /formforge-polish to fix visual defects without breaking working functionality.
+description: FORMFORGE visual hierarchy, typography, spacing, and surface refinement
 argument-hint: "[UI to refine]"
 ---
 
-Load `SKILL.md`, `references/visual-critique.md`, `references/typography-and-content.md`, `references/color-and-surfaces.md`, and `references/layout-and-responsive.md`. Refine concrete visual defects without breaking working functionality.
+Load `skills/formforge-polish/SKILL.md` and follow its workflow and shared reference routing.
 
 Request: $ARGUMENTS
