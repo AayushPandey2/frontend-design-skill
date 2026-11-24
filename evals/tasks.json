@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "tasks": [
+    {
+      "id": "FF-EVAL-01",
+      "title": "Architectural Acoustics Studio Landing Page",
+      "category": "landing-page",
+      "expected_mode": "PREMIUM",
+      "prompt": "Build a landing page for Kestrel Acoustics, a boutique architectural acoustics consultancy designing concert halls and recording studios. Include a hero, 3 selected studio case studies, acoustic methodology overview, and a consultation request form.",
+      "required_capabilities": ["FF-CR-01", "FF-CR-02", "FF-CR-03", "FF-VD-01", "FF-VD-02", "FF-UX-02", "FF-UX-04", "FF-VF-01"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Product-grounded visual identity without generic SaaS card-kit clichés.",
+        "Working consultation form with client-side validation and accessible labels.",
+        "Responsive layout with zero horizontal overflow at 375px and 1440px."
+      ],
+      "efficiency_focus": "Avoid unnecessary animation libraries and decorative filler sections."
+    },
+    {
+      "id": "FF-EVAL-02",
+      "title": "Cloud Cost & Usage SaaS Analytics Dashboard",
+      "category": "saas-dashboard",
+      "expected_mode": "STANDARD",
+      "prompt": "Create a responsive SaaS analytics dashboard for monitoring API latency, error rates, and monthly spend by team. Include date-range filtering, a sortable service breakdown table, and loading/empty/error states.",
+      "required_capabilities": ["FF-SP-01", "FF-VD-04", "FF-UX-01", "FF-UX-03", "FF-CP-02", "FF-EN-01", "FF-VF-01"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Appropriate operational density with scannable KPIs and sortable table.",
+        "Interactive date filter updates displayed metrics and table rows.",
+        "Explicit loading, empty, and error states implemented."
+      ],
+      "efficiency_focus": "Use native HTML/CSS and lightweight SVG/canvas rather than heavy charting suites if simple."
+    },
+    {
+      "id": "FF-EVAL-03",
+      "title": "Specialty Coffee Roaster E-Commerce Product & Cart Flow",
+      "category": "ecommerce-interface",
+      "expected_mode": "PREMIUM",
+      "prompt": "Build a product detail and slide-over cart experience for a specialty coffee roaster. Support grind selection, bag size variants, subscription vs. one-time toggle, quantity updates, and subtotal calculation.",
+      "required_capabilities": ["FF-CR-01", "FF-VD-02", "FF-UX-04", "FF-CP-02", "FF-SP-01", "FF-VF-01", "FF-VF-02"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Accurate live price and subtotal updates across variant and quantity changes.",
+        "Accessible slide-over cart drawer with focus trap, Escape close, and focus restoration.",
+        "Clear trust and shipping cues without visual clutter."
+      ],
+      "efficiency_focus": "Derive cart totals directly from state without redundant effects."
+    },
+    {
+      "id": "FF-EVAL-04",
+      "title": "Industrial Designer Interactive Portfolio",
+      "category": "creative-portfolio",
+      "expected_mode": "FLAGSHIP",
+      "prompt": "Design and build a portfolio website for an industrial designer specializing in tactile hardware objects. Showcase 4 hardware projects with interactive detail inspection, editorial typography, and restrained motion.",
+      "required_capabilities": ["FF-CR-04", "FF-CR-03", "FF-VD-01", "FF-MO-01", "FF-MO-02", "FF-MO-03", "FF-VF-01"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Distinctive editorial pacing and typography tailored to physical hardware.",
+        "Smooth, interruptible project transitions that respect prefers-reduced-motion.",
+        "Zero decorative clutter or generic agency boilerplate."
+      ],
+      "efficiency_focus": "Achieve flagship craft with native CSS/WAAPI and minimal JS footprint."
+    },
+    {
+      "id": "FF-EVAL-05",
+      "title": "AI Research Assistant Workspace",
+      "category": "ai-application",
+      "expected_mode": "PREMIUM",
+      "prompt": "Create a split-pane AI research assistant interface with a prompt composer, simulated streaming response with inline source citations, stop/retry controls, and a collapsible citation inspector.",
+      "required_capabilities": ["FF-SP-02", "FF-UX-01", "FF-UX-03", "FF-CP-02", "FF-EN-04", "FF-VF-02", "FF-VF-03"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Working streaming simulation with functional Stop and Retry controls.",
+        "Citations open/highlight cleanly in the inspector and are keyboard accessible.",
+        "Rendered output safely escapes any user/model text (no raw HTML injection)."
+      ],
+      "efficiency_focus": "Keep state local and avoid unnecessary global store boilerplate."
+    },
+    {
+      "id": "FF-EVAL-06",
+      "title": "Mobile-First Transit & Route Companion",
+      "category": "mobile-interface",
+      "expected_mode": "STANDARD",
+      "prompt": "Build a mobile-first commuter transit tracker showing live next departures, line status alerts, and a quick-save favorite stops drawer.",
+      "required_capabilities": ["FF-SP-03", "FF-UX-04", "FF-VD-03", "FF-VD-04", "FF-VF-01", "FF-VF-02"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Thumb-friendly primary actions and >= 44px touch targets.",
+        "Clean 375px viewport layout using dynamic viewport height and safe spacing.",
+        "Zero hover-locked interactions."
+      ],
+      "efficiency_focus": "Zero external UI framework dependencies required."
+    },
+    {
+      "id": "FF-EVAL-07",
+      "title": "Targeted Existing Component Modification",
+      "category": "existing-component-mod",
+      "expected_mode": "QUICK",
+      "prompt": "In an existing React + Tailwind project with a Button and Badge component, add a dismissible 'unsaved changes' banner using the existing design tokens and Button component without altering unrelated files.",
+      "required_capabilities": ["FF-CP-01", "FF-EN-02", "FF-OP-01", "FF-OP-03", "FF-VF-03"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Reuses existing Button and tokens; zero duplicate primitives created.",
+        "Minimal diff touching only the target component/view.",
+        "Keyboard-accessible dismiss button with aria-label."
+      ],
+      "efficiency_focus": "QUICK mode execution with minimal token and tool-call overhead."
+    },
+    {
+      "id": "FF-EVAL-08",
+      "title": "Responsive Grid & Overflow Repair",
+      "category": "responsive-layout-repair",
+      "expected_mode": "QUICK",
+      "prompt": "Fix a broken pricing comparison section where 3 columns overflow horizontally at 375px and feature labels clip inside fixed-height cards.",
+      "required_capabilities": ["FF-VD-03", "FF-SP-03", "FF-OP-01", "FF-OP-03", "FF-VF-01"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Zero horizontal overflow at 320px, 375px, 768px, and 1280px.",
+        "Fixed heights replaced with fluid content-driven sizing.",
+        "Existing visual identity preserved."
+      ],
+      "efficiency_focus": "Fix root CSS cause without rewriting the entire page."
+    },
+    {
+      "id": "FF-EVAL-09",
+      "title": "Interruptible Accordion & Tab Indicator Motion",
+      "category": "animation-implementation",
+      "expected_mode": "STANDARD",
+      "prompt": "Implement a segmented tab switcher with a sliding active indicator and smooth expandable FAQ accordion that stay smooth under rapid clicking and respect reduced motion.",
+      "required_capabilities": ["FF-MO-01", "FF-MO-02", "FF-MO-03", "FF-CP-02", "FF-OP-01", "FF-VF-02"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Uses GPU-composited transforms/opacity cleanly.",
+        "Rapid switching does not desync active state or indicator.",
+        "Honors prefers-reduced-motion: reduce."
+      ],
+      "efficiency_focus": "Use native CSS/WAAPI without installing heavy animation packages."
+    },
+    {
+      "id": "FF-EVAL-10",
+      "title": "Checkout Form Accessibility Remediation",
+      "category": "accessibility-remediation",
+      "expected_mode": "STANDARD",
+      "prompt": "Audit and fix an inaccessible checkout form that uses clickable divs, placeholder-only inputs, missing error associations, and low-contrast muted text.",
+      "required_capabilities": ["FF-VF-02", "FF-CP-02", "FF-UX-04", "FF-VD-02", "FF-EN-01"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "All controls use native semantic elements with visible labels.",
+        "Error messages linked via aria-describedby and announced cleanly.",
+        "All text meets >= 4.5:1 contrast with visible focus indicators."
+      ],
+      "efficiency_focus": "Fix accessibility defects without breaking existing layout aesthetics."
+    },
+    {
+      "id": "FF-EVAL-11",
+      "title": "Design System Token Consolidation & Dark Mode Parity",
+      "category": "design-system-maintenance",
+      "expected_mode": "STANDARD",
+      "prompt": "Consolidate scattered hardcoded hex colors and spacing values across 3 components into semantic CSS custom properties and add a verified dark theme.",
+      "required_capabilities": ["FF-DS-01", "FF-DS-02", "FF-VD-02", "FF-CP-01", "FF-VF-02"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "All 3 components consume semantic tokens with zero hardcoded hex leftovers.",
+        "Both light and dark themes pass contrast checks.",
+        "Existing component APIs remain backwards-compatible."
+      ],
+      "efficiency_focus": "Keep token set minimal and semantic rather than over-granular."
+    },
+    {
+      "id": "FF-EVAL-12",
+      "title": "Landing Page Rendering & Bundle Optimization",
+      "category": "performance-optimization",
+      "expected_mode": "STANDARD",
+      "prompt": "Optimize a slow product page that loads a full-size hero PNG eagerly without dimensions, imports an entire icon/animation library for 2 icons, and causes layout shift on font load.",
+      "required_capabilities": ["FF-EN-03", "FF-VD-01", "FF-OP-01", "FF-VF-03"],
+      "mandatory_gates": ["functional_correctness", "accessibility", "security"],
+      "acceptance_criteria": [
+        "Explicit media dimensions and lazy loading for below-the-fold assets.",
+        "Unnecessary heavy dependency removed in favor of inline SVG/CSS.",
+        "Font loading configured to eliminate layout shift."
+      ],
+      "efficiency_focus": "Measurable reduction in bundle size and DOM/asset overhead."
+    }
+  ]
+}

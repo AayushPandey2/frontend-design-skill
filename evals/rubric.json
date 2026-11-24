@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "total_points": 100,
+  "quality_categories": [
+    {
+      "id": "visual_aesthetics",
+      "name": "Visual Aesthetics",
+      "max_points": 20,
+      "criteria": "Distinctive, product-grounded visual identity, intentional typography, harmonious color usage, clean hierarchy, and absence of generic AI clichés.",
+      "bands": {
+        "excellent": "17-20: Cohesive, memorable craft tailored to the product brief.",
+        "acceptable": "12-16: Clean and competent but slightly conventional.",
+        "failing": "0-11: Generic template feel, weak hierarchy, or visual noise."
+      }
+    },
+    {
+      "id": "user_experience",
+      "name": "User Experience",
+      "max_points": 15,
+      "criteria": "Clear information architecture, scannable flows, helpful microcopy, low cognitive load, and complete loading/empty/error/success states.",
+      "bands": {
+        "excellent": "13-15: Effortless task completion with clear state feedback.",
+        "acceptable": "9-12: Usable core path with minor copy or state gaps.",
+        "failing": "0-8: Confusing navigation, missing states, or vague errors."
+      }
+    },
+    {
+      "id": "functional_correctness",
+      "name": "Functional Correctness",
+      "max_points": 15,
+      "criteria": "All requested features, state updates, forms, filters, and edge cases work without runtime or console errors.",
+      "bands": {
+        "excellent": "14-15: Zero defects across primary and edge interactions.",
+        "acceptable": "10-13: Core flow works with minor non-blocking edge quirks.",
+        "failing": "0-9: Broken interactions, build errors, or uncaught exceptions."
+      }
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "max_points": 10,
+      "criteria": "Semantic HTML, full keyboard operability, visible focus rings, WCAG AA contrast, labeled inputs, and reduced-motion support.",
+      "bands": {
+        "excellent": "9-10: Passes keyboard, contrast, semantic, and reduced-motion checks.",
+        "acceptable": "6-8: Minor non-blocking aria or focus polish needed.",
+        "failing": "0-5: Keyboard traps, missing labels, or failing contrast."
+      }
+    },
+    {
+      "id": "responsiveness",
+      "name": "Responsiveness",
+      "max_points": 10,
+      "criteria": "Intentional layout adaptation from 320px/375px mobile through desktop with zero unintended overflow or clipped content.",
+      "bands": {
+        "excellent": "9-10: Clean ergonomics at mobile, tablet, and desktop.",
+        "acceptable": "6-8: Minor spacing tightness at intermediate widths.",
+        "failing": "0-5: Horizontal overflow, overlapping text, or broken mobile nav."
+      }
+    },
+    {
+      "id": "design_consistency",
+      "name": "Design Consistency",
+      "max_points": 10,
+      "criteria": "Consistent spacing rhythm, token usage, component reuse, and adherence to existing project conventions.",
+      "bands": {
+        "excellent": "9-10: Unified tokens, reused primitives, and coherent surfaces.",
+        "acceptable": "6-8: Occasional magic values without breaking cohesion.",
+        "failing": "0-5: Inconsistent styles, duplicated components, or token drift."
+      }
+    },
+    {
+      "id": "code_maintainability",
+      "name": "Code Maintainability",
+      "max_points": 10,
+      "criteria": "Readable, minimal, idiomatic code with shallow nesting, zero dead code, no speculative abstractions, and appropriate dependencies.",
+      "bands": {
+        "excellent": "9-10: Smallest complete, readable implementation.",
+        "acceptable": "6-8: Minor verbosity or avoidable helper indirection.",
+        "failing": "0-5: Bloated wrappers, dead code, or unnecessary dependencies."
+      }
+    },
+    {
+      "id": "performance",
+      "name": "Performance",
+      "max_points": 5,
+      "criteria": "Fast initial render, minimal JS bundle impact, reserved media dimensions, and zero layout thrashing.",
+      "bands": {
+        "excellent": "5: Lean assets, no avoidable CLS or heavy dependencies.",
+        "acceptable": "3-4: Acceptable runtime with minor asset optimization possible.",
+        "failing": "0-2: Heavy unrequested packages, severe CLS, or blocking scripts."
+      }
+    },
+    {
+      "id": "motion_and_interaction",
+      "name": "Motion & Interaction Quality",
+      "max_points": 5,
+      "criteria": "Purposeful transitions, crisp timing, interruptible state changes, and GPU-composited properties.",
+      "bands": {
+        "excellent": "5: Restraint and tactile responsiveness where motion applies.",
+        "acceptable": "3-4: Clean basic transitions.",
+        "failing": "0-2: Gratuitous animation, janky layout transitions, or broken state."
+      }
+    }
+  ],
+  "mandatory_gates": [
+    {
+      "id": "functional_correctness",
+      "rule": "Build/runtime must succeed and primary user flows must function without critical errors."
+    },
+    {
+      "id": "accessibility",
+      "rule": "Keyboard navigation, semantic controls, contrast floor, and reduced-motion compliance must hold."
+    },
+    {
+      "id": "security",
+      "rule": "Zero unsanitized HTML injection, exposed secrets, or unsafe external link handling."
+    }
+  ],
+  "efficiency_metrics": [
+    "input_tokens",
+    "output_tokens",
+    "total_tokens",
+    "context_loaded_bytes",
+    "generated_code_size",
+    "changed_files",
+    "added_dependencies",
+    "tool_calls",
+    "execution_time_seconds",
+    "cost_usd",
+    "functional_test_results",
+    "regression_failures"
+  ],
+  "evaluation_protocol": {
+    "blind_evaluation": "Evaluate rendered outputs without revealing which skill variant or baseline produced them when comparing approaches.",
+    "rendered_inspection_required": true,
+    "tie_breaker_rule": "When two implementations achieve equivalent quality scores, prefer the one with lower token consumption, fewer added dependencies, and smaller clean diff.",
+    "integrity_rule": "Never fabricate scores or report unexecuted checks as passing."
+  }
+}
