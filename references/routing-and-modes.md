@@ -45,6 +45,10 @@ Evaluate all five dimensions before selecting a mode or loading references:
 - **Build a cinematic creative portfolio**: `PREMIUM`/`FLAGSHIP` -> load creative direction, typography, composition, asset direction, motion, responsive, perf, a11y.
 - **Fix keyboard navigation in a modal**: `STANDARD` -> load accessibility + component focus/Escape/dismissal rules -> preserve visual design -> verify keyboard flow.
 - **Make an existing page load faster**: `STANDARD` -> load perf + framework guidance -> profile/identify bottlenecks -> targeted fix -> measure if supported.
+- **Build a luxury product landing page**: `PREMIUM` -> load `creative-direction`, `typography-and-content`, `color-and-surfaces`, `layout-and-responsive`, `industry-patterns` (skip dense dashboard/tool rules).
+- **Improve an existing dashboard table**: `STANDARD` -> load `layout-and-responsive` (hierarchy/density), `ux-and-systems` (table patterns), `project-and-memory` (existing tokens/a11y) -> skip creative exploration.
+- **Change the primary accent color**: `QUICK` -> load `color-and-surfaces` (semantic color + contrast), `implementation-economy` -> skip full design intelligence.
+- **Improve a confusing checkout flow**: `STANDARD`/`PREMIUM` -> load `ux-and-systems` (journeys, IA, forms, states), `industry-patterns` (e-commerce), `typography-and-content` (microcopy).
 
 ## 5. Context Budgets & Compression
 

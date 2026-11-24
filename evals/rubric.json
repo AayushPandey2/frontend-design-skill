@@ -136,5 +136,21 @@
     "rendered_inspection_required": true,
     "tie_breaker_rule": "When two implementations achieve equivalent quality scores, prefer the one with lower token consumption, fewer added dependencies, and smaller clean diff.",
     "integrity_rule": "Never fabricate scores or report unexecuted checks as passing."
+  },
+  "supplementary_design_rubric": {
+    "status": "hypothesis_subordinate_to_mandatory_gates",
+    "total_points": 100,
+    "categories": [
+      { "id": "creative_direction_relevance", "name": "Creative Direction & Product Relevance", "max_points": 15 },
+      { "id": "originality_identity", "name": "Originality & Visual Identity", "max_points": 10 },
+      { "id": "typography", "name": "Typography", "max_points": 12 },
+      { "id": "color_contrast", "name": "Color & Contrast", "max_points": 10 },
+      { "id": "composition_layout", "name": "Composition & Layout", "max_points": 12 },
+      { "id": "visual_hierarchy", "name": "Visual Hierarchy", "max_points": 10 },
+      { "id": "spacing_surface", "name": "Spacing & Surface Consistency", "max_points": 8 },
+      { "id": "user_experience", "name": "User Experience", "max_points": 12 },
+      { "id": "responsive_design", "name": "Responsive Design", "max_points": 6 },
+      { "id": "content_asset_quality", "name": "Content & Asset Quality", "max_points": 5 }
+    ]
   }
 }

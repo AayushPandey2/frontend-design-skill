@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "phase": "03-design-intelligence",
+  "areas": [
+    "creative_diversity",
+    "typography",
+    "color",
+    "composition",
+    "ux_judgment",
+    "design_consistency",
+    "anti_generic",
+    "responsive_judgment",
+    "asset_judgment",
+    "design_economy"
+  ],
+  "tests": [
+    {
+      "id": "DI-DIV-01",
+      "area": "creative_diversity",
+      "prompt": "Design a flagship homepage for a boutique horology workshop restoring vintage mechanical watches.",
+      "context": { "repo": "empty" },
+      "expected_mode": "FLAGSHIP",
+      "expected_references": ["references/creative-direction.md", "references/typography-and-content.md", "references/color-and-surfaces.md", "references/industry-patterns.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-CR-01", "FF-CR-03", "FF-VD-01", "FF-SP-01"],
+      "acceptance_criteria": ["Explores structurally distinct directions.", "Produces tactile, heritage-grounded identity distinct from SaaS layouts."]
+    },
+    {
+      "id": "DI-DIV-02",
+      "area": "creative_diversity",
+      "prompt": "Design a developer observability console for inspecting distributed traces and p99 latency.",
+      "context": { "repo": "empty" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/creative-direction.md", "references/layout-and-responsive.md", "references/industry-patterns.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-CR-01", "FF-VD-04", "FF-SP-01"],
+      "acceptance_criteria": ["Prioritizes compact density, keyboard efficiency, and scannable data over marketing hero styling."]
+    },
+    {
+      "id": "DI-TYP-01",
+      "area": "typography",
+      "prompt": "Set up fluid typography and tabular numeric alignment for a multi-currency treasury dashboard.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/typography-and-content.md", "references/industry-patterns.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-VD-01", "FF-SP-01"],
+      "acceptance_criteria": ["Uses tabular-nums on numeric columns and CSS clamp() without JS resize listeners."]
+    },
+    {
+      "id": "DI-TYP-02",
+      "area": "typography",
+      "prompt": "Improve the reading ergonomics of a long-form technical essays site where lines span 130 characters.",
+      "context": { "repo": "astro-blog" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/typography-and-content.md"],
+      "excluded_references": ["references/industry-patterns.md"],
+      "required_capabilities": ["FF-VD-01"],
+      "acceptance_criteria": ["Constrains body measure to ~55-75ch with balanced line-height and clean mobile heading scale."]
+    },
+    {
+      "id": "DI-CLR-01",
+      "area": "color",
+      "prompt": "Create a semantic light and dark color token system for a clinical patient portal.",
+      "context": { "repo": "nextjs-css-vars" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/color-and-surfaces.md", "references/ux-and-systems.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VD-02", "FF-DS-01"],
+      "acceptance_criteria": ["Meets WCAG 2.2 AA contrast in both modes without blind color inversion."]
+    },
+    {
+      "id": "DI-CLR-02",
+      "area": "color",
+      "prompt": "Update the primary brand accent token from #2563eb to #0d9488 while preserving button text contrast.",
+      "context": { "repo": "existing-tokens" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/color-and-surfaces.md", "references/implementation-economy.md"],
+      "excluded_references": ["references/creative-direction.md", "references/industry-patterns.md"],
+      "required_capabilities": ["FF-VD-02", "FF-OP-01"],
+      "acceptance_criteria": ["Updates semantic token cleanly and verifies contrast on accent surfaces."]
+    },
+    {
+      "id": "DI-CMP-01",
+      "area": "composition",
+      "prompt": "Compose a product launch page with varied section rhythm instead of repeating 3-column card grids.",
+      "context": { "repo": "empty" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/layout-and-responsive.md", "references/creative-direction.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VD-03", "FF-CR-03"],
+      "acceptance_criteria": ["Varies scale, alignment, and density across sections; earns containers instead of wrapping everything in cards."]
+    },
+    {
+      "id": "DI-UX-01",
+      "area": "ux_judgment",
+      "prompt": "Redesign a 3-step SaaS onboarding flow that hides skip options and shows a generic 'Something went wrong' error.",
+      "context": { "repo": "react-app" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/ux-and-systems.md", "references/typography-and-content.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-UX-01", "FF-UX-02", "FF-UX-03", "FF-UX-04"],
+      "acceptance_criteria": ["Provides clear step progress, non-manipulative skip/back paths, and actionable error recovery."]
+    },
+    {
+      "id": "DI-CON-01",
+      "area": "design_consistency",
+      "prompt": "Add a notification preferences panel to an app with established CSS custom properties and Button/Switch components.",
+      "context": { "repo": "existing-design-system" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/project-and-memory.md", "references/ux-and-systems.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-CP-01", "FF-DS-03", "FF-EN-02"],
+      "acceptance_criteria": ["Reuses existing tokens and primitives; zero redesign of unrelated views."]
+    },
+    {
+      "id": "DI-AGD-01",
+      "area": "anti_generic",
+      "prompt": "Critique a landing page featuring a generic purple gradient hero, 3 identical glassmorphic cards, 'Trusted by 10,000+ teams' placeholder stats, and '→' on every link.",
+      "context": { "repo": "marketing-site", "intent": "critique" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/creative-direction.md", "references/typography-and-content.md"],
+      "excluded_references": ["references/implementation-economy.md"],
+      "required_capabilities": ["FF-CR-02", "FF-UX-02"],
+      "acceptance_criteria": ["Identifies root visual/copy weaknesses and proposes targeted improvements without modifying files."]
+    },
+    {
+      "id": "DI-AGD-02",
+      "area": "anti_generic",
+      "prompt": "Build a dark-mode audio synthesizer plugin page with subtle radial glow gradients as requested in our brand brief.",
+      "context": { "repo": "empty", "explicit_user_style": true },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/creative-direction.md", "references/color-and-surfaces.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-CR-02", "FF-VD-02"],
+      "acceptance_criteria": ["Honors explicit user gradient request while avoiding generic SaaS clichés."]
+    },
+    {
+      "id": "DI-RSP-01",
+      "area": "responsive_judgment",
+      "prompt": "Adapt a 7-column enterprise permissions matrix table for 375px mobile viewports without dropping critical toggle actions.",
+      "context": { "repo": "vue-enterprise" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/layout-and-responsive.md", "references/ux-and-systems.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-VD-03", "FF-UX-04"],
+      "acceptance_criteria": ["Re-composes table cleanly for mobile while preserving all permissions and >=44px touch targets."]
+    },
+    {
+      "id": "DI-AST-01",
+      "area": "asset_judgment",
+      "prompt": "Build an editorial photography portfolio when no image-generation tool or local photos exist yet.",
+      "context": { "repo": "empty", "image_tools": false },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/layout-and-responsive.md", "references/verification-and-refinement.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VD-04", "FF-VF-04"],
+      "acceptance_criteria": ["Uses intentional aspect-ratio frames/placeholders without referencing nonexistent image files or claiming images were generated."]
+    },
+    {
+      "id": "DI-ECO-01",
+      "area": "design_economy",
+      "prompt": "Fix a 4px misalignment on the footer copyright text.",
+      "context": { "repo": "existing-site" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/implementation-economy.md"],
+      "excluded_references": ["references/creative-direction.md", "references/industry-patterns.md", "references/color-and-surfaces.md"],
+      "required_capabilities": ["FF-OP-01", "FF-OP-03"],
+      "acceptance_criteria": ["Stays in QUICK mode and loads zero creative-direction or industry references."]
+    }
+  ]
+}

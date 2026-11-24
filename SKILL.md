@@ -3,7 +3,7 @@ name: formforge
 description: Adaptive frontend design and engineering intelligence for building, redesigning, auditing, and optimizing web and mobile interfaces. Use for websites, landing pages, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, interface motion, and frontend performance or reviews. Skip pure backend, database-only, algorithm, or unrelated system tasks; on mixed full-stack work, apply only to frontend responsibilities.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   tagline: "Maximum taste. Minimum waste."
 ---
 
@@ -71,6 +71,17 @@ Load only the Level 2 modules needed for the classified task. Never load all mod
 | [references/implementation-economy.md](references/implementation-economy.md) | Writing/editing UI code, choosing CSS vs. JS, or trimming complexity |
 | [references/project-and-memory.md](references/project-and-memory.md) | Inspecting an existing repo, checking deps, or reading/updating design memory |
 | [references/verification-and-refinement.md](references/verification-and-refinement.md) | Verifying rendered/a11y/functional gates, running refinement loops, or handling missing tools |
+
+### Design Intelligence Modules (Load Only When Matched)
+
+| Module | Load When |
+| :--- | :--- |
+| [references/creative-direction.md](references/creative-direction.md) | New UI/redesign brief, visual signature, aesthetic fit, anti-generic audit, or design critique |
+| [references/typography-and-content.md](references/typography-and-content.md) | Font selection/pairing, type hierarchy, fluid `clamp()` scaling, or UI copy |
+| [references/color-and-surfaces.md](references/color-and-surfaces.md) | Color palettes, semantic color tokens, WCAG contrast, dark mode, or elevation/surfaces |
+| [references/layout-and-responsive.md](references/layout-and-responsive.md) | Visual hierarchy, grid/composition, spacing, density, responsive strategy, or assets |
+| [references/ux-and-systems.md](references/ux-and-systems.md) | User journeys, navigation, forms, interaction states, design systems, or motion intent |
+| [references/industry-patterns.md](references/industry-patterns.md) | Calibrating density, trust signals, and hierarchy for a specific product domain |
 
 Full capability statuses (`IMPLEMENTED`, `PLANNED`, `DEFERRED`, `REJECTED`) live in [docs/capability-registry.json](docs/capability-registry.json).
 

@@ -2,15 +2,13 @@
 
 **Maximum taste. Minimum waste.**
 
-FORMFORGE is a portable, zero-dependency AI agent skill for frontend design and engineering. It combines adaptive task classification, progressive context loading, strict implementation economy, project/design-memory awareness, and bounded evidence-driven verification.
+FORMFORGE is a portable, zero-dependency AI agent skill for frontend design and engineering. It combines product-grounded design intelligence, adaptive task classification, progressive context loading, strict implementation economy, and bounded verification.
 
-## Core Capabilities (Phase 02)
+## Capabilities (Phase 03)
 
-- **Lightweight Operating Kernel** ([SKILL.md](SKILL.md)): Clear activation boundaries, 5-dimension task classification, 10-level conflict priority ladder, and 6-step code economy ladder.
-- **Adaptive Modes & Routing** ([references/routing-and-modes.md](references/routing-and-modes.md)): Auto-selects `QUICK`, `STANDARD`, `PREMIUM`, or `FLAGSHIP` based on scope and risk, loading only task-relevant guidance.
-- **Implementation & Tool Economy** ([references/implementation-economy.md](references/implementation-economy.md)): Prefers existing project code and native HTML/CSS/Browser APIs over unnecessary JS, wrappers, or dependencies.
-- **Project Awareness & Design Memory** ([references/project-and-memory.md](references/project-and-memory.md)): Preserves existing frameworks and tokens while maintaining concise, non-duplicative cross-session design decisions.
-- **Verification & Graceful Degradation** ([references/verification-and-refinement.md](references/verification-and-refinement.md)): Risk-scaled checks, bounded refinement loops, and honest fallback reporting when browser or test tools are unavailable.
+- **Operating Kernel** ([SKILL.md](SKILL.md)): Activation boundaries, 5-dimension classification, adaptive modes (`QUICK`, `STANDARD`, `PREMIUM`, `FLAGSHIP`), 10-level priority ladder, and 6-step code economy ladder.
+- **Core Intelligence** (`references/`): [routing-and-modes.md](references/routing-and-modes.md), [implementation-economy.md](references/implementation-economy.md), [project-and-memory.md](references/project-and-memory.md), [verification-and-refinement.md](references/verification-and-refinement.md).
+- **Design Intelligence** (`references/`): [creative-direction.md](references/creative-direction.md), [typography-and-content.md](references/typography-and-content.md), [color-and-surfaces.md](references/color-and-surfaces.md), [layout-and-responsive.md](references/layout-and-responsive.md), [ux-and-systems.md](references/ux-and-systems.md), [industry-patterns.md](references/industry-patterns.md).
 
 ## Repository Layout
 
@@ -19,19 +17,16 @@ FORMFORGE/
 ├── SKILL.md                           # Level 0 discovery + Level 1 core operating kernel
 ├── README.md                          # Project overview
 ├── LICENSE                            # MIT License
-├── references/
-│   ├── routing-and-modes.md           # 5-dimension classification, modes, routing examples
-│   ├── implementation-economy.md      # Code/CSS/editing/tool economy rules
-│   ├── project-and-memory.md          # Stack detection, dependency checks, design memory
-│   └── verification-and-refinement.md # Risk-based checks, bounded loops, degradation
+├── references/                        # 10 selective Level 2 core & design modules
 ├── docs/
 │   ├── architecture.md                # Progressive context, budgets, conflict & degradation model
 │   ├── capability-registry.json       # Unified 10-domain registry (30 entries)
-│   └── roadmap.md                     # Phased plan & open uncertainties
+│   └── roadmap.md                     # Phased plan (Phase 01-05) & open uncertainties
 └── evals/
     ├── core-intelligence.json         # 23 core intelligence test cases (9 categories)
+    ├── design-intelligence.json       # 14 design intelligence test cases (10 areas)
     ├── tasks.json                     # 12 frontend benchmark tasks
-    └── rubric.json                    # 100-point rubric, 3 mandatory gates, 12 efficiency metrics
+    └── rubric.json                    # 100-pt global rubric + 100-pt design hypothesis
 ```
 
-See [docs/roadmap.md](docs/roadmap.md) for Phase 03–04 plans and open uncertainties.
+See [docs/roadmap.md](docs/roadmap.md) for Phase 04–05 plans and open uncertainties.
