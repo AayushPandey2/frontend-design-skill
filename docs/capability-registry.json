@@ -1,7 +1,7 @@
 {
-  "schema_version": "2.3.0",
+  "schema_version": "2.4.0",
   "project": "FORMFORGE",
-  "phase": "05-verification-intelligence",
+  "phase": "06-optimization",
   "domains": [
     { "id": "FF-CR", "name": "Creative Intelligence" },
     { "id": "FF-VD", "name": "Visual Design Intelligence" },

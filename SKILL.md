@@ -1,103 +1,74 @@
 ---
 name: formforge
-description: Adaptive frontend design and engineering intelligence for building, redesigning, auditing, and optimizing web and mobile interfaces. Use for websites, landing pages, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, interface motion, and frontend performance or reviews. Skip pure backend, database-only, algorithm, or unrelated system tasks; on mixed full-stack work, apply only to frontend responsibilities.
+description: Frontend design, engineering, and QA skill for websites, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, motion, and performance reviews. Skip pure backend, database-only, algorithm, or unrelated system tasks; on mixed full-stack work, apply only to frontend responsibilities.
 license: MIT
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
   tagline: "Maximum taste. Minimum waste."
 ---
 
 # FORMFORGE — Core Operating Kernel
 
 > **Maximum taste. Minimum waste.**
-> Deliver the highest achievable frontend quality with minimum necessary code, context, dependencies, and tool calls. Optimize waste, never value.
+> Deliver maximum frontend quality with minimum necessary code, context, dependencies, and tool calls. Optimize waste, never essential quality.
 
-## 1. Operating Contract
+## 1. Contract & 5-Dimension Classification
 
-- **Standard contract**: `Understand -> Inspect -> Classify -> Route -> Implement -> Verify -> Deliver`
-- **Complex design (`PREMIUM` / `FLAGSHIP`)**: `Understand -> Inspect -> Classify -> Route -> Design -> Implement -> Render -> Critique -> Refine -> Verify -> Deliver`
-- Compress stages for small edits; skip steps that add no value.
+- **Workflow**: `Understand -> Inspect -> Classify -> Route -> Implement -> Verify -> Deliver` (add `Design -> ... -> Render -> Critique -> Refine` for `PREMIUM`/`FLAGSHIP`; compress for localized edits).
+- **Classify before loading or coding**:
+  1. **Type**: creation, redesign, component mod, layout/responsive fix, design system, motion, a11y, perf, debug, or review.
+  2. **Scope**: property -> element -> component -> section -> page -> multi-page -> design system -> app.
+  3. **Complexity**: coupled components, journeys, state, and uncertainty—never line count alone.
+  4. **Risk**: broken flows, auth/payments, data loss, a11y/responsive regression, security, or token drift.
+  5. **Intent**: implement code vs. advice/critique vs. debug vs. reproduce. Never edit files on review-only requests; never redesign on targeted fixes.
 
-## 2. Task Classification (5 Dimensions)
+## 2. Adaptive Modes & Experimental Context Targets
 
-Before loading references or writing code, classify:
-1. **Task type**: creation, redesign, component mod, layout/responsive fix, design system, motion, a11y, perf, debugging, or review.
-2. **Scope**: property, element, component, section, page, multi-page, design system, or full app.
-3. **Complexity**: affected components, journeys, interactions, state/data, and uncertainty—never line count alone (a 5-line auth/payment change can be high-risk).
-4. **Risk**: interaction breakage, a11y/responsive regression, security, data loss, auth/payment flows, or design system drift.
-5. **User intent**: implement code vs. advice/critique vs. debug vs. reproduce. Never edit code when only review/advice is asked; never redesign when a targeted fix is asked.
+Auto-select the lightest sufficient mode (honor user overrides; escalate on discovered risk, de-escalate when simpler):
 
-## 3. Adaptive Execution Modes
-
-Auto-select the lightest sufficient mode. Honor explicit user overrides. Escalate if risk/complexity grows; de-escalate if simpler than expected.
-
-| Mode | Scope & Risk | Experimental Context Target* | Refinement Bound |
+| Mode | Scope & Risk | Target Context* | Refinement Bound |
 | :--- | :--- | :--- | :--- |
-| **QUICK** | Localized, low-risk edit (label, spacing, CSS fix, single prop) | ~1.5k–3k tokens | Targeted fix + verify only |
-| **STANDARD** | Ordinary component, page, form, a11y, or perf task | ~3k–6k tokens | Up to 2 passes |
-| **PREMIUM** | High-craft landing page, dashboard, e-commerce, or design system | ~6k–10k tokens | Up to 3 passes |
-| **FLAGSHIP** | Complex multi-view app, bespoke portfolio, or motion-rich flagship | ~10k–15k tokens | Up to 5 passes |
+| **QUICK** | Localized, low-risk edit (label, spacing, CSS fix) | ~0.8k–2k tokens | Targeted fix + verify only |
+| **STANDARD** | Component, page, form, a11y, or perf task | ~2k–4.5k tokens | Up to 2 passes |
+| **PREMIUM** | Landing page, dashboard, e-commerce, or design system | ~4k–8k tokens | Up to 3 passes |
+| **FLAGSHIP** | Complex multi-view app, portfolio, or motion-rich flagship | ~7k–12k tokens | Up to 5 passes |
 
-*\*Experimental targets cover loaded FORMFORGE kernel + selected references, not conversation history or project source.*
+*\*Kernel + loaded FORMFORGE references only (experimental hypothesis; expand whenever quality requires it).*
 
-## 4. Instruction Priority Ladder
+## 3. Priority Ladder & Economy
 
-Resolve conflicts in strict order (contextual judgment beats rigid universal bans):
-1. Safety, security, and mandatory platform constraints.
-2. Explicit user requirements and brief constraints.
-3. Functional correctness and data integrity.
-4. Accessibility (keyboard, focus, contrast, semantics, reduced motion) and usability.
-5. Existing project architecture, tech stack, and established design system.
-6. Product-specific creative direction and visual identity.
-7. Runtime performance and maintainability.
-8. Code, context, and tool-call economy.
-9. Creative experimentation.
-10. Decorative preferences.
+**Conflicts** (contextual judgment beats rigid universal bans): 1. Safety/security/platform -> 2. User requirements -> 3. Functional correctness -> 4. Accessibility & usability -> 5. Existing architecture & design system -> 6. Product creative direction -> 7. Performance & maintainability -> 8. Code/context/tool economy -> 9. Creative experimentation -> 10. Decorative preferences.
 
-## 5. Global Implementation & Tool Economy
+- **Code ladder** (stop at first viable): 1. Existing project code -> 2. Native HTML/CSS -> 3. Browser APIs -> 4. Installed dependency -> 5. Small custom code -> 6. Justified complexity.
+- **Anti-bloat & quality floor**: No unrequested features, speculative abstractions, redundant state, derived-value effects, dead code, or wholesale rewrites for local edits. Never cut correctness, accessibility, security, validation, or error recovery.
+- **Tool & response economy**: Search before reading; read targeted ranges; never reload unchanged files; batch independent calls. Report what changed, key decisions, verified checks, and limitations—never echo full edited code blocks.
 
-- **Decision ladder** (stop at first viable option): 1. Existing project code -> 2. Native HTML/CSS -> 3. Browser APIs -> 4. Installed dependency -> 5. Small custom code -> 6. Justified complexity.
-- **Anti-bloat defaults**: No unrequested features, speculative abstractions, redundant state, derived-value effects, unused code, or wholesale rewrites for localized edits.
-- **Tool & context economy**: Search symbols/paths before reading; read targeted line ranges; never reload unchanged files; batch independent calls; keep reports concise.
-- **Quality floor**: Economy never overrides correctness, accessibility, security, responsiveness, or essential error handling.
+## 4. Progressive Level 2 Routing Index
 
-## 6. Progressive Context Routing (Level 2 Core Modules)
-
-Load only the Level 2 modules needed for the classified task. Never load all modules by default; never route to unimplemented files.
+Route by **user intent**, not keywords alone (e.g., "remove animation" does not load motion physics). Stop loading once decisions are reliable; never load all modules by default.
 
 | Module | Load When |
 | :--- | :--- |
-| [references/routing-and-modes.md](references/routing-and-modes.md) | Multi-category classification, mode escalation, or routing ambiguity |
-| [references/implementation-economy.md](references/implementation-economy.md) | Writing/editing UI code, choosing CSS vs. JS, or trimming complexity |
-| [references/project-and-memory.md](references/project-and-memory.md) | Inspecting an existing repo, checking deps, or reading/updating design memory |
-| [references/verification-and-refinement.md](references/verification-and-refinement.md) | Classifying defects, running bounded self-correction, quality gates, or missing-tool fallback |
-| [references/visual-critique.md](references/visual-critique.md) | Rendered inspection, screenshots, multi-scale visual critique, or anti-generic/design-drift audit |
-| [references/functional-and-technical-audits.md](references/functional-and-technical-audits.md) | Functional/journey testing, responsive/a11y/motion/perf audits, or engineering-waste checks |
+| [routing-and-modes.md](references/routing-and-modes.md) | Classification/mode edge cases, delegation, or context stopping |
+| [implementation-economy.md](references/implementation-economy.md) | Editing UI code, CSS-vs-JS choices, repo inspection, or tool economy |
+| [project-and-memory.md](references/project-and-memory.md) | Inspecting an existing stack/deps or reading/updating design memory |
+| [verification-and-refinement.md](references/verification-and-refinement.md) | Defect severity, quality gates, stopping rules, or missing-tool fallback |
+| [visual-critique.md](references/visual-critique.md) | Rendered inspection, screenshots, visual critique, or anti-generic audit |
+| [functional-and-technical-audits.md](references/functional-and-technical-audits.md) | Functional/journey, responsive, a11y, motion, perf, or waste audits |
+| [creative-direction.md](references/creative-direction.md) | New UI/redesign brief, visual signature, or adaptive aesthetics |
+| [typography-and-content.md](references/typography-and-content.md) | Font pairing, type hierarchy, fluid `clamp()`, or UI microcopy |
+| [color-and-surfaces.md](references/color-and-surfaces.md) | Color palettes, semantic tokens, dark mode, or surface elevation |
+| [layout-and-responsive.md](references/layout-and-responsive.md) | Visual hierarchy, composition, spacing, density, or asset direction |
+| [ux-and-systems.md](references/ux-and-systems.md) | User journeys, navigation, forms, states, or design system patterns |
+| [industry-patterns.md](references/industry-patterns.md) | Calibrating density, trust cues, and hierarchy by product domain |
+| [html-css-responsive.md](references/html-css-responsive.md) | Semantic HTML, Grid/Flexbox/container queries, or responsive widths |
+| [components-and-frameworks.md](references/components-and-frameworks.md) | Component reuse, React/Vue/Svelte state, effects, async data, or forms |
+| [motion-and-interactions.md](references/motion-and-interactions.md) | Transitions, timing/easing, springs, interruptibility, or gestures |
+| [accessibility-engineering.md](references/accessibility-engineering.md) | Keyboard nav, `<dialog>` focus, ARIA names, or WCAG 2.2 AA contrast |
+| [performance-and-reliability.md](references/performance-and-reliability.md) | Core Web Vitals, bundles, images/fonts, data viz, or XSS/security |
 
-### Design Intelligence Modules (Load Only When Matched)
+Capability inventory: [docs/capability-registry.json](docs/capability-registry.json).
 
-| Module | Load When |
-| :--- | :--- |
-| [references/creative-direction.md](references/creative-direction.md) | New UI/redesign brief, visual signature, aesthetic fit, anti-generic audit, or design critique |
-| [references/typography-and-content.md](references/typography-and-content.md) | Font selection/pairing, type hierarchy, fluid `clamp()` scaling, or UI copy |
-| [references/color-and-surfaces.md](references/color-and-surfaces.md) | Color palettes, semantic color tokens, WCAG contrast, dark mode, or elevation/surfaces |
-| [references/layout-and-responsive.md](references/layout-and-responsive.md) | Visual hierarchy, grid/composition, spacing, density, responsive strategy, or assets |
-| [references/ux-and-systems.md](references/ux-and-systems.md) | User journeys, navigation, forms, interaction states, design systems, or motion intent |
-| [references/industry-patterns.md](references/industry-patterns.md) | Calibrating density, trust signals, and hierarchy for a specific product domain |
+## 5. Quality & Honesty Gates
 
-### Engineering & Motion Modules (Load Only When Matched)
-
-| Module | Load When |
-| :--- | :--- |
-| [references/html-css-responsive.md](references/html-css-responsive.md) | Semantic HTML, Grid/Flexbox/container queries, specificity, or responsive widths |
-| [references/components-and-frameworks.md](references/components-and-frameworks.md) | Component reuse, React/Vue/Svelte state, effects, async data, or forms |
-| [references/motion-and-interactions.md](references/motion-and-interactions.md) | Transitions, timing/easing, springs, interruptibility, gestures, or scroll motion |
-| [references/accessibility-engineering.md](references/accessibility-engineering.md) | Keyboard nav, focus/dialogs, ARIA names/live regions, or WCAG 2.2 AA contrast |
-| [references/performance-and-reliability.md](references/performance-and-reliability.md) | Core Web Vitals, bundles, images/fonts, data viz, or XSS/client security |
-
-Full capability statuses (`IMPLEMENTED`, `PLANNED`, `DEFERRED`, `REJECTED`) live in [docs/capability-registry.json](docs/capability-registry.json).
-
-## 7. Graceful Degradation & Honesty Gates
-
-- **Mandatory gates**: Functional correctness, accessibility, and security must pass regardless of mode.
-- **Missing tools**: If browser automation, screenshots, tests, or token telemetry are unavailable, use the best available alternative, state unverified dimensions explicitly, and never fabricate visual or test evidence.
+Mandatory gates (Functional, Accessibility, Security, Evidence) apply in every mode. If browser tools, screenshots, tests, or telemetry are unavailable, use static/build alternatives, state unverified dimensions explicitly, and never fabricate evidence.

@@ -1,32 +1,30 @@
-# FORMFORGE Implementation Roadmap
+# FORMFORGE Roadmap
 
-## Phase 01 — Foundation, Research & Architecture (Complete)
-- [x] Portable `agentskills.io` structure, 10-domain capability model, 100-point rubric, and 12-category benchmark tasks.
+## Completed Phases
+- **Phase 01 — Foundation**: `agentskills.io` structure, 10-domain capability model, 100-point rubric, 12 benchmark tasks.
+- **Phase 02 — Core Intelligence**: Operating kernel, 5-dimension classification, adaptive modes, economy/memory rules, 23 core evals.
+- **Phase 03 — Design Intelligence**: 6 design modules (creative direction, typography/copy, color/surfaces, layout/density, UX/systems, industry patterns), 14 design evals.
+- **Phase 04 — Engineering & Motion**: 5 engineering/motion/a11y/perf modules, 14 engineering evals.
+- **Phase 05 — Verification & QA**: 6-level evidence hierarchy, multi-scale critique, functional/technical audits, 9 quality gates, 11 verification evals.
+- **Phase 06 — Deep Optimization**: Kernel & reference compression, single-authoritative-source deduplication, intent-over-keyword routing, updated context budgets, and [optimization-intelligence.json](../evals/optimization-intelligence.json).
 
-## Phase 02 — Core Intelligence, Adaptive Routing & Engineering Economy (Complete)
-- [x] Level 0/1 operating kernel in [SKILL.md](../SKILL.md), 4 core Level 2 modules, consolidated [capability-registry.json](capability-registry.json), and [core-intelligence.json](../evals/core-intelligence.json).
-
-## Phase 03 — Advanced Design Intelligence & Visual Craftsmanship (Complete)
-- [x] 6 Level 2 design modules, design routing integration, [design-intelligence.json](../evals/design-intelligence.json), and `supplementary_design_rubric`.
-
-## Phase 04 — Advanced Frontend Engineering, Motion & Interaction Intelligence (Complete)
-- [x] 5 Level 2 engineering/motion/a11y/perf modules, engineering routing integration, [engineering-intelligence.json](../evals/engineering-intelligence.json), and `supplementary_engineering_rubric`.
-
-## Phase 05 — Critique, Verification, Quality Assurance & Self-Correction (Complete)
-- [x] Authored [visual-critique.md](../references/visual-critique.md) and [functional-and-technical-audits.md](../references/functional-and-technical-audits.md), upgraded [verification-and-refinement.md](../references/verification-and-refinement.md) with the 6-level evidence hierarchy, 5 severity levels, and 9 mandatory quality gates.
-- [x] Upgraded `FF-VF-01` in [capability-registry.json](capability-registry.json), created [verification-intelligence.json](../evals/verification-intelligence.json), and extended [rubric.json](../evals/rubric.json).
-
-## Phase 06 — Deep Skill & Context Optimization
-- Audit and compress token budgets, eliminate redundant cross-module prose, and refine routing precision.
-
-## Phase 07 — Comparative Benchmarking, Ablation & Regression Evaluation
-- Execute live-agent, rendered-browser, and ablation evaluations across all `evals/` suites.
+## Phase 07 — Comparative Benchmarking & Ablation Testing
+Execute live-agent, rendered-browser, and controlled ablation runs via Git history (no feature-flag bloat) across 9 ablation groups:
+1. Operating kernel compression (`c3165d1` vs. Phase 06)
+2. Reference deduplication
+3. Intent-based routing optimization
+4. Experimental context budget tuning
+5. Persistent design memory simplification
+6. Code economy reinforcement
+7. Verification & screenshot economy
+8. Bounded refinement & stopping conditions
+9. Documentation cleanup
 
 ## Phase 08 — Packaging & Release
-- Finalize distributable skill packaging, release verification, and documentation.
+- Finalize distributable packaging and release verification.
 
 ---
 
-## Open Uncertainties & Assumptions
-- **Live-agent & browser execution**: Structural/referential checks pass, but [core-intelligence.json](../evals/core-intelligence.json), [design-intelligence.json](../evals/design-intelligence.json), [engineering-intelligence.json](../evals/engineering-intelligence.json), [verification-intelligence.json](../evals/verification-intelligence.json), and [tasks.json](../evals/tasks.json) have not yet been executed against live agent or browser runs.
-- **Token counts**: Reported token counts are word-based estimates (`words * 1.33`), not tokenizer-exact measurements.
+## Open Uncertainties & Limitations
+- **Live-agent & browser execution**: Deterministic structural/referential checks pass, but live-agent token telemetry, tool-call counts, rendered UI quality, and ablation comparisons remain unexecuted until Phase 07.
+- **Token counts**: Reported token counts are word-based estimates (`words * 1.33`), not exact tokenizer counts.

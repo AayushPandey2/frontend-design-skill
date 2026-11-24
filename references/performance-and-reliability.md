@@ -1,24 +1,14 @@
 # Performance, Asset Optimization, Data Viz & Security
 
-**Load when**: Optimizing Core Web Vitals, bundles, images/fonts, charts/data visualizations, or frontend reliability and security.
+**Load when**: Optimizing Core Web Vitals, bundles, images/fonts, data visualizations, or frontend security.
 
-## 1. Core Web Vitals & Performance Protocol
+## 1. Core Web Vitals & Asset Discipline
 
-- **Targets** (field 75th percentile; distinguish lab checks from real-user field telemetry): `LCP <= 2.5s`, `INP <= 200ms`, `CLS <= 0.1`.
-- **Protocol**: 1. Identify suspected bottleneck -> 2. Measure where supported -> 3. Inspect implementation -> 4. Apply smallest root-cause fix -> 5. Re-measure -> 6. Check regressions. Avoid premature optimization.
+- **CWV targets** (field p75; distinguish lab from field): `LCP <= 2.5s`, `INP <= 200ms`, `CLS <= 0.1`. Protocol: `identify bottleneck -> measure -> inspect -> minimal fix -> re-measure -> regression check`. Avoid premature optimization.
+- **Bundles**: Check existing packages and native APIs first; remove duplicate icon/utility/animation libs; code-split heavy offscreen modules. Never claim bundle savings without measurement.
+- **Images & fonts**: Never lazy-load primary LCP hero images (`fetchpriority="high"` when helpful); reserve dimensions/`aspect-ratio`; use modern formats and `srcset`; load needed font weights only with `font-display: swap`; never reference nonexistent assets.
 
-## 2. Bundle, Asset & Font Optimization
+## 2. Data Visualization & Security
 
-- **Dependencies**: Check existing packages and native browser APIs first. Eliminate duplicate icon/utility/state libraries and unnecessary animation packages; code-split heavy offscreen modules. Never claim bundle savings without measurement.
-- **Images & media**: Never lazy-load the primary above-the-fold LCP hero image (`fetchpriority="high"` where helpful); set explicit width/height or `aspect-ratio` to prevent CLS; use modern compressed formats and responsive `srcset`; never reference nonexistent asset paths.
-- **Fonts**: Load only required families/weights/subsets; use clean fallback stacks and `font-display: swap`; avoid unnecessary preloads that starve critical assets.
-
-## 3. Data Visualization Engineering
-
-- Reuse existing charting tools or native HTML/SVG for simple progress/sparklines before adding chart libraries.
-- Include accurate axis labels, units, legends, tooltips, keyboard/text value access, and explicit empty/loading/error states. Never invent datasets; clearly label sample data.
-
-## 4. Frontend Reliability & Security
-
-- **Safe rendering**: Prevent XSS—avoid `dangerouslySetInnerHTML`/`v-html`/`{@html}` with untrusted input, validate external URLs (`https:`/`http:` only), and use `rel="noopener noreferrer"` where needed.
-- **Trust boundaries**: Never expose secrets in client bundles, never treat hidden UI elements as authorization, and preserve server-side validation for security-sensitive operations. Guard against duplicate submissions, accidental destructive actions, and async race conditions.
+- **Data viz**: Reuse existing charting tools or native HTML/SVG for simple indicators; provide accurate labels, units, legends, tooltips, keyboard/text access, and empty/loading/error states. Label sample data; never invent datasets.
+- **Security**: Prevent XSS (no unsanitized `dangerouslySetInnerHTML`/`v-html`/`{@html}`), validate external URLs (`https:`/`http:` only), use `rel="noopener noreferrer"`, keep secrets off client bundles, never treat hidden UI as authorization, and guard duplicate submits/destructive actions/race conditions.

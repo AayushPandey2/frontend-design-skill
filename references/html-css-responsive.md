@@ -1,27 +1,16 @@
 # Semantic HTML, Modern CSS & Responsive Engineering
 
-**Load when**: Writing or refactoring markup, CSS architecture, layouts, container/media queries, or responsive behavior.
+**Load when**: Writing or refactoring markup, CSS architecture, layouts, container/media queries, or responsive widths.
 
-## 1. Engineering Contract & Design Fidelity
+## 1. Semantic HTML & Design Fidelity
 
-- **Process**: `Inspect -> Reuse -> Select -> Implement -> Verify -> Simplify` (compress to `Inspect -> Modify -> Verify` for localized edits).
-- **Design fidelity**: Preserve Phase 03 typography, semantic colors, hierarchy, spacing, and visual signature—never replace distinctive design decisions with generic component defaults.
-- **Production readiness**: Check navigation, primary actions, forms, keyboard operation, responsive widths, loading/error/empty states, console errors, and build compatibility.
-
-## 2. Semantic HTML Intelligence
-
+- Preserve Phase 03 typography, semantic colors, hierarchy, spacing, and visual signature.
 - Use native landmarks (`<main>`, `<nav>`, `<header>`, `<footer>`, `<section>`, `<article>`), ordered headings, lists, `<table>` for tabular data, `<dialog>`, `<details>`, and `<progress>`.
-- **Interaction rules**: `<button>` for actions, `<a href>` for navigation, explicit `<label>` associations for controls. Never use clickable `<div>`/`<span>` as controls, never add redundant ARIA where native semantics suffice, and avoid unnecessary wrapper depth.
+- Use `<button>` for actions, `<a href>` for navigation, and explicit `<label>` associations. Never use clickable `<div>`/`<span>` as controls, add redundant ARIA where native semantics suffice, or add unnecessary wrapper depth.
 
-## 3. Advanced CSS Intelligence
+## 2. Advanced CSS & Responsive Engineering
 
-- **Native layout first**: Use CSS Grid, Flexbox, logical properties, `position: sticky`, container queries, media queries, `clamp()`, and CSS transitions instead of JS resize/alignment/visibility scripts.
-- **Intrinsic & fluid sizing**: Combine `min-width`/`max-width`, `min-content`/`max-content`/`fit-content`, `min()`, `max()`, and `clamp()`. Prevent flex/grid child overflow with `min-width: 0` where needed.
-- **Specificity & tokens**: Keep selectors flat and predictable; avoid `!important` wars and fragile DOM-coupled chains. Reuse semantic custom properties; do not invent variables for single-use values.
-- **Compatibility**: Use modern CSS supported by target browsers; add fallbacks only where project targets require them.
-
-## 4. Responsive Engineering & Verification
-
-- Avoid fixed widths or fixed heights on dynamic text; preserve critical actions on narrow screens; use deliberate horizontal scroll wrappers only for wide tables/data grids.
-- Guard against text enlargement (`200%`), long localized labels, mobile dynamic viewports (`dvh`), and device safe areas (`env(safe-area-inset-*)`) while keeping logical reading and focus order.
-- **Verification**: When browser tools exist, inspect representative widths (`320px`, `375px`/`390px`, `768px`, `1024px`, `1440px`, plus component stress widths) rather than assuming utility classes guarantee responsiveness.
+- **Native layout first**: Use CSS Grid, Flexbox, logical properties, `position: sticky`, container/media queries, `clamp()`, and CSS transitions over JS resize/alignment/visibility scripts.
+- **Sizing & specificity**: Combine `min-width`/`max-width`, `min-content`/`max-content`/`fit-content`, `min()`, `max()`, and `clamp()`; set `min-width: 0` on flex/grid children to prevent overflow. Keep selectors flat (no `!important` wars) and reuse semantic tokens.
+- **Responsive rules**: Avoid fixed widths/heights on dynamic text; preserve critical actions on narrow screens; use scroll wrappers only for wide tables. Support `200%` text scaling, long localized strings, `dvh`, and `env(safe-area-inset-*)` while keeping logical reading/focus order.
+- **Verification**: Inspect representative widths (`320px`, `375px`/`390px`, `768px`, `1024px`, `1440px`, plus stress widths) when browser tools exist.

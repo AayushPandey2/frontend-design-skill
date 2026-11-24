@@ -1,36 +1,19 @@
-# Visual Hierarchy, Layout, Spacing, Responsive & Asset Direction
+# Visual Hierarchy, Composition, Density & Asset Direction
 
-**Load when**: Structuring page composition, grids, spacing, density, responsive layouts, or visual asset direction.
+**Load when**: Structuring page composition, spacing, visual density, responsive design strategy, or visual assets.
 
-## 1. Visual Hierarchy
+## 1. Visual Hierarchy & Composition
 
-Order attention deliberately before composing:
-1. Primary user objective -> 2. Primary action -> 3. Primary content -> 4. Secondary actions -> 5. Supporting context -> 6. Metadata.
-- Control prominence via position, scale, contrast, weight, spacing, grouping, and color—never give every element equal weight or create competing primary actions.
-- In operational tools, optimize for rapid scanning and repeat use rather than marketing-style hero attention.
+Order attention before composing: `objective -> primary action -> primary content -> secondary actions -> supporting -> metadata`. Never give all elements equal weight or create competing primary actions; optimize operational tools for rapid scanning.
+- **Patterns**: editorial/asymmetric grids, split views, modular bands, full-bleed moments, single-column flows, or dense workspaces. Symmetry conveys stability; intentional asymmetry adds energy (no arbitrary offsets).
+- **Earn containers**: Wrap items in cards only for real grouping, interaction boundaries, or surface contrast. Vary rhythm across marketing sections; keep transactional UI predictable.
 
-## 2. Layout & Composition Strategy
+## 2. Spacing, Density & Responsive Strategy
 
-Choose structure from content relationships, density, and reading flow:
-- **Patterns**: editorial/asymmetric grids, split views, modular bands, full-bleed moments, focused single-column flows, or dense multi-column workspaces.
-- **Symmetry vs. asymmetry**: Symmetry conveys stability and clarity; intentional asymmetry adds editorial energy—never use arbitrary offsets.
-- **Earn containers**: Do not wrap every item in a card. Use containers only when they define clear grouping, interaction boundaries, or surface contrast.
-- **Rhythm**: Vary scale, width, alignment, and density across marketing sections; keep transactional/enterprise layouts predictable.
+- Use existing spacing tokens; distinguish intra-group, inter-group, section, and region spacing via proximity.
+- **Calibrate density** (`spacious`, `balanced`, `compact`, `dense`) to user expertise, frequency, and viewport while preserving legibility and target sizes.
+- **Responsive strategy**: Recompose content for narrow screens rather than shrinking desktop views; never hide critical actions to fit. (For CSS Grid/Flexbox/breakpoint mechanics, load [html-css-responsive.md](html-css-responsive.md).)
 
-## 3. Spacing, Proportion & Visual Density
+## 3. Asset Direction
 
-- Use existing spacing tokens; when new, choose a coherent scale distinguishing intra-group, inter-group, section, and region spacing via proximity.
-- **Calibrate density** (spacious, balanced, compact, dense) to user expertise, task frequency, and viewport: high-craft dashboards can be dense and crisp; editorial/luxury sites benefit from generous breathing room. Preserve legibility and target sizes at every density.
-
-## 4. Responsive Design Strategy
-
-Responsive design is content-driven recomposition, not shrinking desktop views:
-- Adapt reading order, navigation, column counts, data tables, and spacing via CSS Grid/Flexbox and content-driven breakpoints (no JS resize listeners).
-- Preserve critical actions and information on narrow screens—never hide essential controls just to fit.
-- Test against narrow viewports (320px–375px), enlarged text, long strings, and realistic data.
-
-## 5. Asset Direction
-
-- Decide first whether imagery, diagrams, or icons actually add clarity or atmosphere.
-- Define subject, art direction, aspect ratio, cropping, placement, alt text, and consistent icon stroke/family.
-- **Integrity**: Never use icons as decorative clutter, invent asset availability, reference nonexistent image files, or claim an image was generated when no generation tool ran.
+Decide first whether imagery, diagrams, or icons add clarity. Define subject, art direction, aspect ratio, cropping, alt text, and consistent icon family/stroke. Never use icons as filler, reference nonexistent files, or claim an image was generated when no generation tool ran.

@@ -1,47 +1,31 @@
-# Creative Direction, Anti-Generic Judgment & Design Critique
+# Creative Direction & Contextual Anti-Generic Judgment
 
-**Load when**: Creating a new interface, redesigning an existing UI, establishing a product brief, or reviewing visual originality. Skip for localized `QUICK` edits.
+**Load when**: Creating a new interface, redesigning UI, or auditing originality. Skip for localized `QUICK` edits.
 
-## 1. Design Intelligence Workflow
+## 1. Product Understanding & Brief
 
-For substantial new interfaces: `Understand -> Define -> Direct -> Compose -> Systemize -> Implement -> Inspect -> Refine`.
-For minor modifications, preserve existing direction via the shorter kernel workflow.
+For substantial interfaces (`Understand -> Define -> Direct -> Compose -> Systemize -> Implement -> Inspect -> Refine`), derive a concise brief first:
+- **Facts**: product category, audience, primary user goal, primary/secondary actions, brand tone, density, device/a11y/industry constraints, existing design language.
+- **Integrity**: Separate explicit requirements from reversible assumptions; ask only when ambiguity blocks a responsible decision. Never fabricate research, testimonials, or metrics.
 
-## 2. Product Understanding Engine
+## 2. Creative Direction, Exploration & Visual Signature
 
-Derive a concise brief before visual styling:
-- **Core facts**: product category, target audience, primary user goal, primary conversion/action, secondary actions.
-- **Experience parameters**: brand personality, emotional tone, information density, device expectations, technical/a11y/industry constraints, existing design language.
-- **Integrity**: Separate explicit requirements from inferred assumptions. Make reversible assumptions when details are missing; ask only when ambiguity blocks a responsible decision. Never fabricate user research, testimonials, or business metrics.
+Define visual character, emotional tone, type/color/composition/surface/image direction, density, and motion intensity.
+- **Exploration (`FLAGSHIP` or open `PREMIUM`)**: Compare 2–3 structurally distinct directions (composition, typography, density, interaction character—never accent-color swaps). Pick the strongest fit for relevance, usability, originality, feasibility, a11y, responsiveness, and performance. Skip when branding or a reference pins the direction.
+- **Visual signature**: Anchor in one memorable idea (editorial grid, tactile contrast, interactive hero artifact, or typographic hierarchy) without unmotivated asymmetry or fragile navigation.
 
-## 3. Creative Direction & Visual Signature
+## 3. Adaptive Aesthetics & Contextual Anti-Generic Audit
 
-Define visual character, emotional tone, typography personality, color direction, composition strategy, surface treatment, image direction, density, interaction character, and motion intensity.
+Treat aesthetic languages as flexible toolkits, never templates:
+- **Minimalist / Swiss / Editorial**: Typographic clarity, structural alignment; avoid sterile emptiness in operational tools.
+- **Luxury / Material**: Restraint, tactile contrast, pacing; never equate black-and-gold clichés with luxury.
+- **Contemporary SaaS / High-Density Tools / Enterprise**: Scannable hierarchy, predictable patterns, keyboard efficiency; skip marketing fluff.
+- **Brutalist / Experimental / Organic / Retro / Futuristic**: Use only when brand fits; WCAG contrast and keyboard clarity remain mandatory.
 
-- **Exploration (`FLAGSHIP` or open `PREMIUM` briefs)**: Compare 2–3 directions that differ structurally (composition, typography, density, interaction character)—never mere accent-color swaps. Score candidates on product relevance, usability, originality, brand fit, feasibility, a11y, responsiveness, and performance. Skip multi-direction exploration when branding or a reference already pins the direction.
-- **Visual signature**: Anchor the interface in one strong, memorable idea (e.g., an editorial grid, tactile material contrast, interactive hero artifact, or distinctive typographic hierarchy). One clear signature beats competing decorative tricks.
-- **Originality without chaos**: Avoid unmotivated asymmetry, unreadable type, or fragile navigation.
+**Contextual anti-generic check** (never enforce rigid blanket bans on gradients, cards, shadows, or centered heroes):
+1. Could this layout belong to any unrelated product?
+2. Is composition shaped by real content rather than cloned card grids?
+3. Does every badge, icon, blur, gradient, or border serve hierarchy or meaning?
+4. Could decorative chrome be removed without losing clarity?
 
-## 4. Adaptive Aesthetic Intelligence
-
-Treat aesthetic languages as flexible toolkits, not templates—never default to the same look across unrelated products:
-- **Minimalist / Swiss / Editorial**: High typographic clarity, disciplined whitespace, structural alignment; watch for sterile emptiness in operational tools.
-- **Luxury / Material**: Restraint, tactile contrast, refined imagery and pacing; never equate black-and-gold clichés with luxury.
-- **Contemporary SaaS / High-Density Tools / Enterprise**: Scannable hierarchy, predictable patterns, crisp borders/surfaces, keyboard efficiency; avoid marketing fluff.
-- **Brutalist / Neo-brutalist / Experimental / Organic / Retro / Futuristic**: Use only when audience and brand fit; enforce WCAG contrast and keyboard clarity as non-negotiable floors.
-
-Tune qualitatively: expressiveness, layout experimentation, density, type expressiveness, color intensity, decorative restraint, motion intensity.
-
-## 5. Contextual Anti-Generic Intelligence
-
-Never apply rigid blanket bans (gradients, cards, shadows, badges, or centered heroes can all be valid when earned). Instead, audit every prominent choice against these review questions:
-1. Could this layout belong to almost any unrelated product?
-2. Does it communicate a recognizable identity grounded in the brief?
-3. Is composition shaped by actual content rather than cloned card grids?
-4. Does every badge, icon, blur, gradient, or border serve hierarchy or meaning?
-5. Are typography, spacing, and primary actions unmistakable?
-6. Could decorative elements be removed without losing clarity?
-
-## 6. Preliminary Design Critique
-
-For rendered inspection, multi-scale critique format, and defect severity classification, load [visual-critique.md](visual-critique.md) and [verification-and-refinement.md](verification-and-refinement.md).
+For rendered inspection and multi-scale critique, load [visual-critique.md](visual-critique.md).

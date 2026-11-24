@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "phase": "06-optimization",
+  "areas": [
+    "intent_over_keyword_routing",
+    "context_minimization",
+    "code_economy",
+    "anti_over_optimization",
+    "delegation_economy",
+    "verification_economy"
+  ],
+  "tests": [
+    {
+      "id": "OI-RTE-01",
+      "area": "intent_over_keyword_routing",
+      "prompt": "Remove the hover animation from this secondary button.",
+      "context": { "repo": "react-css", "mode": "QUICK" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/implementation-economy.md"],
+      "excluded_references": ["references/motion-and-interactions.md", "references/creative-direction.md"],
+      "required_capabilities": ["FF-OP-01", "FF-OP-02"],
+      "acceptance_criteria": ["Routes by intent (removal) rather than keyword 'animation'.", "Skips motion physics/choreography."]
+    },
+    {
+      "id": "OI-CTX-01",
+      "area": "context_minimization",
+      "prompt": "Adjust the article body line-height from 1.4 to 1.65 and cap measure at 68ch.",
+      "context": { "repo": "astro-blog", "mode": "QUICK" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/typography-and-content.md", "references/implementation-economy.md"],
+      "excluded_references": ["references/creative-direction.md", "references/motion-and-interactions.md", "references/industry-patterns.md"],
+      "required_capabilities": ["FF-VD-01", "FF-OP-02"],
+      "acceptance_criteria": ["Loads only typography + economy guidance.", "Completes within QUICK context budget."]
+    },
+    {
+      "id": "OI-ECO-01",
+      "area": "code_economy",
+      "prompt": "Display total price and item count in CartSummary from the existing items array.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/implementation-economy.md", "references/components-and-frameworks.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-OP-01", "FF-EN-02"],
+      "acceptance_criteria": ["Computes derived totals during render.", "Does not introduce useState + useEffect or global store."]
+    },
+    {
+      "id": "OI-AOO-01",
+      "area": "anti_over_optimization",
+      "prompt": "Build an audio synth landing page with a dark radial gradient hero as specified in our brand brief.",
+      "context": { "repo": "empty", "explicit_user_style": true },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/creative-direction.md", "references/color-and-surfaces.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-CR-02", "FF-VD-02"],
+      "acceptance_criteria": ["Honors brief-earned gradient instead of applying a rigid ban."]
+    },
+    {
+      "id": "OI-AOO-02",
+      "area": "anti_over_optimization",
+      "prompt": "Implement a reorderable Kanban column with drag-and-drop and keyboard move controls.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/motion-and-interactions.md", "references/accessibility-engineering.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-MO-01", "FF-CP-02"],
+      "acceptance_criteria": ["Uses JS/pointer/keyboard coordination where CSS alone is insufficient."]
+    },
+    {
+      "id": "OI-AOO-03",
+      "area": "anti_over_optimization",
+      "prompt": "Fix a keyboard trap and missing runtime schema validation on our 5-line auth login modal.",
+      "context": { "repo": "nextjs-ts" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/accessibility-engineering.md", "references/components-and-frameworks.md", "references/verification-and-refinement.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-CP-02", "FF-VF-03"],
+      "acceptance_criteria": ["Expands context/verification above QUICK due to auth + a11y risk.", "Preserves runtime validation."]
+    },
+    {
+      "id": "OI-AOO-04",
+      "area": "anti_over_optimization",
+      "prompt": "Use our already-installed accessible Dialog primitive for the delete confirmation modal.",
+      "context": { "repo": "react-ts", "installed_primitive": "Dialog" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/components-and-frameworks.md", "references/accessibility-engineering.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-CP-01", "FF-CP-02"],
+      "acceptance_criteria": ["Reuses reliable installed primitive rather than writing a fragile custom modal."]
+    },
+    {
+      "id": "OI-DEL-01",
+      "area": "delegation_economy",
+      "prompt": "Change the footer copyright year from 2025 to 2026.",
+      "context": { "repo": "static-html" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/routing-and-modes.md"],
+      "excluded_references": ["references/creative-direction.md", "references/visual-critique.md"],
+      "required_capabilities": ["FF-OP-02", "FF-OP-03"],
+      "acceptance_criteria": ["Completes directly without spawning subagents or planning docs."]
+    },
+    {
+      "id": "OI-VER-01",
+      "area": "verification_economy",
+      "prompt": "Verify a visually redesigned hero section with custom typography and mobile layout.",
+      "context": { "repo": "nextjs-ts", "browser_tools": true },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/visual-critique.md", "references/verification-and-refinement.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VF-01", "FF-VF-04"],
+      "acceptance_criteria": ["Captures targeted desktop/mobile screenshots for visual proof without redundant unchanged captures."]
+    },
+    {
+      "id": "OI-VER-02",
+      "area": "verification_economy",
+      "prompt": "Verify a pure TypeScript date-formatting helper refactor with no UI changes.",
+      "context": { "repo": "react-ts", "browser_tools": true },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/verification-and-refinement.md"],
+      "excluded_references": ["references/visual-critique.md"],
+      "required_capabilities": ["FF-VF-03", "FF-OP-03"],
+      "acceptance_criteria": ["Runs unit/typecheck only; skips browser screenshots for nonvisual change."]
+    }
+  ]
+}

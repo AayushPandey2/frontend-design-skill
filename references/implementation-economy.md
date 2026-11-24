@@ -1,35 +1,21 @@
-# Implementation & Tool Economy
+# Implementation, Repo Inspection & Tool Economy
 
-## 1. Implementation Decision Ladder
+## 1. Repository Inspection & File-Reading Intelligence
 
-Before writing new code, evaluate in order and stop at the first viable option:
-1. **Existing project code**: Reuse existing components, hooks, helpers, and tokens.
-2. **Native HTML & CSS**: Prefer semantic elements and modern CSS over custom JS.
-3. **Browser APIs**: Use platform APIs (`Intl`, `Dialog`, `IntersectionObserver`, `Web Animations`) before packages.
-4. **Installed dependencies**: Reuse what is already in `package.json`.
-5. **Small custom implementation**: Write clear, shallow, readable code.
-6. **Justified complexity**: Add dependencies or abstractions only when concrete benefits outweigh maintenance cost.
+Inspect in order, stopping as soon as the scope is clear:
+1. Structure -> 2. Stack (`package.json`/configs) -> 3. Affected files -> 4. Existing symbols/primitives -> 5. Targeted line ranges -> 6. Expand only if shared callers/constraints require it.
+- **Avoid**: Reading entire repos, `node_modules`, build outputs, or unchanged files; broad audits for localized fixes.
+- **Full-file reads**: Justified only for complex state, shared dependencies, security boundaries, or intricate control flow.
 
-## 2. Frontend-Specific Simplifications
+## 2. Frontend Simplifications & Editing Economy
 
-Default to the simpler platform mechanism unless accessibility, interactivity, or creative requirements demand otherwise:
-- CSS `:hover`/`:focus-within`, Grid/Flexbox, media/container queries, and `position: sticky` over JS listeners.
-- CSS transitions over animation libraries for simple state changes.
-- Derived values computed during render over redundant state or synchronization effects.
-- Event handlers over effect-driven side effects.
-- Local component state over global stores unless cross-tree sharing is required.
-- Semantic HTML (`<button>`, `<dialog>`, `<details>`, `<nav>`) over `<div>` wrappers.
-- Existing design tokens over repeated hardcoded values.
+Prefer native platform capabilities unless accessibility, interactivity, or creative requirements justify more:
+- CSS `:hover`/`:focus-within`, Grid/Flexbox, container/media queries, `position: sticky`, and CSS transitions over JS listeners or animation libraries.
+- Derived values during render over redundant state or synchronization effects; event handlers over effect-driven side effects.
+- Local state over global stores; semantic HTML (`<button>`, `<dialog>`, `<details>`) over `<div>` wrappers; existing primitives and tokens over duplicates.
+- **Existing repos**: Modify minimum necessary files, preserve component APIs, skip unrelated formatting/renaming, delete superseded dead code, and update directly affected callers/tests. Never sacrifice readability or root-cause correctness to shrink line count.
 
-## 3. Anti-Bloat & Editing Economy
+## 3. Tool-Call & Response Economy
 
-- **Avoid**: unrequested features, speculative abstractions, single-use wrappers, unused imports/variables, dead code, redundant fallback layers, and wholesale file rewrites for localized edits.
-- **Existing repos**: Modify the minimum necessary files, preserve established component APIs, avoid unrelated formatting/renaming, remove superseded dead code, and update directly affected callers/tests.
-- Never sacrifice readability or root-cause correctness to artificially shrink a diff.
-
-## 4. Tool & Execution Economy
-
-- **Search first**: Locate symbols/files with targeted search before reading; read only needed line ranges.
-- **Batch**: Group independent file reads or checks.
-- **No churn**: Never re-read unchanged files, repeat identical commands without new information, or recap large edited code blocks in the final response.
-- **Risk-scaled checks**: Run targeted tests/builds for low-risk edits; run broader regression checks when shared primitives or critical flows change.
+- Batch independent reads/searches; run targeted builds/tests for low-risk edits and regression checks when shared primitives or critical flows change.
+- Never repeat identical passing commands or echo large edited code blocks in final replies.

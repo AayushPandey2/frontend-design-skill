@@ -1,33 +1,13 @@
 # Project Awareness & Persistent Design Memory
 
-## 1. Proportional Project Inspection
+## 1. Proportional Stack & Dependency Discipline
 
-Inspect only what the task scope requires (skip repo-wide audits for a 1-file CSS fix):
-- **Stack & tooling**: `package.json`, framework config, TypeScript config, package manager, build/test scripts.
-- **Styling & tokens**: CSS custom properties, Tailwind config, theme files, existing spacing/color/type conventions.
-- **UI architecture**: component directories, shared primitives, icon/animation libraries, routing, state, and project-level agent instructions.
+Inspect only what the task requires (`package.json`, framework/TS config, styling/tokens, component primitives, routing, state, test tools, project instructions).
+- **Preserve the stack**: Write idiomatic code for the project's framework, styling engine, and router; never migrate stacks unrequested. For greenfield work, pick the lightest suitable stack and note key assumptions.
+- **Before adding any dependency**: Confirm (1) not already installed, (2) no installed package covers it, (3) native HTML/CSS/Browser APIs cannot solve it, and (4) bundle, a11y, and maintenance cost are justified.
 
-## 2. Framework & Dependency Discipline
+## 2. Lightweight Persistent Design Memory
 
-- **Preserve the stack**: Write idiomatic code for the project's existing framework, styling system, and router. Never migrate frameworks, styling engines, or state libraries unless explicitly asked.
-- **Greenfield selection**: If no project exists, choose the lightest stack that fits the requirements and note key assumptions concisely.
-- **Before adding any dependency**: Verify (1) it isn't already installed, (2) no installed package covers it, (3) native HTML/CSS/Browser APIs cannot solve it, and (4) bundle size, accessibility, and maintenance cost are justified.
-
-## 3. Lightweight Persistent Design Memory
-
-Preserve high-value design decisions across pages and sessions without duplicating code.
-
-### When to Use
-- **Read first** when a project already has design tokens, theme files, or a concise design-decisions note.
-- **Create or update** only when establishing a design system, multi-page product identity, or stable cross-session conventions—never for `QUICK` or trivial edits.
-
-### Memory Economy
-- **Code is authoritative**: Existing CSS variables, theme configs, and components remain the primary source of truth.
-- **Store only non-obvious decisions**: product identity, audience, creative direction, typography pairing rationale, semantic role rules, layout/density rules, motion principles, and a11y conventions.
-- **Never store**: secrets, API keys, conversation transcripts, duplicate code snippets, temporary debug notes, or stale decisions.
-
-### Conflict Resolution
-When stored design memory conflicts with current project code:
-1. Inspect the discrepancy.
-2. Treat explicit user requirements as highest priority, followed by current authoritative project code.
-3. Update or prune stale memory so there is never a second contradictory source of truth.
+- **Scope**: Read existing tokens/themes/design notes first. Create or update a concise design-decisions note only for multi-page/multi-session continuity—never for `QUICK` or trivial edits.
+- **Authority & economy**: Code/CSS tokens remain authoritative. Store only non-obvious decisions not easily recovered from code (product identity, audience, direction, type/color rationale, density/motion/a11y conventions). Never store secrets, API keys, transcripts, code snippets, or stale notes.
+- **Conflicts**: When design memory conflicts with code, inspect the discrepancy; explicit user intent wins, followed by authoritative project code, then prune/update stale memory to keep one source of truth.

@@ -1,62 +1,28 @@
-# Routing & Adaptive Execution Modes
+# Routing, Modes, Planning & Delegation Economy
 
-## 1. Task Classification Matrix
+## 1. Mode Guardrails & Escalation
 
-Evaluate all five dimensions before selecting a mode or loading references:
+- **`QUICK`**: Inspect affected files -> preserve conventions -> minimal change -> targeted check. No design brief, design memory, repo-wide audit, new deps, or unrelated refactoring.
+- **`STANDARD`**: Understand -> inspect stack -> load matched refs -> set/preserve direction -> implement -> verify/render -> refine defects (<=2 passes).
+- **`PREMIUM`**: Product brief -> inspect architecture -> 2–3 distinct directions (skip if brand/ref pins it) -> tokens -> states -> implement -> render & critique -> refine (<=3 passes).
+- **`FLAGSHIP`**: Deep analysis -> creative direction -> design system -> complex interactions/motion -> comprehensive responsive/a11y/perf checks -> unanchored critique -> refine (<=5 passes). Never load every capability blindly.
+- **Escalate** on hidden coupling, auth/payment risk, or missing foundations; **de-escalate** when existing primitives/tokens already solve the task.
 
-- **Task type**: new interface, redesign, page/component creation, component modification, visual/layout/responsive fix, design system generation/maintenance, motion, accessibility remediation, performance optimization, debugging, UI/UX critique, or design reproduction.
-- **Scope**: single property -> single element -> single component -> section -> page -> multi-page -> design system -> full app.
-- **Complexity**: count interacting components, user journeys, state/data dependencies, and technical uncertainty—never raw line count.
-- **Risk**: interaction breakage, auth/payment/data-loss impact, a11y/responsive regression, security, or design-system drift. High risk upgrades verification even for small edits.
-- **User intent**: implement code, advise/critique only, debug, reproduce, or scoped edit. Never edit files on review-only requests; never redesign on targeted fixes.
+## 2. Intent-First Routing & Stopping Rules
 
-## 2. Mode Workflows & Guardrails
+Route by **user intent**, not keyword matching (e.g., "remove button animation" uses `QUICK` + `implementation-economy`, not `motion-and-interactions`).
+- **Expand context** only when a required capability is missing, new complexity/constraints appear, or verification uncovers a defect.
+- **Stop expanding** once decisions are reliable and existing conventions resolve remaining questions. Never recursively load references merely because another module is mentioned.
 
-### `QUICK`
-- **Workflow**: Inspect affected files -> preserve existing conventions -> minimal complete change -> targeted verification -> concise report.
-- **Restrictions**: No design brief, no design system generation, no repo-wide audit, no new dependencies, no unrelated refactoring, no repeated verification without cause.
+| Task Example | Mode | Load | Exclude |
+| :--- | :--- | :--- | :--- |
+| Change button radius / remove hover | `QUICK` | `implementation-economy` | `creative-direction`, `motion-and-interactions`, `industry-patterns` |
+| Fix dropdown keyboard nav | `STANDARD` | `accessibility-engineering`, `components-and-frameworks` | `creative-direction`, `project-and-memory` |
+| Improve dashboard table | `STANDARD` | `layout-and-responsive`, `ux-and-systems`, `project-and-memory` | `creative-direction`, `motion-and-interactions` |
+| Luxury landing page / portfolio | `PREMIUM`/`FLAGSHIP` | `creative-direction`, `typography-and-content`, `color-and-surfaces`, `layout-and-responsive`, `industry-patterns` | Dense tool patterns |
+| Drag-and-drop board | `PREMIUM` | `components-and-frameworks`, `motion-and-interactions`, `accessibility-engineering`, `performance-and-reliability` | Unrelated domain profiles |
 
-### `STANDARD`
-- **Workflow**: Understand requirements -> inspect project & conventions -> load matched capabilities -> preserve/set direction -> implement -> verify behavior -> render/inspect if practical -> refine defects -> deliver.
+## 3. Planning & Delegation Economy
 
-### `PREMIUM`
-- **Workflow**: Product & audience brief -> inspect architecture -> explore creative directions (skip if brand/reference already pins direction) -> select visual identity -> tokens -> plan journeys/states -> implement -> render -> visual/technical critique -> refine -> verify gates.
-
-### `FLAGSHIP`
-- **Workflow**: Deep product/audience analysis -> creative direction -> design system -> complex interactions -> purposeful motion -> comprehensive responsive, a11y & perf verification -> independent critique -> bounded refinement.
-- **Guardrail**: Never load every capability automatically; activate only what the experience actually requires.
-
-### Escalation & De-escalation
-- **Escalate** when hidden coupling, higher risk, broader regressions, or missing design foundations surface.
-- **De-escalate** when an existing component/token already solves most of the task.
-
-## 3. Capability Routing Procedure
-
-1. Interpret request and classify 5 dimensions.
-2. Inspect existing project constraints first.
-3. Select the lightest sufficient mode.
-4. Load mandatory core references only; exclude unrelated capabilities.
-5. Expand context only if a concrete gap or verification failure emerges. Never recurse indefinitely or reload already-read references.
-
-## 4. Routing Examples
-
-- **Change button border radius**: `QUICK` -> inspect button + tokens -> preserve design language -> apply edit. Exclude creative direction, motion, and industry modules.
-- **Build a premium financial dashboard**: `PREMIUM` -> load design systems, fintech/data density, hierarchy, typography, responsive, a11y, perf. Exclude decorative motion unless justified.
-- **Build a cinematic creative portfolio**: `PREMIUM`/`FLAGSHIP` -> load creative direction, typography, composition, asset direction, motion, responsive, perf, a11y.
-- **Fix keyboard navigation in a modal**: `STANDARD` -> load accessibility + component focus/Escape/dismissal rules -> preserve visual design -> verify keyboard flow.
-- **Make an existing page load faster**: `STANDARD` -> load perf + framework guidance -> profile/identify bottlenecks -> targeted fix -> measure if supported.
-- **Build a luxury product landing page**: `PREMIUM` -> load `creative-direction`, `typography-and-content`, `color-and-surfaces`, `layout-and-responsive`, `industry-patterns` (skip dense dashboard/tool rules).
-- **Improve an existing dashboard table**: `STANDARD` -> load `layout-and-responsive` (hierarchy/density), `ux-and-systems` (table patterns), `project-and-memory` (existing tokens/a11y) -> skip creative exploration.
-- **Change the primary accent color**: `QUICK` -> load `color-and-surfaces` (semantic color + contrast), `implementation-economy` -> skip full design intelligence.
-- **Improve a confusing checkout flow**: `STANDARD`/`PREMIUM` -> load `ux-and-systems` (journeys, IA, forms, states), `industry-patterns` (e-commerce), `typography-and-content` (microcopy).
-- **Add a hover effect to a button**: `QUICK` -> load `implementation-economy`, `motion-and-interactions` (CSS transition) -> skip springs, gestures, and choreography.
-- **Build a drag-and-drop board**: `PREMIUM` -> load `components-and-frameworks`, `motion-and-interactions` (gestures, springs, interruptibility), `accessibility-engineering` (keyboard alternatives), `performance-and-reliability`.
-- **Fix unnecessary React rendering**: `STANDARD` -> load `components-and-frameworks` (state scope, derived values, measured memoization), `performance-and-reliability` -> skip unrelated design modules.
-- **Fix keyboard behavior in a dropdown**: `STANDARD` -> load `accessibility-engineering`, `components-and-frameworks` -> preserve existing visual design.
-- **Audit a broken modal or complex animation**: `STANDARD` -> load `functional-and-technical-audits` (keyboard/focus/interruptibility/reduced-motion) + `verification-and-refinement` (regression checks) -> skip unrelated visual exploration.
-- **Review an entire application**: `PREMIUM`/`FLAGSHIP` -> load `visual-critique` (cross-page consistency, macro/meso/micro critique), `functional-and-technical-audits` (journeys, a11y, responsive, perf), and `verification-and-refinement` (severity, gates, stopping).
-
-## 5. Context Budgets & Compression
-
-- Experimental targets (kernel + loaded references): `QUICK` ~1.5k–3k, `STANDARD` ~3k–6k, `PREMIUM` ~6k–10k, `FLAGSHIP` ~10k–15k tokens.
-- Expand above target only when essential requirements demand it. Do not build token-counting machinery to enforce budgets.
+- **Planning**: Small tasks -> compact mental diff (no plans/briefs). Standard -> requirements, constraints, approach, verify. Complex -> detailed plan only when it prevents rework.
+- **Delegation**: Delegate only for unanchored independent visual critique, genuinely parallel independent tasks, or specialized audits. Never delegate CSS tweaks, routine file reads, or tasks the main agent handles faster—parallel agents increase total tokens.
