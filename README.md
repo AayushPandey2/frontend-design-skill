@@ -22,7 +22,7 @@ AI-generated frontends frequently suffer from generic card-kit layouts, weak typ
 ## Package Boundaries
 
 - **Production Skill (Installable)**: [SKILL.md](SKILL.md), `references/` (17 modules), and [LICENSE](LICENSE). Self-contained with zero runtime dependencies and no Python/Node scripts required.
-- **Project Documentation**: `docs/` ([architecture.md](docs/architecture.md), [capability-registry.json](docs/capability-registry.json), [roadmap.md](docs/roadmap.md)).
+- **Project Documentation**: `docs/` ([architecture.md](docs/architecture.md), [capability-registry.json](docs/capability-registry.json)).
 - **Evaluation Suite**: `evals/` ([protocol.md](evals/protocol.md), [benchmarks.json](evals/benchmarks.json), [results.json](evals/results.json), [rubric.json](evals/rubric.json), and 6 task/intelligence fixtures).
 
 ## Installation
