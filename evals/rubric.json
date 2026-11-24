@@ -152,5 +152,21 @@
       { "id": "responsive_design", "name": "Responsive Design", "max_points": 6 },
       { "id": "content_asset_quality", "name": "Content & Asset Quality", "max_points": 5 }
     ]
+  },
+  "supplementary_engineering_rubric": {
+    "status": "hypothesis_subordinate_to_mandatory_gates",
+    "normalization_note": "Normalize or omit motion points for static interfaces without animation requirements.",
+    "total_points": 100,
+    "categories": [
+      { "id": "functional_correctness", "name": "Functional Correctness", "max_points": 20 },
+      { "id": "code_simplicity_maintainability", "name": "Code Simplicity & Maintainability", "max_points": 15 },
+      { "id": "accessibility", "name": "Accessibility", "max_points": 15 },
+      { "id": "responsive_implementation", "name": "Responsive Implementation", "max_points": 10 },
+      { "id": "component_architecture_reuse", "name": "Component Architecture & Reuse", "max_points": 10 },
+      { "id": "performance", "name": "Performance", "max_points": 10 },
+      { "id": "motion_interaction_quality", "name": "Motion & Interaction Quality", "max_points": 10 },
+      { "id": "reliability_state_handling", "name": "Reliability & State Handling", "max_points": 5 },
+      { "id": "framework_project_compatibility", "name": "Framework & Project Compatibility", "max_points": 5 }
+    ]
   }
 }

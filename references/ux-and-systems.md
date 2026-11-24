@@ -24,7 +24,6 @@
   - **Dialogs / Drawers / Dropdowns / Tabs**: Clear dismissal (`Escape`, close trigger), focus containment/restoration, unambiguous active state.
   - **Feedback (Tooltips, Toasts, Empty/Loading/Error)**: Non-blocking, concise, actionable recovery.
 
-## 4. Design-Level Motion Foundations
+## 4. Design-Level Motion Intent
 
-- **Purpose**: Animate only to give feedback, clarify state change, preserve spatial continuity, guide focus, or express brand character.
-- **Restraint**: Keep frequent operational interactions fast; never block primary tasks with slow choreography; use CSS transitions first; respect `prefers-reduced-motion`. (Advanced spring/gesture engineering belongs to Phase 04.)
+Animate only for interaction feedback, state clarity, spatial continuity, or brand character; keep frequent tasks fast and respect `prefers-reduced-motion`. For implementation mechanics, timing, springs, gestures, and GPU performance, load [motion-and-interactions.md](motion-and-interactions.md).

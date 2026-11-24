@@ -49,6 +49,10 @@ Evaluate all five dimensions before selecting a mode or loading references:
 - **Improve an existing dashboard table**: `STANDARD` -> load `layout-and-responsive` (hierarchy/density), `ux-and-systems` (table patterns), `project-and-memory` (existing tokens/a11y) -> skip creative exploration.
 - **Change the primary accent color**: `QUICK` -> load `color-and-surfaces` (semantic color + contrast), `implementation-economy` -> skip full design intelligence.
 - **Improve a confusing checkout flow**: `STANDARD`/`PREMIUM` -> load `ux-and-systems` (journeys, IA, forms, states), `industry-patterns` (e-commerce), `typography-and-content` (microcopy).
+- **Add a hover effect to a button**: `QUICK` -> load `implementation-economy`, `motion-and-interactions` (CSS transition) -> skip springs, gestures, and choreography.
+- **Build a drag-and-drop board**: `PREMIUM` -> load `components-and-frameworks`, `motion-and-interactions` (gestures, springs, interruptibility), `accessibility-engineering` (keyboard alternatives), `performance-and-reliability`.
+- **Fix unnecessary React rendering**: `STANDARD` -> load `components-and-frameworks` (state scope, derived values, measured memoization), `performance-and-reliability` -> skip unrelated design modules.
+- **Fix keyboard behavior in a dropdown**: `STANDARD` -> load `accessibility-engineering`, `components-and-frameworks` -> preserve existing visual design.
 
 ## 5. Context Budgets & Compression
 

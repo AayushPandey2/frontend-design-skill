@@ -18,7 +18,7 @@ FORMFORGE is a portable, file-based Agent Skill compliant with the `agentskills.
 | **Level 1 — Core Kernel** | `SKILL.md` Markdown body | Loaded on skill activation (target ~1k–2k est. tokens) | Operational (Phase 02) |
 | **Level 2 — Core Intelligence** | `references/routing-and-modes.md`, `implementation-economy.md`, `project-and-memory.md`, `verification-and-refinement.md` | Loaded selectively by task route | Operational (Phase 02) |
 | **Level 2 — Design Intelligence** | `references/creative-direction.md`, `typography-and-content.md`, `color-and-surfaces.md`, `layout-and-responsive.md`, `ux-and-systems.md`, `industry-patterns.md` | Loaded selectively by design route | Operational (Phase 03) |
-| **Level 2/3 — Engineering & Motion** | Semantic HTML/CSS, accessible primitives, motion engineering, performance | Loaded only when needed | Planned (Phase 04) |
+| **Level 2 — Engineering & Motion** | `references/html-css-responsive.md`, `components-and-frameworks.md`, `motion-and-interactions.md`, `accessibility-engineering.md`, `performance-and-reliability.md` | Loaded selectively by engineering route | Operational (Phase 04) |
 | **Level 4 — Executable Verification** | Browser/a11y/perf verification probes | Invoked out-of-context when supported | Planned (Phase 05) |
 
 ### Experimental Context Targets (Kernel + Loaded References)

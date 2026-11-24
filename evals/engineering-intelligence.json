@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "phase": "04-engineering-intelligence",
+  "areas": [
+    "implementation_simplicity",
+    "component_architecture",
+    "responsive_engineering",
+    "motion_mechanics",
+    "micro_interactions",
+    "gesture_intelligence",
+    "accessibility",
+    "performance",
+    "framework_awareness",
+    "reliability",
+    "economy_under_complexity",
+    "context_efficiency"
+  ],
+  "tests": [
+    {
+      "id": "EI-SIM-01",
+      "area": "implementation_simplicity",
+      "prompt": "Make the table header sticky on scroll, add a card hover lift, and compute the React filtered count.",
+      "context": { "repo": "react-css" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/html-css-responsive.md", "references/components-and-frameworks.md", "references/implementation-economy.md"],
+      "excluded_references": ["references/creative-direction.md", "references/industry-patterns.md"],
+      "required_capabilities": ["FF-EN-01", "FF-OP-01"],
+      "acceptance_criteria": ["Uses CSS position: sticky and :hover transition.", "Derives filtered count during render without useEffect."]
+    },
+    {
+      "id": "EI-CMP-01",
+      "area": "component_architecture",
+      "prompt": "Add a confirmation modal using our existing Dialog and Button primitives without creating duplicate button variants.",
+      "context": { "repo": "react-ts", "existing_components": ["Dialog", "Button"] },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/components-and-frameworks.md", "references/accessibility-engineering.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-CP-01", "FF-CP-02", "FF-EN-02"],
+      "acceptance_criteria": ["Reuses Dialog and Button.", "Preserves focus trap, Escape dismissal, and focus restoration."]
+    },
+    {
+      "id": "EI-RSP-01",
+      "area": "responsive_engineering",
+      "prompt": "Fix a flex grid with long unbreakable email strings that causes horizontal page overflow at 320px.",
+      "context": { "repo": "nextjs-tailwind" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/html-css-responsive.md"],
+      "excluded_references": ["references/motion-and-interactions.md", "references/creative-direction.md"],
+      "required_capabilities": ["FF-EN-01", "FF-VD-03"],
+      "acceptance_criteria": ["Applies min-width: 0 / overflow-wrap cleanly.", "Eliminates horizontal page overflow at 320px and 375px."]
+    },
+    {
+      "id": "EI-MOT-01",
+      "area": "motion_mechanics",
+      "prompt": "Implement an interruptible slide-over drawer that stays responsive under rapid open/close toggling.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/motion-and-interactions.md", "references/accessibility-engineering.md"],
+      "excluded_references": ["references/industry-patterns.md"],
+      "required_capabilities": ["FF-MO-01", "FF-CP-02"],
+      "acceptance_criteria": ["Allows mid-flight reversal without stale state.", "Animates transform/opacity and honors prefers-reduced-motion."]
+    },
+    {
+      "id": "EI-MIC-01",
+      "area": "micro_interactions",
+      "prompt": "Add a copy-to-clipboard button with a brief 'Copied' confirmation and keyboard/screen-reader feedback.",
+      "context": { "repo": "vanilla-ts" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/motion-and-interactions.md", "references/accessibility-engineering.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-MO-01", "FF-CP-02"],
+      "acceptance_criteria": ["Uses clean CSS/state feedback.", "Announces confirmation cleanly without noisy live-region spam."]
+    },
+    {
+      "id": "EI-GES-01",
+      "area": "gesture_intelligence",
+      "prompt": "Build a reorderable priority list supporting pointer drag-and-drop and keyboard move up/down controls.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/motion-and-interactions.md", "references/accessibility-engineering.md", "references/components-and-frameworks.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-MO-01", "FF-CP-02", "FF-EN-02"],
+      "acceptance_criteria": ["Handles pointer capture/cancel without breaking scroll.", "Provides full keyboard reorder alternative."]
+    },
+    {
+      "id": "EI-A11Y-01",
+      "area": "accessibility",
+      "prompt": "Remediate a custom dropdown menu built with clickable divs, no Escape handling, and icon-only trigger.",
+      "context": { "repo": "vue-app" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/accessibility-engineering.md", "references/components-and-frameworks.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-CP-02", "FF-EN-01"],
+      "acceptance_criteria": ["Uses semantic button trigger with accessible name.", "Supports arrow keys, Escape close, and focus restoration."]
+    },
+    {
+      "id": "EI-PRF-01",
+      "area": "performance",
+      "prompt": "Optimize a product page where the LCP hero image is lazy-loaded without dimensions and an entire icon package is imported for 2 icons.",
+      "context": { "repo": "nextjs-app" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/performance-and-reliability.md", "references/components-and-frameworks.md"],
+      "excluded_references": ["references/motion-and-interactions.md"],
+      "required_capabilities": ["FF-EN-03", "FF-OP-01"],
+      "acceptance_criteria": ["Removes lazy loading on LCP hero and reserves dimensions.", "Replaces oversized icon import with targeted SVGs."]
+    },
+    {
+      "id": "EI-PRF-02",
+      "area": "performance",
+      "prompt": "Fix unnecessary React re-renders in a filterable list that wraps every handler in useCallback without measurement.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/components-and-frameworks.md", "references/performance-and-reliability.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-EN-02", "FF-EN-03"],
+      "acceptance_criteria": ["Isolates state boundary cleanly.", "Removes speculative memoization where unmeasured."]
+    },
+    {
+      "id": "EI-FRM-01",
+      "area": "framework_awareness",
+      "prompt": "Add a filterable users table to an existing SvelteKit + Tailwind repository.",
+      "context": { "repo": "sveltekit-tailwind" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/components-and-frameworks.md", "references/html-css-responsive.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-EN-02", "FF-EN-01"],
+      "acceptance_criteria": ["Uses idiomatic SvelteKit + Tailwind without migrating to React or adding UI libraries."]
+    },
+    {
+      "id": "EI-REL-01",
+      "area": "reliability",
+      "prompt": "Implement an async search box that handles rapid typing race conditions, network errors, and empty results.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/components-and-frameworks.md", "references/performance-and-reliability.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-UX-03", "FF-EN-02"],
+      "acceptance_criteria": ["Cancels/ignores stale responses via AbortController.", "Renders explicit empty and recoverable error states."]
+    },
+    {
+      "id": "EI-REL-02",
+      "area": "reliability",
+      "prompt": "Render user-submitted markdown comments safely without exposing XSS vectors or raw HTML injection.",
+      "context": { "repo": "nextjs-ts" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/performance-and-reliability.md"],
+      "excluded_references": ["references/motion-and-interactions.md"],
+      "required_capabilities": ["FF-EN-01", "FF-VF-03"],
+      "acceptance_criteria": ["Avoids unsanitized dangerouslySetInnerHTML.", "Validates external link protocols."]
+    },
+    {
+      "id": "EI-ECN-01",
+      "area": "economy_under_complexity",
+      "prompt": "Add a collapsible FAQ section using native disclosure behavior without installing an accordion library.",
+      "context": { "repo": "static-html-css" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/html-css-responsive.md", "references/implementation-economy.md"],
+      "excluded_references": ["references/motion-and-interactions.md"],
+      "required_capabilities": ["FF-EN-01", "FF-OP-01"],
+      "acceptance_criteria": ["Uses native <details>/<summary> with zero added dependencies."]
+    },
+    {
+      "id": "EI-CTX-01",
+      "area": "context_efficiency",
+      "prompt": "Fix a missing aria-label on a close button in an existing modal.",
+      "context": { "repo": "react-ts" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/accessibility-engineering.md", "references/implementation-economy.md"],
+      "excluded_references": ["references/creative-direction.md", "references/motion-and-interactions.md", "references/industry-patterns.md"],
+      "required_capabilities": ["FF-CP-02", "FF-OP-02", "FF-OP-03"],
+      "acceptance_criteria": ["Stays in QUICK mode and loads only accessibility + economy guidance."]
+    }
+  ]
+}

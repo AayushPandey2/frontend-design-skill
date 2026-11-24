@@ -3,7 +3,7 @@ name: formforge
 description: Adaptive frontend design and engineering intelligence for building, redesigning, auditing, and optimizing web and mobile interfaces. Use for websites, landing pages, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, interface motion, and frontend performance or reviews. Skip pure backend, database-only, algorithm, or unrelated system tasks; on mixed full-stack work, apply only to frontend responsibilities.
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   tagline: "Maximum taste. Minimum waste."
 ---
 
@@ -82,6 +82,16 @@ Load only the Level 2 modules needed for the classified task. Never load all mod
 | [references/layout-and-responsive.md](references/layout-and-responsive.md) | Visual hierarchy, grid/composition, spacing, density, responsive strategy, or assets |
 | [references/ux-and-systems.md](references/ux-and-systems.md) | User journeys, navigation, forms, interaction states, design systems, or motion intent |
 | [references/industry-patterns.md](references/industry-patterns.md) | Calibrating density, trust signals, and hierarchy for a specific product domain |
+
+### Engineering & Motion Modules (Load Only When Matched)
+
+| Module | Load When |
+| :--- | :--- |
+| [references/html-css-responsive.md](references/html-css-responsive.md) | Semantic HTML, Grid/Flexbox/container queries, specificity, or responsive widths |
+| [references/components-and-frameworks.md](references/components-and-frameworks.md) | Component reuse, React/Vue/Svelte state, effects, async data, or forms |
+| [references/motion-and-interactions.md](references/motion-and-interactions.md) | Transitions, timing/easing, springs, interruptibility, gestures, or scroll motion |
+| [references/accessibility-engineering.md](references/accessibility-engineering.md) | Keyboard nav, focus/dialogs, ARIA names/live regions, or WCAG 2.2 AA contrast |
+| [references/performance-and-reliability.md](references/performance-and-reliability.md) | Core Web Vitals, bundles, images/fonts, data viz, or XSS/client security |
 
 Full capability statuses (`IMPLEMENTED`, `PLANNED`, `DEFERRED`, `REJECTED`) live in [docs/capability-registry.json](docs/capability-registry.json).
 
