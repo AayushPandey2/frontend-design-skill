@@ -168,5 +168,7 @@
       { "id": "reliability_state_handling", "name": "Reliability & State Handling", "max_points": 5 },
       { "id": "framework_project_compatibility", "name": "Framework & Project Compatibility", "max_points": 5 }
     ]
-  }
+  },
+  "score_status_taxonomy": ["verified", "provisional", "subjective_expert", "not_evaluated", "not_applicable"],
+  "severity_levels": ["BLOCKER", "MAJOR", "MODERATE", "MINOR", "PREFERENCE"]
 }

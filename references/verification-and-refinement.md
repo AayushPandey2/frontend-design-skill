@@ -1,42 +1,40 @@
-# Verification, Bounded Refinement & Graceful Degradation
+# Verification, Severity, Self-Correction & Degradation
 
-## 1. Risk-Based Adaptive Verification
+**Load when**: Classifying defects, running bounded self-correction, enforcing quality gates, deciding when to stop, or handling unavailable tools.
 
-Scale verification effort to task risk, not diff size:
-- **Low-risk localized edits**: Targeted build/typecheck/lint + inspect changed behavior.
-- **Interactive / state / auth / payment changes**: Verify all affected user flows, edge states, and keyboard/error handling.
-- **Visual / layout / responsive changes**: Inspect actual rendered output across desktop and mobile viewports when rendering tools are available.
+## 1. Verification Contract & Evidence Hierarchy
 
-## 2. Bounded Refinement Loop
+Workflow: `Understand -> Implement -> Render -> Inspect -> Critique -> Prioritize -> Correct -> Reverify -> Deliver` (compress for localized `QUICK` edits).
 
-Trigger refinement only on concrete defects: functional failures, a11y violations, responsive breakage, weak hierarchy, design-token drift, broken interactions, perf regressions, or unmet requirements. Never redesign satisfactory output merely because another aesthetic exists.
+Match every claim to its evidence level—never present lower-level checks as higher-level proof:
+- **Level 0 — Unsupported assumption**: No evidence; never report as verified.
+- **Level 1 — Static inspection**: Source/CSS/token review; cannot establish rendered quality.
+- **Level 2 — Automated project checks**: Build, typecheck, lint, unit/integration tests, static a11y checks.
+- **Level 3 — Rendered inspection**: Live browser rendering, screenshots, DOM/computed styles.
+- **Level 4 — Behavioral verification**: Executing real navigation, forms, keyboard flows, states, and gestures.
+- **Level 5 — Measured & independent evaluation**: Performance/a11y audits, regression comparisons, unanchored independent criticism.
 
-### Defect Fix Procedure
-1. Identify defect and severity (critical functional/a11y/security issues before cosmetic polish).
-2. Diagnose root cause (avoid stacking patches).
-3. Apply focused fix.
-4. Re-verify affected behavior.
+## 2. Severity Classification & Root-Cause Remediation
 
-### Default Refinement Budgets
-- `QUICK`: Targeted fix and verification only.
-- `STANDARD`: Up to 2 refinement passes.
-- `PREMIUM`: Up to 3 refinement passes.
-- `FLAGSHIP`: Up to 5 refinement passes when justified.
-
-## 3. Stopping Conditions
-
-Stop refining when:
-- Explicit requirements, functional checks, a11y/security gates, and relevant responsive/visual checks pass.
-- No known critical regression remains and further passes yield diminishing returns.
-- Never chase an arbitrary 100/100 score; conversely, never ship a knowingly broken critical flow just because a pass budget was reached.
-
-## 4. Graceful Capability Degradation
-
-| Unavailable Capability | Fallback Behavior | Reporting Requirement |
+| Severity | Meaning | Action |
 | :--- | :--- | :--- |
-| Browser / screenshots | Inspect DOM/CSS/layout logic statically; run build/unit tests if available | State clearly that visual rendering was not inspected |
-| Planned Level 2/3 reference | Rely on Level 1 kernel + existing project conventions | Note capability gap without inventing guidance |
-| Test runner / dev server | Run typecheck/syntax checks if available; trace logic carefully | Report exact commands run and what could not execute |
-| Token telemetry | Report estimated instruction tokens (e.g., word-based estimate) | Label estimates explicitly; never present as measured |
+| **BLOCKER** | App fails to start, primary flow broken, security/data-loss risk | Must resolve or report explicitly before delivery |
+| **MAJOR** | Mobile clipping, keyboard trap/unlabeled control, broken interaction, unmet core req | Prioritize before cosmetic fixes |
+| **MODERATE** | Weak hierarchy, token drift, layout imbalance, avoidable complexity | Fix when in scope and materially beneficial |
+| **MINOR** | Slight spacing/alignment/secondary type polish | Fix only if cheap; never extend loop endlessly |
+| **PREFERENCE** | Subjective aesthetic alternative with no defect | Do not modify code automatically |
 
-Static code inspection must never be reported as browser verification.
+- **Structured defect record** (temporary working note, not persisted to skill files): `ID | Category | Severity | Target | Evidence | Actual vs. Expected | Root Cause | Fix | Verify | Status`.
+- **Root-cause fix**: Fix shared tokens, intrinsic sizing, semantics, or state ownership rather than stacking compensating patches. Verify regressions on affected flows/components without rerunning unrelated expensive suites.
+- **Independent criticism** (optional on `PREMIUM`/`FLAGSHIP` when supported): Withhold the generator's self-assessment to avoid anchoring; never claim independent review when the same agent generated and critiqued.
+
+## 3. Mandatory Quality Gates, Budgets & Stopping Conditions
+
+- **9 Gates**: Requirement, Functional, Accessibility, Responsive, Design, Engineering, Security, Economy, Evidence. Failed critical gates cannot be offset by aesthetic or token-economy scores; unverified gates must be marked unverified.
+- **Default refinement budgets**: `QUICK`: targeted fix/verify only; `STANDARD`: <=2 passes; `PREMIUM`: <=3 passes; `FLAGSHIP`: <=5 passes.
+- **Stop when**: Requirements, functional/a11y/security gates, and needed rendered checks pass; no critical regressions remain; and further edits yield diminishing returns. Never ship knowingly broken critical behavior just because a budget expired.
+
+## 4. Verification Economy & Graceful Degradation
+
+- **Economy**: Avoid duplicate screenshots of unchanged states, re-reading unchanged files, or repeating identical passing commands.
+- **Degradation**: When browser tools, screenshots, test runners, or telemetry are unavailable, use the best static/build alternative, state unverified dimensions explicitly, and never fabricate screenshots, FPS, or test passes.

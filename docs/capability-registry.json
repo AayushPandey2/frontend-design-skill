@@ -1,7 +1,7 @@
 {
-  "schema_version": "2.2.0",
+  "schema_version": "2.3.0",
   "project": "FORMFORGE",
-  "phase": "04-engineering-intelligence",
+  "phase": "05-verification-intelligence",
   "domains": [
     { "id": "FF-CR", "name": "Creative Intelligence" },
     { "id": "FF-VD", "name": "Visual Design Intelligence" },
@@ -136,7 +136,7 @@
       "purpose": "Derive visual direction, adaptive aesthetics, and optional multi-concept exploration from the product brief.",
       "activation_conditions": ["STANDARD", "PREMIUM", "FLAGSHIP", "greenfield UI or redesign"],
       "applicable_task_types": ["new-interface", "redesign", "page-implementation"],
-      "reference_paths": ["references/creative-direction.md"],
+      "reference_paths": ["references/creative-direction.md", "references/visual-critique.md"],
       "dependencies": ["FF-OP-02"],
       "conflicts": ["Existing design system wins unless redesign is requested."],
       "verification_requirements": ["Visual choices trace to product subject, audience, and primary job."]
@@ -150,7 +150,7 @@
       "purpose": "Detect clichéd AI UI defaults contextually and run preliminary design critique without rigid universal bans.",
       "activation_conditions": ["STANDARD", "PREMIUM", "FLAGSHIP", "ui-critique"],
       "applicable_task_types": ["new-interface", "redesign", "ui-critique"],
-      "reference_paths": ["references/creative-direction.md"],
+      "reference_paths": ["references/creative-direction.md", "references/visual-critique.md"],
       "dependencies": ["FF-CR-01"],
       "conflicts": ["Explicit user aesthetic requests override anti-generic heuristics."],
       "verification_requirements": ["No unmotivated filler badges, fake stats, or cloned card kits."]
@@ -367,14 +367,14 @@
     },
     {
       "id": "FF-VF-01",
-      "name": "Rendered Visual & Accessibility Audit",
+      "name": "Rendered Visual, Functional & Accessibility Audit",
       "domain": "FF-VF",
       "decision": "MERGE",
-      "status": "PLANNED",
-      "purpose": "Inspect live rendered desktop/mobile output and verify keyboard, contrast, and semantic gates (Phase 05).",
-      "activation_conditions": ["STANDARD", "PREMIUM", "FLAGSHIP", "visual/a11y tasks"],
+      "status": "IMPLEMENTED",
+      "purpose": "Inspect live rendered output, user journeys, keyboard/WCAG gates, motion/perf, and engineering waste.",
+      "activation_conditions": ["STANDARD", "PREMIUM", "FLAGSHIP", "visual/functional/a11y tasks"],
       "applicable_task_types": ["browser-verification", "accessibility-remediation", "ui-critique", "page-implementation"],
-      "reference_paths": [],
+      "reference_paths": ["references/visual-critique.md", "references/functional-and-technical-audits.md", "references/verification-and-refinement.md"],
       "dependencies": ["FF-VF-04"],
       "conflicts": ["Degrade honestly via FF-VF-04 if browser tools are unavailable."],
       "verification_requirements": ["No visual verification claimed without rendered inspection."]

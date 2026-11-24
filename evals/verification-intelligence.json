@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "phase": "05-verification-intelligence",
+  "areas": [
+    "visual_defect_detection",
+    "functional_defect_detection",
+    "responsive_defects",
+    "accessibility_defects",
+    "motion_defects",
+    "engineering_waste",
+    "false_positive_resistance",
+    "regression_resistance",
+    "verification_honesty",
+    "stopping_intelligence",
+    "verification_economy"
+  ],
+  "tests": [
+    {
+      "id": "VI-VIS-01",
+      "area": "visual_defect_detection",
+      "prompt": "Inspect a rendered SaaS landing page where secondary nav links match the h1 size/weight, cards use 3 different border radii, and body copy has 3:1 contrast.",
+      "context": { "browser_tools": true, "mode": "PREMIUM" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/visual-critique.md", "references/verification-and-refinement.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VF-01", "FF-VF-04"],
+      "acceptance_criteria": ["Logs concrete 8-field findings for nav hierarchy, radius drift, and contrast.", "Fixes shared tokens rather than patching one element."]
+    },
+    {
+      "id": "VI-FNC-01",
+      "area": "functional_defect_detection",
+      "prompt": "Verify a settings page where the 'Export CSV' button has no click handler and the email form clears input on server validation error.",
+      "context": { "browser_tools": true, "mode": "STANDARD" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/functional-and-technical-audits.md", "references/verification-and-refinement.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-VF-01", "FF-VF-03"],
+      "acceptance_criteria": ["Detects dead control and input-loss bug.", "Fixes root causes and reverifies state transitions."]
+    },
+    {
+      "id": "VI-RSP-01",
+      "area": "responsive_defects",
+      "prompt": "Audit a pricing table at 320px and 375px where column headers clip and the primary CTA shifts offscreen horizontally.",
+      "context": { "browser_tools": true, "mode": "STANDARD" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/functional-and-technical-audits.md", "references/html-css-responsive.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-VF-01", "FF-VD-03"],
+      "acceptance_criteria": ["Classifies clipped/offscreen CTA as MAJOR.", "Fixes layout without hiding essential actions."]
+    },
+    {
+      "id": "VI-A11Y-01",
+      "area": "accessibility_defects",
+      "prompt": "An automated scanner reports 0 violations on a custom modal, but Tab escapes behind the backdrop and Escape does nothing.",
+      "context": { "browser_tools": true, "mode": "STANDARD" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/functional-and-technical-audits.md", "references/accessibility-engineering.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-VF-01", "FF-CP-02"],
+      "acceptance_criteria": ["Does not claim full accessibility from 0 automated violations.", "Tests keyboard flow, fixes focus trap/Escape, and reverifies."]
+    },
+    {
+      "id": "VI-MOT-01",
+      "area": "motion_defects",
+      "prompt": "Audit a sidebar drawer that ignores rapid double-clicks during its 600ms entrance and animates width/left properties.",
+      "context": { "browser_tools": true, "mode": "STANDARD" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/functional-and-technical-audits.md", "references/motion-and-interactions.md"],
+      "excluded_references": ["references/industry-patterns.md"],
+      "required_capabilities": ["FF-VF-01", "FF-MO-01"],
+      "acceptance_criteria": ["Tests rapid toggling.", "Replaces layout animation with interruptible transform transition and reduced-motion fallback."]
+    },
+    {
+      "id": "VI-WST-01",
+      "area": "engineering_waste",
+      "prompt": "Audit a React filter panel that duplicates filteredItems in useState + useEffect, wraps a single button in a CustomBtnWrapper, and imports lodash for debounce.",
+      "context": { "repo": "react-ts", "mode": "STANDARD" },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/functional-and-technical-audits.md", "references/implementation-economy.md"],
+      "excluded_references": ["references/creative-direction.md"],
+      "required_capabilities": ["FF-VF-01", "FF-OP-01"],
+      "acceptance_criteria": ["Removes redundant state/effect and trivial wrapper while preserving accessibility and behavior."]
+    },
+    {
+      "id": "VI-FPR-01",
+      "area": "false_positive_resistance",
+      "prompt": "Review a dark-mode audio hardware site with intentional radial gradients, deliberate editorial asymmetry, and a dense parameter matrix.",
+      "context": { "browser_tools": true, "mode": "PREMIUM" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/visual-critique.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VF-01", "FF-CR-02"],
+      "acceptance_criteria": ["Recognizes earned gradients, asymmetry, and density as valid.", "Does not flag them as generic defects."]
+    },
+    {
+      "id": "VI-REG-01",
+      "area": "regression_resistance",
+      "prompt": "Fix a broken mobile menu close button in Header.tsx without altering desktop nav alignment or breaking existing header tests.",
+      "context": { "repo": "nextjs-ts", "mode": "QUICK" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/verification-and-refinement.md"],
+      "excluded_references": ["references/visual-critique.md", "references/creative-direction.md"],
+      "required_capabilities": ["FF-VF-03", "FF-VF-04"],
+      "acceptance_criteria": ["Fixes close button cleanly and verifies desktop nav regression check passes."]
+    },
+    {
+      "id": "VI-HON-01",
+      "area": "verification_honesty",
+      "prompt": "Verify the updated checkout page.",
+      "context": { "browser_tools": false, "screenshots": false, "test_runner": true },
+      "expected_mode": "STANDARD",
+      "expected_references": ["references/verification-and-refinement.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VF-04", "FF-VF-03"],
+      "acceptance_criteria": ["Executes test runner (Level 2).", "Explicitly marks rendered visual and browser keyboard checks as unverified."]
+    },
+    {
+      "id": "VI-STP-01",
+      "area": "stopping_intelligence",
+      "prompt": "Inspect a completed dashboard that passes functional, keyboard, contrast, and responsive gates with clean minimal code.",
+      "context": { "browser_tools": true, "mode": "PREMIUM" },
+      "expected_mode": "PREMIUM",
+      "expected_references": ["references/verification-and-refinement.md"],
+      "excluded_references": [],
+      "required_capabilities": ["FF-VF-04"],
+      "acceptance_criteria": ["Stops without inventing cosmetic redesigns or burning remaining refinement passes."]
+    },
+    {
+      "id": "VI-ECO-01",
+      "area": "verification_economy",
+      "prompt": "Verify a 1-line button label change from 'Submit' to 'Save profile'.",
+      "context": { "repo": "react-ts", "mode": "QUICK" },
+      "expected_mode": "QUICK",
+      "expected_references": ["references/verification-and-refinement.md"],
+      "excluded_references": ["references/visual-critique.md", "references/functional-and-technical-audits.md"],
+      "required_capabilities": ["FF-OP-03", "FF-VF-03"],
+      "acceptance_criteria": ["Runs targeted check only.", "Skips full-page screenshots and comprehensive audits."]
+    }
+  ]
+}

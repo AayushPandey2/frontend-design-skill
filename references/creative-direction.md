@@ -44,6 +44,4 @@ Never apply rigid blanket bans (gradients, cards, shadows, badges, or centered h
 
 ## 6. Preliminary Design Critique
 
-Before concluding substantial UI work, log specific defects by user impact:
-- **Record**: what is wrong, why it matters, applicable principle, focused correction, and whether the fix is necessary.
-- **Discipline**: Fix root causes rather than recommending full redesigns for local issues. Never claim rendered visual quality is verified without inspecting rendered output.
+For rendered inspection, multi-scale critique format, and defect severity classification, load [visual-critique.md](visual-critique.md) and [verification-and-refinement.md](verification-and-refinement.md).

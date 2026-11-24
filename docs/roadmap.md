@@ -10,21 +10,23 @@
 - [x] 6 Level 2 design modules, design routing integration, [design-intelligence.json](../evals/design-intelligence.json), and `supplementary_design_rubric`.
 
 ## Phase 04 — Advanced Frontend Engineering, Motion & Interaction Intelligence (Complete)
-- [x] Authored 5 consolidated Level 2 engineering modules: [html-css-responsive.md](../references/html-css-responsive.md), [components-and-frameworks.md](../references/components-and-frameworks.md), [motion-and-interactions.md](../references/motion-and-interactions.md), [accessibility-engineering.md](../references/accessibility-engineering.md), and [performance-and-reliability.md](../references/performance-and-reliability.md).
-- [x] Integrated engineering routing in [SKILL.md](../SKILL.md) and [routing-and-modes.md](../references/routing-and-modes.md), updated [capability-registry.json](capability-registry.json), created [engineering-intelligence.json](../evals/engineering-intelligence.json), and added `supplementary_engineering_rubric` to [rubric.json](../evals/rubric.json).
+- [x] 5 Level 2 engineering/motion/a11y/perf modules, engineering routing integration, [engineering-intelligence.json](../evals/engineering-intelligence.json), and `supplementary_engineering_rubric`.
 
-## Phase 05 — Browser Verification, Visual Criticism & Automated Quality Gates
-- Integrate live browser verification, independent visual criticism, and automated quality gates (`FF-VF-01`).
+## Phase 05 — Critique, Verification, Quality Assurance & Self-Correction (Complete)
+- [x] Authored [visual-critique.md](../references/visual-critique.md) and [functional-and-technical-audits.md](../references/functional-and-technical-audits.md), upgraded [verification-and-refinement.md](../references/verification-and-refinement.md) with the 6-level evidence hierarchy, 5 severity levels, and 9 mandatory quality gates.
+- [x] Upgraded `FF-VF-01` in [capability-registry.json](capability-registry.json), created [verification-intelligence.json](../evals/verification-intelligence.json), and extended [rubric.json](../evals/rubric.json).
 
-## Phase 06 — Context & Architectural Optimization
-- Profile and refine token budgets, context retrieval density, and routing precision.
+## Phase 06 — Deep Skill & Context Optimization
+- Audit and compress token budgets, eliminate redundant cross-module prose, and refine routing precision.
 
-## Phase 07 — Comparative Benchmarking & Ablation Testing
-- Execute empirical blind comparisons and ablation runs across `evals/`.
+## Phase 07 — Comparative Benchmarking, Ablation & Regression Evaluation
+- Execute live-agent, rendered-browser, and ablation evaluations across all `evals/` suites.
+
+## Phase 08 — Packaging & Release
+- Finalize distributable skill packaging, release verification, and documentation.
 
 ---
 
 ## Open Uncertainties & Assumptions
-- **Live-agent & browser execution**: Structural/referential checks pass, but [core-intelligence.json](../evals/core-intelligence.json), [design-intelligence.json](../evals/design-intelligence.json), [engineering-intelligence.json](../evals/engineering-intelligence.json), and [tasks.json](../evals/tasks.json) have not yet been executed against live agent, browser, or Lighthouse runs.
+- **Live-agent & browser execution**: Structural/referential checks pass, but [core-intelligence.json](../evals/core-intelligence.json), [design-intelligence.json](../evals/design-intelligence.json), [engineering-intelligence.json](../evals/engineering-intelligence.json), [verification-intelligence.json](../evals/verification-intelligence.json), and [tasks.json](../evals/tasks.json) have not yet been executed against live agent or browser runs.
 - **Token counts**: Reported token counts are word-based estimates (`words * 1.33`), not tokenizer-exact measurements.
-- **Rubric hypotheses**: Supplementary design and engineering rubrics in [rubric.json](../evals/rubric.json) are unvalidated hypotheses subordinate to mandatory global gates.

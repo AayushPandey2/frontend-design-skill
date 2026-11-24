@@ -53,6 +53,8 @@ Evaluate all five dimensions before selecting a mode or loading references:
 - **Build a drag-and-drop board**: `PREMIUM` -> load `components-and-frameworks`, `motion-and-interactions` (gestures, springs, interruptibility), `accessibility-engineering` (keyboard alternatives), `performance-and-reliability`.
 - **Fix unnecessary React rendering**: `STANDARD` -> load `components-and-frameworks` (state scope, derived values, measured memoization), `performance-and-reliability` -> skip unrelated design modules.
 - **Fix keyboard behavior in a dropdown**: `STANDARD` -> load `accessibility-engineering`, `components-and-frameworks` -> preserve existing visual design.
+- **Audit a broken modal or complex animation**: `STANDARD` -> load `functional-and-technical-audits` (keyboard/focus/interruptibility/reduced-motion) + `verification-and-refinement` (regression checks) -> skip unrelated visual exploration.
+- **Review an entire application**: `PREMIUM`/`FLAGSHIP` -> load `visual-critique` (cross-page consistency, macro/meso/micro critique), `functional-and-technical-audits` (journeys, a11y, responsive, perf), and `verification-and-refinement` (severity, gates, stopping).
 
 ## 5. Context Budgets & Compression
 

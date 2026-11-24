@@ -3,7 +3,7 @@ name: formforge
 description: Adaptive frontend design and engineering intelligence for building, redesigning, auditing, and optimizing web and mobile interfaces. Use for websites, landing pages, apps, dashboards, UI components, responsive layouts, typography, design systems, accessibility, interface motion, and frontend performance or reviews. Skip pure backend, database-only, algorithm, or unrelated system tasks; on mixed full-stack work, apply only to frontend responsibilities.
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
   tagline: "Maximum taste. Minimum waste."
 ---
 
@@ -70,7 +70,9 @@ Load only the Level 2 modules needed for the classified task. Never load all mod
 | [references/routing-and-modes.md](references/routing-and-modes.md) | Multi-category classification, mode escalation, or routing ambiguity |
 | [references/implementation-economy.md](references/implementation-economy.md) | Writing/editing UI code, choosing CSS vs. JS, or trimming complexity |
 | [references/project-and-memory.md](references/project-and-memory.md) | Inspecting an existing repo, checking deps, or reading/updating design memory |
-| [references/verification-and-refinement.md](references/verification-and-refinement.md) | Verifying rendered/a11y/functional gates, running refinement loops, or handling missing tools |
+| [references/verification-and-refinement.md](references/verification-and-refinement.md) | Classifying defects, running bounded self-correction, quality gates, or missing-tool fallback |
+| [references/visual-critique.md](references/visual-critique.md) | Rendered inspection, screenshots, multi-scale visual critique, or anti-generic/design-drift audit |
+| [references/functional-and-technical-audits.md](references/functional-and-technical-audits.md) | Functional/journey testing, responsive/a11y/motion/perf audits, or engineering-waste checks |
 
 ### Design Intelligence Modules (Load Only When Matched)
 
