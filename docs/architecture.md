@@ -24,3 +24,11 @@ FORMFORGE is a portable, zero-dependency, Markdown-first Agent Skill (`agentskil
 - `FLAGSHIP`: ~7,000–12,000 est. tokens
 
 Targets are hypotheses, not rigid caps—expand context whenever accessibility, security, or complex requirements demand it.
+
+---
+
+## 3. Package Boundaries & Portability
+
+- **Production skill** (`SKILL.md`, `references/`, `LICENSE`): Self-contained, portable across compatible coding agents, and free of external runtime dependencies or `docs/`/`evals/` coupling.
+- **Project documentation** (`docs/`) and **Evaluations** (`evals/`): Maintained for contributors and benchmarking; not required at runtime.
+- **Platform-independent instructions**: Capabilities describe required outcomes (e.g., "inspect rendered output using available browser tools") rather than hard-coding a single host tool or OS.

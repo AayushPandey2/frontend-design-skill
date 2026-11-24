@@ -4,7 +4,7 @@
 
 ## 1. Semantic HTML & Design Fidelity
 
-- Preserve Phase 03 typography, semantic colors, hierarchy, spacing, and visual signature.
+- Preserve established typography, semantic colors, hierarchy, spacing, and visual signature.
 - Use native landmarks (`<main>`, `<nav>`, `<header>`, `<footer>`, `<section>`, `<article>`), ordered headings, lists, `<table>` for tabular data, `<dialog>`, `<details>`, and `<progress>`.
 - Use `<button>` for actions, `<a href>` for navigation, and explicit `<label>` associations. Never use clickable `<div>`/`<span>` as controls, add redundant ARIA where native semantics suffice, or add unnecessary wrapper depth.
 
