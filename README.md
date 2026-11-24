@@ -15,19 +15,20 @@ FORMFORGE/
 ├── docs/
 │   ├── architecture.md                # Progressive context, single-source rules & budgets
 │   ├── capability-registry.json       # Unified 10-domain registry (30 entries)
-│   └── roadmap.md                     # Phases 01–08 & open uncertainties
+│   └── roadmap.md                     # Phases 01–08 & release readiness
 └── evals/
+    ├── protocol.md                    # Controlled benchmark, blind eval & ablation protocol
+    ├── benchmarks.json                # 32 tasks, 3 holdouts, 10 ablations, 6 interactions
+    ├── results.json                   # Stage A structural & B1/B2/B3 context-simulation results
     ├── core-intelligence.json         # 23 core intelligence cases
     ├── design-intelligence.json       # 14 design intelligence cases
     ├── engineering-intelligence.json  # 14 engineering intelligence cases
     ├── verification-intelligence.json # 11 verification intelligence cases
-    ├── optimization-intelligence.json # 12 optimization & anti-over-optimization cases
+    ├── optimization-intelligence.json # 10 optimization & anti-over-optimization cases
     ├── tasks.json                     # 12 end-to-end frontend benchmark tasks
     └── rubric.json                    # 100-pt global + supplementary rubrics & severity taxonomy
 ```
 
-## Activation & Limitations
+## Readiness & Limitations
 
-FORMFORGE activates for frontend UI creation, redesign, component engineering, responsive fixes, typography, design systems, accessibility, motion, and performance reviews—skipping pure backend, database-only, or algorithm tasks.
-
-*Note: Structural and referential checks are verified deterministically; live-agent token telemetry and rendered browser benchmarks are scheduled for Phase 07 (see [docs/roadmap.md](docs/roadmap.md)).*
+Current release readiness: **`EXPERIMENTAL`**. Deterministic structural checks and `B1`/`B2`/`B3` instruction/context-simulation comparisons pass in [evals/results.json](evals/results.json); live-agent, rendered-browser, cost, and ablation trials remain unexecuted (see [docs/roadmap.md](docs/roadmap.md)).

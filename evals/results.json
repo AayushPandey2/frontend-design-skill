@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "phase": "07-benchmarking",
+  "generated_at": "2026-11-24T14:37:02.409Z",
+  "release_readiness": {
+    "status": "EXPERIMENTAL",
+    "rationale": "Stage A structural, referential, and corpus/context-simulation checks pass with zero blockers, but live-agent, rendered-browser, and ablation trials (Stages B-F) are NOT EXECUTED."
+  },
+  "stage_a_structural_checks": {
+    "status": "PASS",
+    "evidence_status": "STRUCTURAL CHECK",
+    "python_files": 0,
+    "added_dependencies": 0,
+    "benchmark_tasks_defined": 32,
+    "holdout_tasks_defined": 3,
+    "ablation_configs_defined": 10
+  },
+  "instruction_corpus_comparison": [
+    {
+      "baseline": "B1 (5338b45)",
+      "instruction_files": 1,
+      "skill_words": 983,
+      "skill_est_tokens": 1307,
+      "total_words": 983,
+      "total_est_tokens": 1307,
+      "words_status": "MEASURED",
+      "tokens_status": "ESTIMATED"
+    },
+    {
+      "baseline": "B2 (c3165d1)",
+      "instruction_files": 18,
+      "skill_words": 956,
+      "skill_est_tokens": 1271,
+      "total_words": 7145,
+      "total_est_tokens": 9503,
+      "words_status": "MEASURED",
+      "tokens_status": "ESTIMATED"
+    },
+    {
+      "baseline": "B3 (9368df9)",
+      "instruction_files": 18,
+      "skill_words": 790,
+      "skill_est_tokens": 1051,
+      "total_words": 4883,
+      "total_est_tokens": 6494,
+      "words_status": "MEASURED",
+      "tokens_status": "ESTIMATED"
+    }
+  ],
+  "simulated_per_task_context_b2_vs_b3": [
+    {
+      "task_id": "M01",
+      "mode": "QUICK",
+      "loaded_references": 1,
+      "b2_words_measured": 1275,
+      "b3_words_measured": 1021,
+      "b2_est_tokens": 1696,
+      "b3_est_tokens": 1358,
+      "est_token_reduction_pct": 19.9,
+      "evidence_status": "SIMULATED / ESTIMATED"
+    },
+    {
+      "task_id": "E01",
+      "mode": "QUICK",
+      "loaded_references": 2,
+      "b2_words_measured": 1637,
+      "b3_words_measured": 1280,
+      "b2_est_tokens": 2177,
+      "b3_est_tokens": 1702,
+      "est_token_reduction_pct": 21.8,
+      "evidence_status": "SIMULATED / ESTIMATED"
+    },
+    {
+      "task_id": "M06",
+      "mode": "STANDARD",
+      "loaded_references": 2,
+      "b2_words_measured": 1540,
+      "b3_words_measured": 1210,
+      "b2_est_tokens": 2048,
+      "b3_est_tokens": 1609,
+      "est_token_reduction_pct": 21.4,
+      "evidence_status": "SIMULATED / ESTIMATED"
+    },
+    {
+      "task_id": "P01",
+      "mode": "PREMIUM",
+      "loaded_references": 5,
+      "b2_words_measured": 2481,
+      "b3_words_measured": 1845,
+      "b2_est_tokens": 3300,
+      "b3_est_tokens": 2454,
+      "est_token_reduction_pct": 25.6,
+      "evidence_status": "SIMULATED / ESTIMATED"
+    },
+    {
+      "task_id": "C01",
+      "mode": "PREMIUM",
+      "loaded_references": 6,
+      "b2_words_measured": 3175,
+      "b3_words_measured": 2235,
+      "b2_est_tokens": 4223,
+      "b3_est_tokens": 2973,
+      "est_token_reduction_pct": 29.6,
+      "evidence_status": "SIMULATED / ESTIMATED"
+    },
+    {
+      "task_id": "C03",
+      "mode": "FLAGSHIP",
+      "loaded_references": 6,
+      "b2_words_measured": 3073,
+      "b3_words_measured": 2172,
+      "b2_est_tokens": 4087,
+      "b3_est_tokens": 2889,
+      "est_token_reduction_pct": 29.3,
+      "evidence_status": "SIMULATED / ESTIMATED"
+    }
+  ],
+  "live_execution_status": {
+    "stage_b_pilot": "NOT EXECUTED",
+    "stage_c_targeted": "NOT EXECUTED",
+    "stage_d_ablations": "NOT EXECUTED",
+    "stage_e_live_regression": "NOT EXECUTED",
+    "stage_f_holdout": "NOT EXECUTED",
+    "provider_token_telemetry": "UNAVAILABLE",
+    "rendered_browser_evals": "NOT EXECUTED",
+    "cost_telemetry": "UNAVAILABLE"
+  }
+}
