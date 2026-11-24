@@ -39,7 +39,7 @@ Type `/` in supported editors or use natural-language equivalents where native s
 ## Package Boundaries
 
 - **Production Skill (Installable)**: [SKILL.md](SKILL.md), `references/` (19 modules), and [LICENSE](LICENSE).
-- **Native Slash Command Dispatchers**: `.claude/commands/` (`.md`), `.cursor/commands/` (`.md`), `.gemini/commands/` (`.toml`), and `.windsurf/workflows/` (`.md`) — 9 thin dispatchers per platform.
+- **Native Slash Command Dispatchers**: `.agents/skills/` (`SKILL.md` for Antigravity & Codex), `.codex/prompts/` (`.md` for Codex), `.claude/commands/` (`.md`), `.cursor/commands/` (`.md`), `.gemini/commands/` (`.toml`), and `.windsurf/workflows/` (`.md`) — 9 thin dispatchers per platform.
 - **Project Documentation & Evals**: `docs/` ([architecture.md](docs/architecture.md), [capability-registry.json](docs/capability-registry.json)) and `evals/` (including [planning-mode.json](evals/planning-mode.json)).
 
 ## Installation
@@ -49,7 +49,7 @@ git clone https://github.com/AayushPandey2/frontend-design-skill.git
 ```
 
 - **Skill installation**: Copy `SKILL.md`, `references/`, and `LICENSE` into `<your-agent-skills-dir>/formforge/` (e.g., `.agents/skills/formforge/` or `~/.gemini/config/skills/formforge/`).
-- **Native slash commands**: Copy the matching command directory into your project or user config (`.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, or `.windsurf/workflows/`). Where native slash commands are unsupported, invoke FORMFORGE via natural language.
+- **Native slash commands**: Copy the matching command directory into your project or user config (`.agents/skills/` for Antigravity & Codex, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, or `.windsurf/workflows/`). Where native slash commands are unsupported, invoke FORMFORGE via natural language.
 - **Remove**: Delete the `formforge/` skill folder and the `formforge*` command files.
 
 *Note: Clean-directory skill packaging, TOML/YAML command syntax, and internal links are structurally verified; third-party host CLI auto-discovery has not been live-tested.*
@@ -75,8 +75,8 @@ git clone https://github.com/AayushPandey2/frontend-design-skill.git
 | Target | Status | Basis |
 | :--- | :--- | :--- |
 | **`agentskills.io` Specification** | Structurally Verified | Valid `SKILL.md` frontmatter + progressive `references/` layout |
-| **Claude Code, Cursor, Gemini CLI, Windsurf** | Structurally Verified / Host Untested | Native `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/` files provided; host discovery untested |
-| **OpenAI Codex, GitHub Copilot, OpenCode** | Documented / Untested | Portable `SKILL.md` + natural-language command fallbacks |
+| **Antigravity, OpenAI Codex, Claude Code, Cursor, Gemini CLI, Windsurf** | Structurally Verified / Host Untested | Native `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/` files provided; host discovery untested |
+| **GitHub Copilot, OpenCode** | Documented / Untested | Portable `SKILL.md` + natural-language command fallbacks |
 
 ## License
 

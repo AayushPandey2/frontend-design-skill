@@ -15,7 +15,7 @@ FORMFORGE is a portable, zero-dependency, Markdown-first Agent Skill (`agentskil
 | **Level 0 — Discovery** | `SKILL.md` YAML frontmatter | Always in agent index |
 | **Level 1 — Kernel** | `SKILL.md` Markdown body | Loaded on skill activation |
 | **Level 2 — Domain Modules** | 19 focused `references/*.md` files (including `planning-mode.md` & `master-prompt-spec.md`) | Loaded selectively by user intent, never by keyword alone |
-| **Native Command Dispatchers** | `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/` | Thin 9-command dispatchers pointing to `SKILL.md` + `references/` |
+| **Native Command Dispatchers** | `.agents/skills/`, `.codex/prompts/`, `.claude/commands/`, `.cursor/commands/`, `.gemini/commands/`, `.windsurf/workflows/` | Thin 9-command dispatchers pointing to `SKILL.md` + `references/` |
 | **Level 4 — Verification Tools** | Host browser/test/lint/a11y tools | Invoked when task risk justifies them |
 
 ### Experimental Context Targets (Kernel + Loaded References)
