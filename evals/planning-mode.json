@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "project": "FORMFORGE",
+  "feature": "interactive-planning-and-slash-commands",
+  "scenarios": [
+    "no_design_knowledge",
+    "established_brand",
+    "multiple_references",
+    "motion_heavy_portfolio",
+    "data_heavy_dashboard",
+    "small_modification",
+    "browsing_unavailable",
+    "inline_images_unavailable",
+    "revising_decisions",
+    "fresh_agent_implementation",
+    "slash_command_dispatch"
+  ],
+  "tests": [
+    {
+      "id": "PM-A",
+      "scenario": "no_design_knowledge",
+      "prompt": "/formforge-plan I want to build a website for my neighborhood bakery, no idea about fonts or colors.",
+      "context": { "repo": "empty", "browsing": true },
+      "expected_references": ["references/planning-mode.md", "references/master-prompt-spec.md"],
+      "required_capabilities": ["FF-CR-04", "FF-OP-04"],
+      "acceptance_criteria": ["Explains choices in plain language with visual/descriptive recommendations.", "Does not modify files or dump a giant questionnaire."]
+    },
+    {
+      "id": "PM-B",
+      "scenario": "established_brand",
+      "prompt": "/formforge-plan Add a new enterprise pricing page for our existing React app—keep our brand tokens.",
+      "context": { "repo": "existing-react-tokens" },
+      "expected_references": ["references/planning-mode.md", "references/project-and-memory.md"],
+      "required_capabilities": ["FF-CR-04", "FF-EN-02"],
+      "acceptance_criteria": ["Inspects existing tokens read-only.", "Marks existing brand colors/fonts as LOCKED."]
+    },
+    {
+      "id": "PM-C",
+      "scenario": "multiple_references",
+      "prompt": "/formforge-plan I like Reference A's huge serif headline and Reference B's minimal dark footer, but not A's sidebar or B's neon cards.",
+      "context": { "browsing": true },
+      "expected_references": ["references/planning-mode.md", "references/master-prompt-spec.md"],
+      "required_capabilities": ["FF-CR-04"],
+      "acceptance_criteria": ["Records Approved, Rejected, and Not Selected traits per reference without combining incompatible aesthetics."]
+    },
+    {
+      "id": "PM-D",
+      "scenario": "motion_heavy_portfolio",
+      "prompt": "/formforge-plan Plan a flagship interactive portfolio for a 3D motion designer.",
+      "context": { "repo": "empty" },
+      "expected_references": ["references/planning-mode.md", "references/motion-and-interactions.md", "references/master-prompt-spec.md"],
+      "required_capabilities": ["FF-CR-04", "FF-MO-01"],
+      "acceptance_criteria": ["Produces measurable Motion Specification Contracts (duration, easing/spring, triggers, interruption, reduced-motion)."]
+    },
+    {
+      "id": "PM-E",
+      "scenario": "data_heavy_dashboard",
+      "prompt": "/formforge-plan Plan an internal logistics fleet operations dashboard.",
+      "context": { "repo": "empty" },
+      "expected_references": ["references/planning-mode.md", "references/industry-patterns.md", "references/ux-and-systems.md"],
+      "required_capabilities": ["FF-CR-04", "FF-SP-01", "FF-UX-01"],
+      "acceptance_criteria": ["Prioritizes density, tabular scanability, filtering, and error/empty states over decorative flair."]
+    },
+    {
+      "id": "PM-F",
+      "scenario": "small_modification",
+      "prompt": "/formforge-plan Plan a small banner addition to our existing checkout header.",
+      "context": { "repo": "existing-app" },
+      "expected_references": ["references/planning-mode.md"],
+      "required_capabilities": ["FF-CR-04"],
+      "acceptance_criteria": ["Uses Express planning depth and skips irrelevant full-site stages."]
+    },
+    {
+      "id": "PM-G",
+      "scenario": "browsing_unavailable",
+      "prompt": "/formforge-plan Plan a specialty tea storefront.",
+      "context": { "browsing": false },
+      "expected_references": ["references/planning-mode.md"],
+      "required_capabilities": ["FF-CR-04", "FF-VF-04"],
+      "acceptance_criteria": ["States browsing is unavailable and provides descriptive alternatives without fabricating URLs or images."]
+    },
+    {
+      "id": "PM-H",
+      "scenario": "inline_images_unavailable",
+      "prompt": "/formforge-plan Show me visual directions for a boutique architectural studio.",
+      "context": { "browsing": true, "inline_images": false },
+      "expected_references": ["references/planning-mode.md"],
+      "required_capabilities": ["FF-CR-04"],
+      "acceptance_criteria": ["Provides verified clickable reference URLs with concise trait descriptions instead of pretending inline images rendered."]
+    },
+    {
+      "id": "PM-I",
+      "scenario": "revising_decisions",
+      "prompt": "Go back to typography and switch the heading font to a geometric sans, then generate the final prompt.",
+      "context": { "active_plan": true },
+      "expected_references": ["references/planning-mode.md", "references/master-prompt-spec.md"],
+      "required_capabilities": ["FF-CR-04"],
+      "acceptance_criteria": ["Updates the running design contract cleanly and reflects the revised font in the final master prompt."]
+    },
+    {
+      "id": "PM-J",
+      "scenario": "fresh_agent_implementation",
+      "prompt": "Execute the standalone master implementation prompt in a fresh session with no planning history.",
+      "context": { "fresh_session": true, "formforge_installed": false },
+      "expected_references": ["references/master-prompt-spec.md"],
+      "required_capabilities": ["FF-CR-04"],
+      "acceptance_criteria": ["Master prompt is self-contained, preserves LOCKED decisions, includes fallback descriptions, and requires deviation reporting."]
+    },
+    {
+      "id": "CMD-01",
+      "scenario": "slash_command_dispatch",
+      "prompt": "/formforge-audit Inspect the pricing page for visual and accessibility defects.",
+      "context": { "repo": "existing-app" },
+      "expected_references": ["references/visual-critique.md", "references/functional-and-technical-audits.md", "references/verification-and-refinement.md"],
+      "required_capabilities": ["FF-OP-04", "FF-VF-01"],
+      "acceptance_criteria": ["Dispatches directly to read-only audit without modifying repository files."]
+    },
+    {
+      "id": "CMD-02",
+      "scenario": "slash_command_dispatch",
+      "prompt": "/formforge-quick Update the Cancel button label to 'Discard changes'.",
+      "context": { "repo": "existing-app" },
+      "expected_references": ["references/implementation-economy.md"],
+      "required_capabilities": ["FF-OP-04", "FF-OP-01"],
+      "acceptance_criteria": ["Dispatches in QUICK mode with minimal inspection and no unrelated edits."]
+    }
+  ]
+}

@@ -58,6 +58,20 @@
       "verification_requirements": ["Trivial edits use QUICK; high-risk edits trigger stronger verification."]
     },
     {
+      "id": "FF-OP-04",
+      "name": "Standalone Slash Command Dispatch",
+      "domain": "FF-OP",
+      "decision": "ADOPT",
+      "status": "STRUCTURALLY VERIFIED",
+      "purpose": "Expose 9 standalone slash commands (/formforge, -quick, -standard, -premium, -flagship, -audit, -polish, -optimize, -plan) with natural-language fallbacks.",
+      "activation_conditions": ["slash command invocation or natural-language command equivalent"],
+      "applicable_task_types": ["all"],
+      "reference_paths": ["SKILL.md"],
+      "dependencies": ["FF-OP-02", "FF-OP-03"],
+      "conflicts": ["Command files remain thin dispatchers without duplicating SKILL.md rules."],
+      "verification_requirements": ["All 9 commands registered cleanly with read-only boundaries enforced on audit/plan."]
+    },
+    {
       "id": "FF-EN-02",
       "name": "Project, Framework & Dependency Awareness",
       "domain": "FF-EN",
@@ -168,6 +182,20 @@
       "dependencies": ["FF-CR-01"],
       "conflicts": ["Adapt density for operational dashboards via FF-SP-01."],
       "verification_requirements": ["Clear single focal point above the fold."]
+    },
+    {
+      "id": "FF-CR-04",
+      "name": "Interactive Design Planning & Master Prompt Consultation",
+      "domain": "FF-CR",
+      "decision": "ADOPT",
+      "status": "STRUCTURALLY VERIFIED",
+      "purpose": "Run read-only progressive design consultation (/formforge-plan) and output a standalone copyable master implementation prompt.",
+      "activation_conditions": ["/formforge-plan", "interactive design planning request"],
+      "applicable_task_types": ["design-consultation", "new-interface", "redesign"],
+      "reference_paths": ["references/planning-mode.md", "references/master-prompt-spec.md"],
+      "dependencies": ["FF-CR-01", "FF-OP-02"],
+      "conflicts": ["Never edits frontend files or auto-executes implementation during planning."],
+      "verification_requirements": ["Read-only boundary preserved; output contains summary, standalone prompt, and reference index."]
     },
     {
       "id": "FF-VD-01",
